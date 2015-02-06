@@ -2,7 +2,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
-
+//STEP
+int step = 0;
+String stepString = request.getParameter("step");
+try {
+	if (stepString != null) step = Integer.parseInt(stepString);
+} catch (NumberFormatException e) {}
+session.setAttribute("step", step);
 %>
 <html>
 <head>
@@ -25,13 +31,19 @@
 <body>
 
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-7">
-				1&nbsp;<br />
-				
-			</div>
-			<div class="col-sm-5">
-				2&nbsp;<br />
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<c:choose>
+					<c:when test="${sessionScope.step == 0}">
+		    			<%@ include file="jspf/step0.jspf" %>
+		    		</c:when>
+		    		<c:when test="${sessionScope.step == 1}">
+		    			<%@ include file="jspf/step1.jspf" %>
+		    		</c:when>
+		    		<c:when test="${sessionScope.step == 2}">
+		    			<%@ include file="jspf/step2.jspf" %>
+		    		</c:when>
+		    	</c:choose>
 			</div>
 		</div>
 	</div>

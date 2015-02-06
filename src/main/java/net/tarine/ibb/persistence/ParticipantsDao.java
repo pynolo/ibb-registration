@@ -8,22 +8,16 @@ import net.tarine.ibb.model.Participants;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.type.BooleanType;
 
 public class ParticipantsDao {
 
-	public List<Participants> findAll(Session ses, boolean filterExpired, boolean filterHidden) throws SystemException {
+	public List<Participants> findAll(Session ses) throws SystemException {
 		List<Participants> result = null;
 		try {
-			String hql = "from Participants h ";
-			if (filterExpired || filterHidden) hql += "where ";
-			if (filterExpired) hql += "h.expired = :b1 ";
-			if (filterExpired && filterHidden) hql += "and ";
-			if (filterHidden) hql += "h.hidden = :b2 ";
-			hql += "order by h.pollTime asc";
+			String hql = "from Participants p ";
+			hql += "order by p.created asc";
 			Query q = ses.createQuery(hql);
-			if (filterExpired) q.setParameter("b1", Boolean.FALSE, BooleanType.INSTANCE);
-			if (filterHidden) q.setParameter("b2", Boolean.FALSE, BooleanType.INSTANCE);
+
 			@SuppressWarnings("unchecked")
 			List<Participants> list = q.list();
 			result = list;

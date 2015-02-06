@@ -1,5 +1,7 @@
 package net.tarine.ibb.model;
 
+import java.util.Date;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * 
@@ -27,6 +31,8 @@ public class Participants extends BaseEntity {
 	@Basic(optional = false)
 	@Column(name = "name", nullable = false, length = 128)
 	private String name;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date created;
 	@Column(name = "arrival_time", length = 128)
 	private String arrivalTime;
 	@Column(name = "arrival_transportation", length = 128)
@@ -93,6 +99,14 @@ public class Participants extends BaseEntity {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 
 	public String getArrivalTime() {

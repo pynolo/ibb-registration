@@ -36,6 +36,9 @@ request.setAttribute("pList", statList);
 					<thead>
 						<tr>
 							<th>
+								Created
+							</th>
+							<th>
 								<b>Email</b>
 							</th>
 							<th>
@@ -59,6 +62,9 @@ request.setAttribute("pList", statList);
 					<tbody>
 						<c:forEach items="${requestScope.pList}" var="p" varStatus="status">
 						<tr>
+							<td>
+								<c:out value="${p.created}" />
+							</td>
 							<td>
 								<b><c:out value="${p.email}" /></b>
 							</td>

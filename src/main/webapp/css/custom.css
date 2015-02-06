@@ -1,0 +1,33 @@
+/*
+Theme Name: Worthy - Free Powerful Theme by HtmlCoder
+Author:HtmlCoder
+Author URI:http://www.htmlcoder.me
+Version:1.0.0
+Created:November 2014
+License: Creative Commons Attribution 3.0 License (https://creativecommons.org/licenses/by/3.0/)
+File Description: Place here your custom CSS styles
+*/
+
+@font-face {font-family: 'Averia'; font-weight: bold; font-style: normal; src: url('fonts/averia/Averia-Bold.ttf') format('truetype');}
+@font-face {font-family: 'Averia'; font-weight: bold; font-style: italic; src: url('fonts/averia/Averia-BoldItalic.ttf') format('truetype');}
+@font-face {font-family: 'Averia'; font-weight: normal; font-style: italic; src: url('fonts/averia/Averia-Italic.ttf') format('truetype');}
+@font-face {font-family: 'Averia'; font-weight: normal; font-style: normal; src: url('fonts/averia/Averia-Regular.ttf') format('truetype');}
+@font-face {font-family: 'Andika'; font-weight: normal; font-style: normal; src: url('fonts/andika/AndBasR.ttf') format('truetype');}
+
+body {
+	font-family: 'Andika', 'Open Sans', sans-serif;
+}
+.site-name, h1, h2, h3, h4 {
+	font-family: 'Averia';
+	font-weight: bold;
+	font-style: normal; 
+}
+/*.lead { color: #339BEB; }*/
+
+.text-colored {
+	color: #55acee;
+}
+
+.text-warning {
+	color: #d22222;
+}

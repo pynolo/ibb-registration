@@ -24,5 +24,8 @@ public class ParticipantsBusiness {
 		}
 		return result;
 	}
-	
+
+	public static void wizardSave(Participants participantsTransient) {
+		//TODO
+	}
 }

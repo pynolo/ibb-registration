@@ -1,0 +1,56 @@
+package net.tarine.ibb.business;
+
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import net.tarine.ibb.AppConstants;
+import net.tarine.ibb.SystemException;
+
+public class WizardBusiness {
+
+	public static void getParameters(HttpSession session, HttpServletRequest request) 
+			throws SystemException {
+		//STEP
+		String step = request.getParameter(AppConstants.PARAMS_STEP);
+		if (step == null) step = "0";
+		session.setAttribute(AppConstants.PARAMS_STEP, step);
+		//CODE
+		String code = request.getParameter(AppConstants.PARAMS_CODE);
+		if (code == null) code = WizardBusiness.createCode(session.getId());
+		session.setAttribute(AppConstants.PARAMS_CODE, code);
+		//EMAIL
+		String email = request.getParameter(AppConstants.PARAMS_EMAIL);
+		if (email == null) email = "";
+		session.setAttribute(AppConstants.PARAMS_EMAIL, email);
+		//NAME
+		String name = request.getParameter(AppConstants.PARAMS_NAME);
+		if (name == null) name = "";
+		session.setAttribute(AppConstants.PARAMS_NAME, name);
+		//FOOD
+		String food = request.getParameter(AppConstants.PARAMS_FOOD);
+		if (food == null) food = "";
+		session.setAttribute(AppConstants.PARAMS_FOOD, food);	
+	}
+	
+	public static String createCode(String seed) throws SystemException {
+		if (seed==null) seed="";
+		seed += new Date().getTime();
+		String md5;
+		try {
+			//Create MessageDigest object for MD5
+			MessageDigest digest = MessageDigest.getInstance("MD5");
+			//Update input string in message digest
+			digest.update(seed.getBytes(), 0, seed.length());
+			//Converts message digest value in base 16 (hex)
+			md5 = new BigInteger(1, digest.digest()).toString(16);
+		} catch (NoSuchAlgorithmException e) {
+			throw new SystemException(e.getMessage(), e);
+		}
+		return md5;
+	}
+}

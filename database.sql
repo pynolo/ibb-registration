@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS participants;
 CREATE TABLE participants (
 	id int NOT NULL auto_increment,
+	code varchar(64) NOT NULL,
 	email varchar(64) NOT NULL,
 	name varchar(128) NOT NULL,
 	created datetime DEFAULT NULL,

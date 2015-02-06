@@ -22,6 +22,13 @@ public class AppConstants {
 	public static final String OPENSHIFT_MYSQL_DB_PORT = "OPENSHIFT_MYSQL_DB_PORT";
 	public static final String OPENSHIFT_APP_NAME = "OPENSHIFT_APP_NAME";
 
+	// PARAMS
+	public static final String PARAMS_STEP = "step";
+	public static final String PARAMS_CODE = "code";
+	public static final String PARAMS_EMAIL = "email";
+	public static final String PARAMS_NAME = "name";
+	public static final String PARAMS_FOOD = "food";
+	
 	// LOOKUP
 	public static final String NETWORK_TYPE_RED = "RED#";
 	public static final String NETWORK_TYPE_FRIENDICA = "FRND";

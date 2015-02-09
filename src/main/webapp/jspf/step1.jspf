@@ -25,7 +25,7 @@
 	}
 </script>
 <form action="index.jsp" name="form1" method="get">
-	<input type="hidden" name="code" value="${session.code}" />
+	<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
 	<input type="hidden" name="step" value="0" />
 	<h3>Food / Cibo</h3>
 	<p>&nbsp;</p>
@@ -35,7 +35,7 @@
 	</p>
 	<div class="input-group">
 		<input type="text" class="form-control" name="name"
-			value="${session.food}" width="85%" aria-describedby="sizing-addon1" />
+			value='<%=session.getAttribute("food") %>' width="85%" aria-describedby="sizing-addon1" />
 	</div>
 	<p>&nbsp;</p>
 	<p>

@@ -21,7 +21,7 @@ public class WizardBusiness {
 		session.setAttribute(AppConstants.PARAMS_STEP, step);
 		//CODE
 		String code = request.getParameter(AppConstants.PARAMS_CODE);
-		if (code == null) code = WizardBusiness.createCode(session.getId());
+		if (code == null) code = WizardBusiness.createCode(session.getId(), 6);
 		session.setAttribute(AppConstants.PARAMS_CODE, code);
 		//EMAIL
 		String email = request.getParameter(AppConstants.PARAMS_EMAIL);
@@ -37,7 +37,7 @@ public class WizardBusiness {
 		session.setAttribute(AppConstants.PARAMS_FOOD, food);
 	}
 	
-	public static String createCode(String seed) throws SystemException {
+	public static String createCode(String seed, int size) throws SystemException {
 		if (seed==null) seed="";
 		seed += new Date().getTime();
 		String md5;
@@ -51,6 +51,8 @@ public class WizardBusiness {
 		} catch (NoSuchAlgorithmException e) {
 			throw new SystemException(e.getMessage(), e);
 		}
-		return md5;
+		String code = md5.substring(0, size);
+		return code.toUpperCase();
 	}
+	
 }

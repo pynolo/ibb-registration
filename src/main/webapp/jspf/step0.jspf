@@ -27,7 +27,7 @@
 	}
 </script>
 <form action="index.jsp" name="form0" method="get">
-	<input type="hidden" name="code" value="${session.code}" />
+	<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
 	<input type="hidden" name="step" value="0" />
 	<h3>Registration / Iscrizione</h3>
 	<p>&nbsp;</p>
@@ -37,7 +37,7 @@
 	</p>
 	<div class="input-group">
 		<input type="text" class="form-control" name="name"
-			value="${session.name}" aria-describedby="sizing-addon1" />
+			value='<%=session.getAttribute("name") %>' aria-describedby="sizing-addon1" />
 	</div>
 	<p>&nbsp;</p>
 	<p>
@@ -46,7 +46,7 @@
 	</p>
 	<div class="input-group">
 		<input type="text" class="form-control" name="email"
-			value="${session.email}" aria-describedby="sizing-addon1">
+			value='<%=session.getAttribute("email") %>' aria-describedby="sizing-addon1">
 	</div>
 	<p>&nbsp;</p>
 	<div class="row">

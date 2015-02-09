@@ -11,6 +11,9 @@ request.setAttribute("countryList", countryList);
 %>
 
 <script type="text/JavaScript">
+
+	$('.selectpicker').selectpicker();
+
 	function forwardForm0() {
 		var valid = true;
 		// Validate Name
@@ -30,7 +33,7 @@ request.setAttribute("countryList", countryList);
 		// Validate Country
 		var country = document.form0.country.value;
 		if (country=="" || country==null) {
-			alert("Please enter the country / Devi scegliere la nazione");
+			alert("Please select a country / Devi scegliere la nazione");
 			valid = false;
 		}
 		
@@ -68,7 +71,7 @@ request.setAttribute("countryList", countryList);
 		<i>Where will you come from?</i><br/>
 		<b>Da dove arriverai?</b>
 	</p>
-	<select name="country" class="form-control">
+	<select name="country" class="selectpicker">
 		<option value="">--</option>
 		<c:forEach items="${requestScope.countryList}" var="c" varStatus="status">  
 			<option value="${c.country}"><c:out value="${c.country}" /></option>

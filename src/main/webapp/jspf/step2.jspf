@@ -26,7 +26,7 @@
 </script>
 <form action="index.jsp" name="form2" method="post">
 	<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
-	<input type="hidden" name="step" value="0" />
+	<input type="hidden" name="step" value="2" />
 	<h3>Food / Cibo</h3>
 	<p>&nbsp;</p>
 	<p>

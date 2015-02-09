@@ -72,7 +72,10 @@ public class WizardBusiness {
 		try {
 			result = new Ip2nationDao().findCountries(ses);
 		} catch (SystemException e) {
-			throw new SystemException(e.getMessage(), e);
+			Ip2nationCountries c = new Ip2nationCountries();
+			c.setCountry("Error loading countries");
+			result.add(c);
+			//throw new SystemException(e.getMessage(), e);
 		} finally {
 			ses.close();
 		}

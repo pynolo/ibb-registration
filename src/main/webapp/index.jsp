@@ -11,6 +11,7 @@
 	
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/bootstrap-select.min.css" rel="stylesheet" />
 	<link href="css/custom.css" rel="stylesheet" />
 	<link rel="shortcut icon" type="image/png" href="images/rm-16.png" />
 	
@@ -51,6 +52,7 @@
 	<script src="jquery/1.11.1/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
 </body>
 </html>
 

@@ -70,11 +70,11 @@ request.setAttribute("countryList", countryList);
 	<p>&nbsp;</p>
 	<div class="row">
 		<div class="col-sm-2">
-	 		<button type="button" class="btn btn-primary" onclick="backwardForm1(); return true;">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
+	 		<button type="button" class="btn btn-primary" onclick="backwardForm2(); return true;">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
 		</div>
 		<div class="col-sm-8"></div>
 		<div class="col-sm-2">
-			<button type="button" class="btn btn-primary" onclick="forwardForm1(); return true;">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
+			<button type="button" class="btn btn-primary" onclick="forwardForm2(); return true;">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
 		</div>
 	</div>
 </form>

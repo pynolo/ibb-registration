@@ -13,9 +13,9 @@
 		var valid = true;
 		
 		// Validate Breakfast
-		var breakfast = document.form1.breakfast.checked();
+		var breakfast = document.form1.breakfast.checked;
 		if (!breakfast) {
-			alert("Please note you need to bring your own breakfast / Attenzione devi portarti le colazioni");
+			alert("Check that you know everything about the breakfast / Controlla di sapere come funzionano le colazioni");
 			valid = false;
 		}
 		if (valid) {

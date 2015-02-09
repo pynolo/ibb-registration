@@ -18,13 +18,19 @@
 			alert("Check that you know everything about the breakfast / Controlla di sapere come funzionano le colazioni");
 			valid = false;
 		}
+		// Validate Drinks
+		//var breakfast = document.form1.drinks.checked;
+		//if (!breakfast) {
+		//	alert("Check that you know everything about drinks / Controlla di sapere come funzionano le bevande");
+		//	valid = false;
+		//}
 		if (valid) {
 			document.form1.step.value = "2";
 			document.form1.submit();
 		}
 	}
 </script>
-<form action="index.jsp" name="form1" method="post">
+<form action="index.jsp" name="form1" method="post" class="form-horizontal">
 	<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
 	<input type="hidden" name="step" value="1" />
 	<h3>Food / Cibo</h3>
@@ -42,8 +48,18 @@
 		<i>Are you aware you will need to bring your own breakfast for Saturday and Sunday?</i><br/>
 		<b>Sai che dovrai portarti la colazione di sabato e domenica?</b>
 	</p>
-	<div class="input-group">
-		<input type="checkbox" class="form-control" name="breakfast" />&nbsp;Yes / S&igrave;
+	<div class="checkbox">
+		<label for="breakfast" class="checkbox">
+			<input type="checkbox" class="checkbox" name="breakfast" />&nbsp;Yes / S&igrave;</label>
+	</div>
+	<p>&nbsp;</p>
+	<p>
+		<i>Are you aware you will need to bring all the drinks but water?</i><br/>
+		<b>Sai che, eccetto l'acqua, dovrai portare tutte le bevande che vuoi?</b>
+	</p>
+	<div class="checkbox">
+		<label for="drinks" class="checkbox">
+			<input type="checkbox" class="checkbox" name="drinks" />&nbsp;Yes / S&igrave;</label>
 	</div>
 	<p>&nbsp;</p>
 	<div class="row">

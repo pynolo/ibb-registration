@@ -42,6 +42,12 @@
 		    		<c:when test="${sessionScope.step == 2}">
 		    			<%@ include file="jspf/step2.jspf" %>
 		    		</c:when>
+		    		<c:when test="${sessionScope.step == 3}">
+		    			<%@ include file="jspf/step3.jspf" %>
+		    		</c:when>
+		    		<c:when test="${sessionScope.step == 1000}">
+		    			<%@ include file="jspf/checkout.jspf" %>
+		    		</c:when>
 		    	</c:choose>
 			</div>
 		</div>

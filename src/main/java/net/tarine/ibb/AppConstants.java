@@ -10,6 +10,9 @@ import java.util.Map;
 
 public class AppConstants {
 
+	public static final String PRICE_ITALY = "65.00";
+	public static final String PRICE_ABROAD = "50.00";
+	
 	// CONFIG FILES
 	public static final String HIBERNATE_CONFIG_FILE="/hibernate.cfg.xml";
 	public static final String APP_PROPERTY_FILE = "/app.properties";
@@ -30,6 +33,9 @@ public class AppConstants {
 	public static final String PARAMS_COUNTRY = "country";
 	public static final String PARAMS_FOOD = "food";
 	public static final String PARAMS_ARRIVAL_TIME = "arrivalTime";
+	public static final String PARAMS_VOLUNTEER = "volunteer";
+	public static final String PARAMS_AMOUNT = "amount";
+	public static final String PARAMS_PAYMENT = "payment";
 	
 	// LOOKUP
 	public static final String NETWORK_TYPE_RED = "RED#";

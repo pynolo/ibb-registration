@@ -16,43 +16,44 @@
 <form action="index.jsp" name="form3" method="post">
 	<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
 	<input type="hidden" name="step" value="3" />
+	<input type="hidden" name="name" value='<%=session.getAttribute("name") %>' />
+	<input type="hidden" name="email" value='<%=session.getAttribute("email") %>' />
+	<input type="hidden" name="food" value='<%=session.getAttribute("food") %>' />
+	<input type="hidden" name="country" value='<%=session.getAttribute("country") %>' />
+	<input type="hidden" name="arrivalTime" value='<%=session.getAttribute("arrivalTime") %>' />
+	<!--input type="hidden" name="volunteer" value='<%=session.getAttribute("volunteer") %>' /-->
 	<h3>Participation / Partecipazione</h3>
 	<p>
-		<i>Where will you come from?</i><br/>
-		<b>Da dove arriverai?</b>
-	</p>
-	<p>&nbsp;</p>
-	<p>
-		<i>Are you aware you will need to bring your own breakfast for Saturday and Sunday?</i><br/>
-		<b>Sai che dovrai portarti la colazione di sabato e domenica?</b>
+		<i>Everybody help at IBB :) do you have any preferences on how to volunteer?</i><br/>
+		<b>Al IBB tutti aiutano :) hai preferenze su come vuoi partecipare?</b>
 	</p>
 	<div class="checkbox">
 		<label for="volunteer[]" class="checkbox">
-			<input type="checkbox" class="checkbox" name="volunteer[]" />&nbsp;Yes / S&igrave;</label>
+			<input type="checkbox" class="checkbox" name="volunteer[]" value="kitchen" />Kitchen / Cucina</label>
 	</div>
 		<div class="checkbox">
 		<label for="volunteer[]" class="checkbox">
-			<input type="checkbox" class="checkbox" name="volunteer[]" />&nbsp;Yes / S&igrave;</label>
+			<input type="checkbox" class="checkbox" name="volunteer[]" value="outside" />Outside the hut and fire / Esterno rifugio e fuoco</label>
 	</div>
 		<div class="checkbox">
 		<label for="volunteer[]" class="checkbox">
-			<input type="checkbox" class="checkbox" name="volunteer[]" />&nbsp;Yes / S&igrave;</label>
+			<input type="checkbox" class="checkbox" name="volunteer[]" value="inside" />Inside the hut / Interno rifugio</label>
 	</div>
 		<div class="checkbox">
 		<label for="volunteer[]" class="checkbox">
-			<input type="checkbox" class="checkbox" name="volunteer[]" />&nbsp;Yes / S&igrave;</label>
+			<input type="checkbox" class="checkbox" name="volunteer[]" value="greeters"/>Greeters / Benvenuto</label>
 	</div>
 		<div class="checkbox">
 		<label for="volunteer[]" class="checkbox">
-			<input type="checkbox" class="checkbox" name="volunteer[]" />&nbsp;Yes / S&igrave;</label>
+			<input type="checkbox" class="checkbox" name="volunteer[]" value="deco"/>Decoration / Allestimento</label>
 	</div>
 	<div class="row">
 		<div class="col-sm-2">
-	 		<button type="button" class="btn btn-primary" onclick="backwardForm2(); return true;">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
+	 		<button type="button" class="btn btn-primary" onclick="backwardForm3(); return true;">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
 		</div>
 		<div class="col-sm-8"></div>
 		<div class="col-sm-2">
-			<button type="button" class="btn btn-primary" onclick="forwardForm2(); return true;">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
+			<button type="button" class="btn btn-primary" onclick="forwardForm3(); return true;">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
 		</div>
 	</div>
 </form>

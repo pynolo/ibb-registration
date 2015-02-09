@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="net.tarine.ibb.business.WizardBusiness"%>
+<%@ page import="net.tarine.ibb.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%
+WizardBusiness.saveParticipant(request);
+%>
+<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+	<input type="hidden" name="cmd" value="_xclick">
+	<input type="hidden" name="business" value="paolo@tarine.net">
+	<input type="hidden" name="item_name" value='Donation for IBB <%=session.getAttribute("code") %>'>
+	<input type="hidden" name="currency_code" value="EUR">
+	<input type="hidden" name="amount" value='<%=session.getAttribute("amount") %>'>
+	<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="Make a donation with PayPal">
+	<input type="hidden" name="return"
+		value='http://www.italianburningboots.org/thanks.jsp?amount=<%=session.getAttribute("amount") %>&code=<%=session.getAttribute("code") %>'>
+</form>

@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 import net.tarine.ibb.AppConstants;
 import net.tarine.ibb.SystemException;
 import net.tarine.ibb.model.Ip2nationCountries;
+import net.tarine.ibb.model.Participants;
+import net.tarine.ibb.persistence.GenericDao;
 import net.tarine.ibb.persistence.HibernateSessionFactory;
 import net.tarine.ibb.persistence.Ip2nationDao;
 
@@ -46,10 +48,69 @@ public class WizardBusiness {
 		String country = request.getParameter(AppConstants.PARAMS_COUNTRY);
 		if (country == null) country = "";
 		session.setAttribute(AppConstants.PARAMS_COUNTRY, country);
-		//TRAVEL TIME
+		//ARRIVAL TIME
 		String arrivalTime = request.getParameter(AppConstants.PARAMS_ARRIVAL_TIME);
 		if (arrivalTime == null) arrivalTime = "";
 		session.setAttribute(AppConstants.PARAMS_ARRIVAL_TIME, arrivalTime);
+		//VOLUNTEER
+		String volunteer = request.getParameter(AppConstants.PARAMS_VOLUNTEER);
+		if (volunteer == null) volunteer = "";
+		session.setAttribute(AppConstants.PARAMS_VOLUNTEER, volunteer);
+		//AMOUNT
+		String amount = request.getParameter(AppConstants.PARAMS_AMOUNT);
+		if (amount == null) amount = "";
+		if (amount == "" && country != null) {
+			if (country.equalsIgnoreCase("ITALY")) {
+				amount = AppConstants.PRICE_ITALY;
+			} else {
+				amount = AppConstants.PRICE_ABROAD;
+			}
+		}
+		session.setAttribute(AppConstants.PARAMS_AMOUNT, amount);
+	}
+	
+	public static void saveParticipant(HttpServletRequest request) throws SystemException {
+		Participants prtc = new Participants();
+		//CODE
+		String code = request.getParameter(AppConstants.PARAMS_CODE);
+		prtc.setCode(code);
+		//EMAIL
+		String email = request.getParameter(AppConstants.PARAMS_EMAIL);
+		prtc.setEmail(email);
+		//NAME
+		String name = request.getParameter(AppConstants.PARAMS_NAME);
+		prtc.setName(name);
+		//FOOD
+		String food = request.getParameter(AppConstants.PARAMS_FOOD);
+		prtc.setFoodRestrictions(food);
+		//COUNTRY
+		String country = request.getParameter(AppConstants.PARAMS_COUNTRY);
+		prtc.setCountryName(country);
+		//ARRIVAL TIME
+		String arrivalTime = request.getParameter(AppConstants.PARAMS_ARRIVAL_TIME);
+		prtc.setArrivalTime(arrivalTime);
+		//VOLUNTEER
+		String volunteer = request.getParameter(AppConstants.PARAMS_VOLUNTEER);
+		prtc.setVolunteering(volunteer);
+		//AMOUNT
+		String amountString = request.getParameter(AppConstants.PARAMS_AMOUNT);
+		Double amount = null;
+			if (amountString != null) {
+			try {
+				amount = Double.parseDouble(amountString);
+			} catch (NumberFormatException e1) { }
+		}
+		prtc.setAmount(amount);
+		//
+		prtc.setCreated(new Date());
+		Session ses = HibernateSessionFactory.getSession();
+		try {
+			GenericDao.saveGeneric(ses, prtc);
+		} catch (SystemException e) {
+			throw new SystemException(e.getMessage(), e);
+		} finally {
+			ses.close();
+		}
 	}
 	
 	public static String createCode(String seed, int size) throws SystemException {

@@ -34,19 +34,23 @@ public class Participants extends BaseEntity {
 	@Basic(optional = false)
 	@Column(name = "name", nullable = false, length = 128)
 	private String name;
+	@Column(name = "created")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date created;
 	@Column(name = "arrival_time", length = 128)
 	private String arrivalTime;
-	@Column(name = "arrival_transportation", length = 128)
-	private String arrivalTransportation;
 	@Column(name = "country_name", length = 256)
 	private String countryName;
 	@Column(name = "food_restrictions", length = 2048)
 	private String foodRestrictions;
 	@Column(name = "volunteering", length = 2048)
 	private String volunteering;
-
+	@Column(name = "amount")
+	private Double amount;
+	@Column(name = "payment")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date payment;
+	
 	@Override
 	public int hashCode() {
 		int hash = 0;
@@ -129,14 +133,6 @@ public class Participants extends BaseEntity {
 		this.arrivalTime = arrivalTime;
 	}
 
-	public String getArrivalTransportation() {
-		return arrivalTransportation;
-	}
-
-	public void setArrivalTransportation(String arrivalTransportation) {
-		this.arrivalTransportation = arrivalTransportation;
-	}
-
 	public String getCountryName() {
 		return countryName;
 	}
@@ -159,6 +155,22 @@ public class Participants extends BaseEntity {
 
 	public void setVolunteering(String volunteering) {
 		this.volunteering = volunteering;
+	}
+
+	public Double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+
+	public Date getPayment() {
+		return payment;
+	}
+
+	public void setPayment(Date payment) {
+		this.payment = payment;
 	}
 
 }

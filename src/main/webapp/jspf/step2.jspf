@@ -35,6 +35,13 @@ request.setAttribute("countryList", countryList);
 <form action="index.jsp" name="form2" method="post">
 	<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
 	<input type="hidden" name="step" value="2" />
+	<input type="hidden" name="name" value='<%=session.getAttribute("name") %>' />
+	<input type="hidden" name="email" value='<%=session.getAttribute("email") %>' />
+	<input type="hidden" name="food" value='<%=session.getAttribute("food") %>' />
+	<!--input type="hidden" name="country" value='<%=session.getAttribute("country") %>' /-->
+	<!--input type="hidden" name="arrivalTime" value='<%=session.getAttribute("arrivalTime") %>' /-->
+	<input type="hidden" name="volunteer" value='<%=session.getAttribute("volunteer") %>' />
+	
 	<h3>Logistics / Logistica</h3>
 	<p>
 		<i>Where will you come from?</i><br/>

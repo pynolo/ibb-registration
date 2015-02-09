@@ -34,7 +34,7 @@ public class WizardBusiness {
 		//FOOD
 		String food = request.getParameter(AppConstants.PARAMS_FOOD);
 		if (food == null) food = "";
-		session.setAttribute(AppConstants.PARAMS_FOOD, food);	
+		session.setAttribute(AppConstants.PARAMS_FOOD, food);
 	}
 	
 	public static String createCode(String seed) throws SystemException {

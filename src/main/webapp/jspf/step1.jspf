@@ -1,28 +1,58 @@
-<!-- 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="net.tarine.ibb.*"%>
 <%@ page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%
-//List<CountryStatBean> csList = HubBusiness.findCountryStatBeans();
-//request.setAttribute("csList", csList);
-%>
-<table class="table table-condensed" style="border-collapse: collapse">
-	<thead>
-		<tr>
-			<th>Geo location</th>
-			<th class="text-right">Hubs</th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach items="${requestScope.csList}" var="cs" varStatus="status">  
-			<tr>
-				<td>
-					<img src="${cs.countryFlag}" />&nbsp;<b><c:out value="${cs.countryName}" /></b>
-				</td>
-				<td class="text-right"><c:out value="${cs.liveHubs}" /></td>
-			</tr>
-		</c:forEach>
-	</tbody>
-</table>-->
+<script type="text/JavaScript">
+	function backwardForm1() {
+		document.form1.step.value = "0";
+		document.form1.submit();
+	}
+
+	function forwardForm1() {
+		var valid = true;
+		
+		// Validate Breakfast
+		var breakfast = document.form0.breakfast.value;
+		if (!breakfast) {
+			alert("Please note you need to bring your own breakfast / Attenzione devi portarti le colazioni");
+			valid = false;
+		}
+		if (valid) {
+			document.form1.step.value = "2";
+			document.form1.submit();
+		}
+	}
+</script>
+<form action="index.jsp" name="form1" method="get">
+	<input type="hidden" name="code" value="${session.code}" />
+	<input type="hidden" name="step" value="0" />
+	<h3>Food / Cibo</h3>
+	<p>&nbsp;</p>
+	<p>
+		<i>Do you have any food restriction?</i><br/>
+		<b>Ci sono cibi che non puoi mangiare?</b>
+	</p>
+	<div class="input-group">
+		<input type="text" class="form-control" name="name"
+			value="${session.food}" width="85%" aria-describedby="sizing-addon1" />
+	</div>
+	<p>&nbsp;</p>
+	<p>
+		<i>Are you aware you will need to bring your own breakfast for Saturday and Sunday?</i><br/>
+		<b>Sai che dovrai portarti la colazione di sabato e domenica?</b>
+	</p>
+	<div class="input-group">
+		<input type="checkbox" class="form-control" name="breakfast" /> Yes / Si
+	</div>
+	<p>&nbsp;</p>
+	<div class="row">
+		<div class="col-sm-2">
+	 		<button type="button" class="btn btn-primary" onclick="backwardForm1(); return true;">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
+		</div>
+		<div class="col-sm-8"></div>
+		<div class="col-sm-2">
+			<button type="button" class="btn btn-primary" onclick="forwardForm1(); return true;">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
+		</div>
+	</div>
+</form>

@@ -3,7 +3,30 @@
 <%@ page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<form action="index.jsp" name="form0" method="get" onsubmit="return forwardForm0();">
+<script type="text/JavaScript">
+	function forwardForm0() {
+		var valid = true;
+		// Validate Name
+		var name = document.form0.name.value;
+		if (name=="" || name==null) {
+			alert("Please enter only alphanumeric values for your name / Inserisci solo numeri e lettere per favore");
+			valid = false;
+		}
+		
+		// Validate Email
+		var email = document.form0.email.value;
+		if (!(/(.+)@(.+){2,}\.(.+){2,}/.test(email)) || email=="" || email==null) {
+			alert("Please enter a valid email / Inserisci un'email valida per favore");
+			valid = false;
+		}
+
+		if (valid) {
+			document.form0.step.value = "1";
+			document.form0.submit();
+		}
+	}
+</script>
+<form action="index.jsp" name="form0" method="get">
 	<input type="hidden" name="code" value="${session.code}" />
 	<input type="hidden" name="step" value="0" />
 	<h3>Registration / Iscrizione</h3>
@@ -26,18 +49,18 @@
 			value="${session.email}" aria-describedby="sizing-addon1">
 	</div>
 	<p>&nbsp;</p>
-	<div class="progress">
-		<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-		0%
-		</div>
-	</div>
 	<div class="row">
 		<div class="col-sm-2">
 	 		<button type="button" class="btn btn-primary" disabled="true">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
 		</div>
 		<div class="col-sm-8"></div>
 		<div class="col-sm-2">
-			<button type="button" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
+			<button type="button" class="btn btn-primary" onclick="forwardForm0(); return true;">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
 		</div>
 	</div>
 </form>
+<!--div class="progress">
+	<div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+	25%
+	</div>
+</div-->

@@ -1,7 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="net.tarine.ibb.*"%>
+<%@ page import="net.tarine.ibb.model.Ip2nationCountries"%>
+<%@ page import="net.tarine.ibb.business.WizardBusiness"%>
 <%@ page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%
+List<Ip2nationCountries> countryList = WizardBusiness.listCountries();
+request.setAttribute("countryList", countryList);
+%>
 
 <script type="text/JavaScript">
 	function backwardForm2() {
@@ -12,12 +19,13 @@
 	function forwardForm2() {
 		var valid = true;
 		
-		// Validate Breakfast
-		var breakfast = document.form2.breakfast.value;
-		if (!breakfast) {
-			alert("Please note you need to bring your own breakfast / Attenzione devi portarti le colazioni");
+		// Validate Country
+		var country = document.form2.country.value;
+		if (country=="" || country==null) {
+			alert("Please select a country / Devi scegliere la nazione");
 			valid = false;
 		}
+		
 		if (valid) {
 			document.form2.step.value = "3";
 			document.form2.submit();
@@ -27,25 +35,38 @@
 <form action="index.jsp" name="form2" method="post">
 	<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
 	<input type="hidden" name="step" value="2" />
-	<h3>Food / Cibo</h3>
+	<h3>Logistics / Logistica</h3>
+	<p>
+		<i>Where will you come from?</i><br/>
+		<b>Da dove arriverai?</b>
+	</p>
+	<select name="country" class="selectpicker">
+		<option value="">--</option>
+		<c:forEach items="${requestScope.countryList}" var="c" varStatus="status">  
+			<option value="${c.country}"><c:out value="${c.country}" /></option>
+		</c:forEach>
+	</select>
 	<p>&nbsp;</p>
 	<p>
-		<i>Do you have any food restriction?</i><br/>
-		<b>Ci sono cibi che non puoi mangiare?</b>
+		<i>When will you arrive?</i><br/>
+		<b>Quando arriverai?</b>
 	</p>
-	<div class="input-group">
-		<input type="text" class="form-control" name="name"
-			value='<%=session.getAttribute("food") %>' width="85%" aria-describedby="sizing-addon1" />
-	</div>
-	<p>&nbsp;</p>
+	<select name="arrivalTime" class="selectpicker">
+		<option value="Venerdi pomeriggio">Friday, before dinner / Venerd&igrave; prima di cena</option>
+		<option value="Venerdi sera">Friday, after dinner / Venerd&igrave; dopo cena</option>
+		<option value="Sabato colazione">Saturday, breakfast time / Sabato a colazione</option>
+		<option value="Non so">I will let you know! / Vi far&ograve; sapere!</option>
+	</select>
+	<!--p>&nbsp;</p>
 	<p>
-		<i>Are you aware you will need to bring your own breakfast for Saturday and Sunday?</i><br/>
-		<b>Sai che dovrai portarti la colazione di sabato e domenica?</b>
+		<i>How will you be travelling?</i><br/>
+		<b>Come viaggerai?</b>
 	</p>
-	<div class="input-group">
-		<label for="breakfast">Yes / Si</label>
-		<input type="checkbox" class="form-control" name="breakfast" />
-	</div>
+	<select name="country" class="selectpicker">
+		<option value="Auto mia">With my car / Con la mia auto</option>
+		<option value="Auto passaggio">A friend will give me a ride / Un amico mi dar&agrave; un passaggio</option>
+		<option value="Treno">By train / In treno</option>
+	</select-->
 	<p>&nbsp;</p>
 	<div class="row">
 		<div class="col-sm-2">

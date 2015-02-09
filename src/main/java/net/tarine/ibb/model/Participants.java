@@ -40,13 +40,12 @@ public class Participants extends BaseEntity {
 	private String arrivalTime;
 	@Column(name = "arrival_transportation", length = 128)
 	private String arrivalTransportation;
-	@Column(name = "country_code", length = 4)
-	private String countryCode;
 	@Column(name = "country_name", length = 256)
 	private String countryName;
 	@Column(name = "food_restrictions", length = 2048)
 	private String foodRestrictions;
-
+	@Column(name = "volunteering", length = 2048)
+	private String volunteering;
 
 	@Override
 	public int hashCode() {
@@ -138,14 +137,6 @@ public class Participants extends BaseEntity {
 		this.arrivalTransportation = arrivalTransportation;
 	}
 
-	public String getCountryCode() {
-		return countryCode;
-	}
-
-	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
-	}
-
 	public String getCountryName() {
 		return countryName;
 	}
@@ -160,6 +151,14 @@ public class Participants extends BaseEntity {
 
 	public void setFoodRestrictions(String foodRestrictions) {
 		this.foodRestrictions = foodRestrictions;
+	}
+
+	public String getVolunteering() {
+		return volunteering;
+	}
+
+	public void setVolunteering(String volunteering) {
+		this.volunteering = volunteering;
 	}
 
 }

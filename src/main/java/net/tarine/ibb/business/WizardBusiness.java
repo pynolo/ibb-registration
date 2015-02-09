@@ -38,14 +38,18 @@ public class WizardBusiness {
 		String name = request.getParameter(AppConstants.PARAMS_NAME);
 		if (name == null) name = "";
 		session.setAttribute(AppConstants.PARAMS_NAME, name);
-		//COUNTRY
-		String country = request.getParameter(AppConstants.PARAMS_COUNTRY);
-		if (country == null) country = "";
-		session.setAttribute(AppConstants.PARAMS_COUNTRY, country);
 		//FOOD
 		String food = request.getParameter(AppConstants.PARAMS_FOOD);
 		if (food == null) food = "";
 		session.setAttribute(AppConstants.PARAMS_FOOD, food);
+		//COUNTRY
+		String country = request.getParameter(AppConstants.PARAMS_COUNTRY);
+		if (country == null) country = "";
+		session.setAttribute(AppConstants.PARAMS_COUNTRY, country);
+		//TRAVEL TIME
+		String arrivalTime = request.getParameter(AppConstants.PARAMS_ARRIVAL_TIME);
+		if (arrivalTime == null) arrivalTime = "";
+		session.setAttribute(AppConstants.PARAMS_ARRIVAL_TIME, arrivalTime);
 	}
 	
 	public static String createCode(String seed, int size) throws SystemException {

@@ -1,14 +1,8 @@
-<%@page import="net.tarine.ibb.business.WizardBusiness"%>
-<%@page import="net.tarine.ibb.model.Ip2nationCountries"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="net.tarine.ibb.*"%>
 <%@ page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%
-List<Ip2nationCountries> countryList = WizardBusiness.listCountries();
-request.setAttribute("countryList", countryList);
-%>
 
 <script type="text/JavaScript">
 
@@ -30,13 +24,6 @@ request.setAttribute("countryList", countryList);
 			valid = false;
 		}
 
-		// Validate Country
-		var country = document.form0.country.value;
-		if (country=="" || country==null) {
-			alert("Please select a country / Devi scegliere la nazione");
-			valid = false;
-		}
-		
 		if (valid) {
 			document.form0.step.value = "1";
 			document.form0.submit();
@@ -66,17 +53,6 @@ request.setAttribute("countryList", countryList);
 		<input type="text" class="form-control" name="email"
 			value='<%=session.getAttribute("email") %>' aria-describedby="sizing-addon1">
 	</div>
-	<p>&nbsp;</p>
-	<p>
-		<i>Where will you come from?</i><br/>
-		<b>Da dove arriverai?</b>
-	</p>
-	<select name="country" class="selectpicker">
-		<option value="">--</option>
-		<c:forEach items="${requestScope.countryList}" var="c" varStatus="status">  
-			<option value="${c.country}"><c:out value="${c.country}" /></option>
-		</c:forEach>
-	</select>
 	<p>&nbsp;</p>
 	<div class="row">
 		<div class="col-sm-2">

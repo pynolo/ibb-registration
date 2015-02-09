@@ -13,7 +13,7 @@
 		var valid = true;
 		
 		// Validate Breakfast
-		var breakfast = document.form1.breakfast.value;
+		var breakfast = document.form1.breakfast.checked();
 		if (!breakfast) {
 			alert("Please note you need to bring your own breakfast / Attenzione devi portarti le colazioni");
 			valid = false;
@@ -43,8 +43,7 @@
 		<b>Sai che dovrai portarti la colazione di sabato e domenica?</b>
 	</p>
 	<div class="input-group">
-		<label for="breakfast">Yes / Si</label>
-		<input type="checkbox" class="form-control" name="breakfast" />
+		<input type="checkbox" class="form-control" name="breakfast" />&nbsp;Yes / S&igrave;
 	</div>
 	<p>&nbsp;</p>
 	<div class="row">

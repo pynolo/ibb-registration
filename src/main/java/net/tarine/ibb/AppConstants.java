@@ -29,6 +29,7 @@ public class AppConstants {
 	public static final String PARAMS_NAME = "name";
 	public static final String PARAMS_COUNTRY = "country";
 	public static final String PARAMS_FOOD = "food";
+	public static final String PARAMS_ARRIVAL_TIME = "arrivalTime";
 	
 	// LOOKUP
 	public static final String NETWORK_TYPE_RED = "RED#";

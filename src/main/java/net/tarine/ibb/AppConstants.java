@@ -27,6 +27,7 @@ public class AppConstants {
 	public static final String PARAMS_CODE = "code";
 	public static final String PARAMS_EMAIL = "email";
 	public static final String PARAMS_NAME = "name";
+	public static final String PARAMS_COUNTRY = "country";
 	public static final String PARAMS_FOOD = "food";
 	
 	// LOOKUP

@@ -3,13 +3,20 @@ package net.tarine.ibb.business;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import net.tarine.ibb.AppConstants;
 import net.tarine.ibb.SystemException;
+import net.tarine.ibb.model.Ip2nationCountries;
+import net.tarine.ibb.persistence.HibernateSessionFactory;
+import net.tarine.ibb.persistence.Ip2nationDao;
+
+import org.hibernate.Session;
 
 public class WizardBusiness {
 
@@ -31,6 +38,10 @@ public class WizardBusiness {
 		String name = request.getParameter(AppConstants.PARAMS_NAME);
 		if (name == null) name = "";
 		session.setAttribute(AppConstants.PARAMS_NAME, name);
+		//COUNTRY
+		String country = request.getParameter(AppConstants.PARAMS_COUNTRY);
+		if (country == null) country = "";
+		session.setAttribute(AppConstants.PARAMS_COUNTRY, country);
 		//FOOD
 		String food = request.getParameter(AppConstants.PARAMS_FOOD);
 		if (food == null) food = "";
@@ -55,4 +66,16 @@ public class WizardBusiness {
 		return code.toUpperCase();
 	}
 	
+	public static List<Ip2nationCountries> listCountries() throws SystemException {
+		List<Ip2nationCountries> result = new ArrayList<Ip2nationCountries>();
+		Session ses = HibernateSessionFactory.getSession();
+		try {
+			result = new Ip2nationDao().findCountries(ses);
+		} catch (SystemException e) {
+			throw new SystemException(e.getMessage(), e);
+		} finally {
+			ses.close();
+		}
+		return result;
+	}
 }

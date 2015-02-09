@@ -27,7 +27,7 @@
 %>
 
 	<div class="container">
-	<h1 class="text-colored">Italian Burning Boots</h1>
+	<h1 class="text-colored text-center">Italian Burning Boots</h1>
 		<div class="panel panel-default">
 			<div class="panel-body">
 				

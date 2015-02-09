@@ -35,4 +35,21 @@ public class Ip2nationDao {
 		return null;
 	}
 	
+	@SuppressWarnings("unchecked")
+	public List<Ip2nationCountries> findCountries(Session ses) throws SystemException {
+		try {
+			String hql = "select c from Ip2nationCountries c "+
+					"order by c.country asc";
+			Query q = ses.createQuery(hql);
+			List<Ip2nationCountries> list = (List<Ip2nationCountries>) q.list();
+			if (list != null) {
+				if (list.size() > 0) {
+					return list;
+				}
+			}
+		} catch (HibernateException e) {
+			throw new SystemException(e.getMessage(), e);
+		}
+		return null;
+	}
 }

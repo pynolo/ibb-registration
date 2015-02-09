@@ -9,6 +9,23 @@
 	}
 
 	function forwardForm3() {
+		var volunteer = "";
+		if(document.form3.v_kitchen.checked) {
+			volunteer += "Kitchen ";
+		}
+		if(document.form3.v_outside.checked) {
+			volunteer += "Outside ";
+		}
+		if(document.form3.v_inside.checked) {
+			volunteer += "Inside ";
+		}
+		if(document.form3.v_greeters.checked) {
+			volunteer += "Greeters ";
+		}
+		if(document.form3.v_deco.checked) {
+			volunteer += "Deco ";
+		}
+		document.form3.volunteer.value = volunteer;
 		document.form3.step.value = "1000";
 		document.form3.submit();
 	}
@@ -21,31 +38,33 @@
 	<input type="hidden" name="food" value='<%=session.getAttribute("food") %>' />
 	<input type="hidden" name="country" value='<%=session.getAttribute("country") %>' />
 	<input type="hidden" name="arrivalTime" value='<%=session.getAttribute("arrivalTime") %>' />
-	<!--input type="hidden" name="volunteer" value='<%=session.getAttribute("volunteer") %>' /-->
+	<input type="hidden" name="volunteer" value='<%=session.getAttribute("volunteer") %>' />
+	<input type="hidden" name="amount" value='<%=session.getAttribute("amount") %>' />
+	
 	<h3>Participation / Partecipazione</h3>
 	<p>
-		<i>Everybody help at IBB :) do you have any preferences on how to volunteer?</i><br/>
-		<b>Al IBB tutti aiutano :) hai preferenze su come vuoi partecipare?</b>
+		<i>Everybody help at IBB, wonderful people :) Click all the areas where you'd like to volunteer!</i><br/>
+		<b>Al IBB tutti aiutano, gente splendida :) Clicca tutte le aree di cui vorresti occuparti!</b>
 	</p>
 	<div class="checkbox">
-		<label for="volunteer[]" class="checkbox">
-			<input type="checkbox" class="checkbox" name="volunteer[]" value="kitchen" />Kitchen / Cucina</label>
+		<label for="v_kitchen" class="checkbox">
+			<input type="checkbox" class="checkbox" name="v_kitchen" />Kitchen / Cucina</label>
 	</div>
 		<div class="checkbox">
-		<label for="volunteer[]" class="checkbox">
-			<input type="checkbox" class="checkbox" name="volunteer[]" value="outside" />Outside the hut and fire / Esterno rifugio e fuoco</label>
+		<label for="v_outside" class="checkbox">
+			<input type="checkbox" class="checkbox" name="v_outside" />Outside the hut and fire / Esterno rifugio e fuoco</label>
 	</div>
 		<div class="checkbox">
-		<label for="volunteer[]" class="checkbox">
-			<input type="checkbox" class="checkbox" name="volunteer[]" value="inside" />Inside the hut / Interno rifugio</label>
+		<label for="v_inside" class="checkbox">
+			<input type="checkbox" class="checkbox" name="v_inside" />Inside the hut / Interno rifugio</label>
 	</div>
 		<div class="checkbox">
-		<label for="volunteer[]" class="checkbox">
-			<input type="checkbox" class="checkbox" name="volunteer[]" value="greeters"/>Greeters / Benvenuto</label>
+		<label for="v_greeters" class="checkbox">
+			<input type="checkbox" class="checkbox" name="v_greeters" />Greeters / Benvenuto</label>
 	</div>
 		<div class="checkbox">
-		<label for="volunteer[]" class="checkbox">
-			<input type="checkbox" class="checkbox" name="volunteer[]" value="deco"/>Decoration / Allestimento</label>
+		<label for="v_deco" class="checkbox">
+			<input type="checkbox" class="checkbox" name="v_deco" />Decoration / Allestimento</label>
 	</div>
 	<div class="row">
 		<div class="col-sm-2">

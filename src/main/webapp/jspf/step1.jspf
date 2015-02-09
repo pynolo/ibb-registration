@@ -39,6 +39,8 @@
 	<input type="hidden" name="country" value='<%=session.getAttribute("country") %>' />
 	<input type="hidden" name="arrivalTime" value='<%=session.getAttribute("arrivalTime") %>' />
 	<input type="hidden" name="volunteer" value='<%=session.getAttribute("volunteer") %>' />
+	<input type="hidden" name="amount" value='<%=session.getAttribute("amount") %>' />
+	
 	<h3>Food / Cibo</h3>
 	<p>&nbsp;</p>
 	<p>
@@ -60,8 +62,8 @@
 	</div>
 	<p>&nbsp;</p>
 	<p>
-		<i>Are you aware you will need to bring all the drinks but water?</i><br/>
-		<b>Sai che, eccetto l'acqua, dovrai portare tutte le bevande che vuoi?</b>
+		<i>Are you aware you will need to bring all the drinks except for water?</i><br/>
+		<b>Sai che se vuoi altre bevande oltre all'acqua dovrai portarle?</b>
 	</p>
 	<div class="checkbox">
 		<label for="drinks" class="checkbox">

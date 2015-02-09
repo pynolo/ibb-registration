@@ -59,7 +59,7 @@ public class WizardBusiness {
 		//AMOUNT
 		String amount = request.getParameter(AppConstants.PARAMS_AMOUNT);
 		if (amount == null) amount = "";
-		if (amount == "" && country != null) {
+		if (amount.equals("") && !country.equals("")) {
 			if (country.equalsIgnoreCase("ITALY")) {
 				amount = AppConstants.PRICE_ITALY;
 			} else {
@@ -73,29 +73,36 @@ public class WizardBusiness {
 		Participants prtc = new Participants();
 		//CODE
 		String code = request.getParameter(AppConstants.PARAMS_CODE);
+		if (code !=null) if (code.length()>64) code=code.substring(0, 64);
 		prtc.setCode(code);
 		//EMAIL
 		String email = request.getParameter(AppConstants.PARAMS_EMAIL);
+		if (email !=null) if (email.length()>64) email=email.substring(0, 64);
 		prtc.setEmail(email);
 		//NAME
 		String name = request.getParameter(AppConstants.PARAMS_NAME);
+		if (name !=null) if (name.length()>128) name=name.substring(0, 128);
 		prtc.setName(name);
 		//FOOD
 		String food = request.getParameter(AppConstants.PARAMS_FOOD);
+		if (food !=null) if (food.length()>2048) food=food.substring(0, 2048);
 		prtc.setFoodRestrictions(food);
 		//COUNTRY
 		String country = request.getParameter(AppConstants.PARAMS_COUNTRY);
+		if (country !=null) if (country.length()>256) country=country.substring(0, 256);
 		prtc.setCountryName(country);
 		//ARRIVAL TIME
 		String arrivalTime = request.getParameter(AppConstants.PARAMS_ARRIVAL_TIME);
+		if (arrivalTime !=null) if (arrivalTime.length()>128) arrivalTime=arrivalTime.substring(0, 128);
 		prtc.setArrivalTime(arrivalTime);
 		//VOLUNTEER
 		String volunteer = request.getParameter(AppConstants.PARAMS_VOLUNTEER);
+		if (volunteer !=null) if (volunteer.length()>2048) volunteer=volunteer.substring(0, 2048);
 		prtc.setVolunteering(volunteer);
 		//AMOUNT
 		String amountString = request.getParameter(AppConstants.PARAMS_AMOUNT);
 		Double amount = null;
-			if (amountString != null) {
+		if (amountString != null) {
 			try {
 				amount = Double.parseDouble(amountString);
 			} catch (NumberFormatException e1) { }
@@ -146,4 +153,5 @@ public class WizardBusiness {
 		}
 		return result;
 	}
+	
 }

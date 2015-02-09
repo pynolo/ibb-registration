@@ -39,6 +39,7 @@
 	<input type="hidden" name="country" value='<%=session.getAttribute("country") %>' />
 	<input type="hidden" name="arrivalTime" value='<%=session.getAttribute("arrivalTime") %>' />
 	<input type="hidden" name="volunteer" value='<%=session.getAttribute("volunteer") %>' />
+	<input type="hidden" name="amount" value='<%=session.getAttribute("amount") %>' />
 	
 	<h3>Registration / Iscrizione</h3>
 	<p>&nbsp;</p>

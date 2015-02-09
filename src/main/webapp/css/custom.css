@@ -8,11 +8,11 @@ License: Creative Commons Attribution 3.0 License (https://creativecommons.org/l
 File Description: Place here your custom CSS styles
 */
 
-@font-face {font-family: 'Averia'; font-weight: bold; font-style: normal; src: url('fonts/averia/Averia-Bold.ttf') format('truetype');}
-@font-face {font-family: 'Averia'; font-weight: bold; font-style: italic; src: url('fonts/averia/Averia-BoldItalic.ttf') format('truetype');}
-@font-face {font-family: 'Averia'; font-weight: normal; font-style: italic; src: url('fonts/averia/Averia-Italic.ttf') format('truetype');}
-@font-face {font-family: 'Averia'; font-weight: normal; font-style: normal; src: url('fonts/averia/Averia-Regular.ttf') format('truetype');}
-@font-face {font-family: 'Andika'; font-weight: normal; font-style: normal; src: url('fonts/andika/AndBasR.ttf') format('truetype');}
+@font-face {font-family: 'Averia'; font-weight: bold; font-style: normal; src: url('http://ibb.tarine.net/fonts/averia/Averia-Bold.ttf') format('truetype');}
+@font-face {font-family: 'Averia'; font-weight: bold; font-style: italic; src: url('http://ibb.tarine.net/fonts/averia/Averia-BoldItalic.ttf') format('truetype');}
+@font-face {font-family: 'Averia'; font-weight: normal; font-style: italic; src: url('http://ibb.tarine.net/fonts/averia/Averia-Italic.ttf') format('truetype');}
+@font-face {font-family: 'Averia'; font-weight: normal; font-style: normal; src: url('http://ibb.tarine.net/fonts/averia/Averia-Regular.ttf') format('truetype');}
+@font-face {font-family: 'Andika'; font-weight: normal; font-style: normal; src: url('http://ibb.tarine.net/fonts/andika/AndBasR.ttf') format('truetype');}
 
 body {
 	font-family: 'Andika', 'Open Sans', sans-serif;

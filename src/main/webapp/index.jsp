@@ -23,6 +23,26 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<script type="text/JavaScript">
+	function forwardForm0() {
+		// Validate Name
+		var title = $("#name").val();
+		if (title=="" || title==null) { } else {
+			alert("Please enter only alphanumeric values for your name / Inserisci solo numeri e lettere per favore");
+			return false;
+		}
+		
+		// Validate Email
+		var email = $("#email").val();
+		if ((/(.+)@(.+){2,}\.(.+){2,}/.test(email)) || email=="" || email==null) { } else {
+			alert("Please enter a valid email / Inserisci un'email valida per favore");
+			return false;
+		}
+	
+		form.step.value = "1";
+		return true;
+	}
+	</script>
 </head>
 <body>
 

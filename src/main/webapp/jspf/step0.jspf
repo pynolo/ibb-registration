@@ -3,27 +3,26 @@
 <%@ page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<form action="index.jsp" method="post">
-	<input type="hidden" name="<%=AppConstants.PARAMS_CODE %>" value="${session.code}" />
+<form action="index.jsp" name="form0" method="get" onsubmit="return forwardForm0();">
+	<input type="hidden" name="code" value="${session.code}" />
+	<input type="hidden" name="step" value="0" />
 	<h3>Registration / Iscrizione</h3>
 	<p>&nbsp;</p>
 	<p>
 		<i>What's your name?</i><br/>
 		<b>Come ti chiami?</b>
 	</p>
-	<div class="input-group input-group-lg">
-		<input type="text" class="form-control" name="<%=AppConstants.PARAMS_NAME %>"
+	<div class="input-group">
+		<input type="text" class="form-control" name="name"
 			value="${session.name}" aria-describedby="sizing-addon1" />
 	</div>
 	<p>&nbsp;</p>
 	<p>
-		<i>What's your email?</i><br/>
-		<i>Please provide the correct address or you might not receive important information about the event.</i><br/>
-		<b>Qual'&egrave; la tua email?</b><br/>
-		<b>Inserisci l'email correttamente o potresti non ricevere informazioni fondamentali sull'evento.</b>
+		<i>Your email to receive important info about the event</i><br/>
+		<b>La tua email per ricevere dettagli e avvisi sull'evento</b>
 	</p>
-	<div class="input-group input-group-lg">
-		<input type="text" class="form-control" name="<%=AppConstants.PARAMS_EMAIL %>"
+	<div class="input-group">
+		<input type="text" class="form-control" name="email"
 			value="${session.email}" aria-describedby="sizing-addon1">
 	</div>
 	<p>&nbsp;</p>
@@ -33,11 +32,11 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-1">
+		<div class="col-sm-2">
 	 		<button type="button" class="btn btn-primary" disabled="true">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
 		</div>
-		<div class="col-sm-10"></div>
-		<div class="col-sm-1">
+		<div class="col-sm-8"></div>
+		<div class="col-sm-2">
 			<button type="button" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
 		</div>
 	</div>

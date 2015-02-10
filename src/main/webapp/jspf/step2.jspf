@@ -11,6 +11,10 @@ request.setAttribute("countryList", countryList);
 %>
 
 <script type="text/JavaScript">
+	function selectCountry(valueToSelect) {    
+		document.form2.country.value = valueToSelect;
+	}
+
 	function backwardForm2() {
 		document.form2.step.value = "1";
 		document.form2.submit();
@@ -48,10 +52,10 @@ request.setAttribute("countryList", countryList);
 		<i>Which country will you come from?</i><br/>
 		<b>Da che nazione arriverai?</b>
 	</p>
-	<select name="country" class="selectpicker">
+	<select name="country" class="selectpicker" onload="selectCountry('Italy'); return true;">
 		<option value="">--</option>
 		<c:forEach items="${requestScope.countryList}" var="c" varStatus="status">  
-			<option value="${c.country}"><c:out value="${c.country}" /></option>
+			<option value="${c.country}" selected="<%= %>"><c:out value="${c.country}" /></option>
 		</c:forEach>
 	</select>
 	<p>&nbsp;</p>

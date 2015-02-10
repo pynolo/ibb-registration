@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * @author paolo
  */
 @Entity
-@Table(name = "hubs")
+@Table(name = "participants")
 public class Participants extends BaseEntity {
 	private static final long serialVersionUID = -298878866265848096L;
 	@Id

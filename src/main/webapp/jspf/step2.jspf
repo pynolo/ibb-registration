@@ -55,7 +55,7 @@ request.setAttribute("countryList", countryList);
 	<select name="country" class="selectpicker" onload="selectCountry('Italy'); return true;">
 		<option value="">--</option>
 		<c:forEach items="${requestScope.countryList}" var="c" varStatus="status">  
-			<option value="${c.country}" selected="<%= %>"><c:out value="${c.country}" /></option>
+			<option value="${c.country}"><c:out value="${c.country}" /></option>
 		</c:forEach>
 	</select>
 	<p>&nbsp;</p>

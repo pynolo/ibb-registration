@@ -36,7 +36,10 @@ request.setAttribute("pList", statList);
 					<thead>
 						<tr>
 							<th>
-								Created
+								<b>Code</b>
+							</th>
+							<th>
+								<b>Created</b>
 							</th>
 							<th>
 								<b>Email</b>
@@ -45,16 +48,19 @@ request.setAttribute("pList", statList);
 								<b>Name</b>
 							</th>
 							<th>
-								<b>Country</b>
+								<b>Food restr.</b>
 							</th>
 							<th>
-								<b>Food restr.</b>
+								<b>Country</b>
 							</th>
 							<th>
 								<b>Arrival time</b>
 							</th>
 							<th>
-								<b>Means of transport</b>
+								<b>Payment</b>
+							</th>
+							<th>
+								<b>Volunteer</b>
 							</th>
 						</tr>
 					</thead>
@@ -62,6 +68,9 @@ request.setAttribute("pList", statList);
 					<tbody>
 						<c:forEach items="${requestScope.pList}" var="p" varStatus="status">
 						<tr>
+							<td>
+								<c:out value="${p.code}" />
+							</td>
 							<td>
 								<c:out value="${p.created}" />
 							</td>
@@ -72,16 +81,22 @@ request.setAttribute("pList", statList);
 								<b><c:out value="${p.name}" /></b>
 							</td>
 							<td>
-								<c:out value="${p.countryName}" />
+								<c:out value="${p.foodRestrictions}" />
 							</td>
 							<td>
-								<c:out value="${p.foodRestrictions}" />
+								<c:out value="${p.countryName}" />
 							</td>
 							<td>
 								<c:out value="${p.arrivalTime}" />
 							</td>
 							<td>
-								<c:out value="${p.arrivalTransportation}" />
+								<c:if test="${p.payment not empty}">
+									<c:out value="${p.amount}" />
+									<c:out value="${p.payment}" />
+								</c:if>
+							</td>
+							<td>
+								<c:out value="${p.volunteering}" />
 							</td>
 						</tr>
 						</c:forEach>

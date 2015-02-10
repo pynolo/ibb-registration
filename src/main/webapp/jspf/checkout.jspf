@@ -20,7 +20,7 @@ WizardBusiness.saveParticipant(request);
 	<div>
 		<i>Minimum amount is <b>&euro;<%=session.getAttribute("amount") %></b>
 		to cover basic costs like hut rental and food.
-		But if you donate more we'll use it to make a better event!</i>
+		But if you donate more we'll use it to make a better event!</i><br/>&nbsp;
 	</div>
 	
 	<input type="hidden" name="cmd" value="_xclick" />
@@ -34,7 +34,7 @@ WizardBusiness.saveParticipant(request);
 		onclick="document.form_paypal_en.submit(); return true;"/>
 	PLEASE insert "Friends/family" and "gift" as payment options.
 </form>
-<p>&nbsp>;</p>
+<p>&nbsp;<br /></p>
 <form name="form_paypal_it" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 	<h3>Conferma</h3>
 	
@@ -47,7 +47,8 @@ WizardBusiness.saveParticipant(request);
 	</div>
 	<div>
 		<b>L'importo minimo &egrave; <i>&euro;<%=session.getAttribute("amount") %></i>
-		e serve solo a coprire spese come l'affitto del rifugio e il cibo. Ma se vuoi donare di pi&ugrave; penseremo a degli extra!</b>
+		e serve solo a coprire spese di base come l'affitto del rifugio e il cibo.
+		Ma se vuoi donare di pi&ugrave; penseremo a degli extra!</b><br />&nbsp;
 	</div>
 	
 	<input type="hidden" name="cmd" value="_xclick" />

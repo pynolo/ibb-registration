@@ -48,7 +48,7 @@
 		<b>Ci sono cibi che non puoi mangiare?</b>
 	</p>
 	<div class="input-group">
-		<input type="text" class="form-control" name="name"
+		<input type="text" class="form-control" name="food"
 			value='<%=session.getAttribute("food") %>' width="85%" aria-describedby="sizing-addon1" />
 	</div>
 	<p>&nbsp;</p>

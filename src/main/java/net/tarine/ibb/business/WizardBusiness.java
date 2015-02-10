@@ -19,6 +19,7 @@ import net.tarine.ibb.persistence.HibernateSessionFactory;
 import net.tarine.ibb.persistence.Ip2nationDao;
 
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class WizardBusiness {
 
@@ -111,9 +112,12 @@ public class WizardBusiness {
 		//
 		prtc.setCreated(new Date());
 		Session ses = HibernateSessionFactory.getSession();
+		Transaction trn = ses.beginTransaction();
 		try {
 			GenericDao.saveGeneric(ses, prtc);
+			trn.commit();
 		} catch (SystemException e) {
+			trn.rollback();
 			throw new SystemException(e.getMessage(), e);
 		} finally {
 			ses.close();

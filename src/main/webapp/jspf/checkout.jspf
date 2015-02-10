@@ -7,33 +7,18 @@
 WizardBusiness.saveParticipant(request);
 %>
 
-<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<form name="_xclick1" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 	<h3>Finalization / Conferma</h3>
 	
-	<div class="panel panel-default">
-		<div>
-			<i>So <%=session.getAttribute("name") %>, it looks like you're at the last step before being registered for the event!</i>
-		</div>
-		<div>
-			<i>The button below will take you to the donation page.
-			A donation will make your registration effective.</i><br/>
-			<i>Minimum amount is <b>&euro;<%=session.getAttribute("amount") %></b>
-			to cover expenses like hut rental and food. But you can donate more if you want!</i>
-		</div>
-		<div><i>PLEASE insert "Friends/family" and "gift" as payment options.</i></div>
+	<div>
+		<i>It looks like you're at the last step before being registered for the event!</i>
 	</div>
-	
-	<div class="panel panel-default">
-		<div>
-			<b>Allora <%=session.getAttribute("name") %>, sei all'ultimo passaggio per di confermare la tua presenza all'evento!</b>
-		</div>
-		<div>
-			<b>Il bottone sotto ti porter&agrave; alla pagina per effettuare una donazione.
-			Solo quando avrai completato questa operazione la tua registrazione sar&agrave; effettiva.</b><br/>
-			<b>L'importo minimo &grave; <i>&euro;<%=session.getAttribute("amount") %></i>
-			per coprire le spese come l'affitto del rifugio e il cibo. Ma se vuoi puoi donare di pi&ugrave;!</b>
-		</div>
-		<div><b>PER FAVORE inserisci come opzioni di pagamento "Amici/famiglia" e "regalo".</b></div>
+	<div>
+		<i>The button below will take you to the donation page.
+		A donation will make your registration effective.</i><br/>
+		<i>Minimum amount is <b>&euro;<%=session.getAttribute("amount") %></b>
+		to cover basic costs like hut rental and food.
+		But if you donate more we'll use them to make a better event!</i>
 	</div>
 	
 	<input type="hidden" name="cmd" value="_xclick" />
@@ -41,29 +26,32 @@ WizardBusiness.saveParticipant(request);
 	<input type="hidden" name="item_name" value='Donation for IBB: <%=session.getAttribute("code") %>' />
 	<input type="hidden" name="currency_code" value="EUR" />
 	<input type="hidden" name="amount" value='<%=session.getAttribute("amount") %>' />
-	<input type="button" title="PayPal" name="submit" class="btn btn-primary btn-lg" title="PayPal"/>
+	<input type="button" title="PayPal Donation" value="* PayPal *" name="submit" class="btn btn-primary btn-lg" />
 	<input type="hidden" name="return"
 		value='http://www.italianburningboots.org/thanks.jsp?amount=<%=session.getAttribute("amount") %>&code=<%=session.getAttribute("code") %>' />
+	PLEASE insert "Friends/family" and "gift" as payment options.
 </form>
 
-<form name="_xclick" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<form name="_xclick2" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+	<h3>Finalization / Conferma</h3>
+	
 	<div>
-		<i>So <%=session.getAttribute("name") %>, it looks like you're at the last step before being registered for the event!</i>
+		<b>Sei all'ultimo passaggio per di confermare la tua presenza all'evento!</b>
 	</div>
 	<div>
-		<i>The button below will take you to the donation page.
-		A donation will make your registration effective.</i><br/>
-		<i>Minimum amount is <b><%=session.getAttribute("amount") %></b>
-		to cover expenses like hut rental and food. But you can donate more if you want!</i>
+		<b>Il bottone sotto ti porter&agrave; alla pagina per effettuare una donazione.
+		Solo quando avrai completato questa operazione la tua registrazione sar&agrave; effettiva.</b><br/>
+		<b>L'importo minimo &grave; <i>&euro;<%=session.getAttribute("amount") %></i>
+		e serve solo a coprire spese come l'affitto del rifugio e il cibo. Ma se vuoi donare di pi&ugrave; penseremo a degli extra!</b>
 	</div>
 	
-	<div>PLEASE insert "Friends/family" and "gift" as payment options. </div>
-	<input type="hidden" name="cmd" value="_xclick">
-	<input type="hidden" name="business" value="paolo@tarine.net">
-	<input type="hidden" name="item_name" value='Donation for IBB: <%=session.getAttribute("code") %>'>
-	<input type="hidden" name="currency_code" value="EUR">
-	<input type="hidden" name="amount" value='<%=session.getAttribute("amount") %>'>
-	<input type="button" title="Donate PayPal" name="submit">
+	<input type="hidden" name="cmd" value="_xclick" />
+	<input type="hidden" name="business" value="paolo@tarine.net" />
+	<input type="hidden" name="item_name" value='Donation for IBB: <%=session.getAttribute("code") %>' />
+	<input type="hidden" name="currency_code" value="EUR" />
+	<input type="hidden" name="amount" value='<%=session.getAttribute("amount") %>' />
+	<input type="button" title="Donazione PayPal" value="* PayPal *" name="submit" class="btn btn-primary btn-lg" />
 	<input type="hidden" name="return"
-		value='http://www.italianburningboots.org/thanks.jsp?amount=<%=session.getAttribute("amount") %>&code=<%=session.getAttribute("code") %>'>
+		value='http://www.italianburningboots.org/thanks.jsp?amount=<%=session.getAttribute("amount") %>&code=<%=session.getAttribute("code") %>' />
+	<div>PER FAVORE inserisci come opzioni di pagamento "Amici/famiglia" e "regalo".</div>
 </form>

@@ -90,7 +90,7 @@ request.setAttribute("pList", statList);
 								<c:out value="${p.arrivalTime}" />
 							</td>
 							<td>
-								<c:if test="${p.payment not empty}">
+								<c:if test="${not empty p.payment}">
 									<c:out value="${p.amount}" />
 									<c:out value="${p.payment}" />
 								</c:if>

@@ -29,6 +29,15 @@ public class ConfigBusiness {
 		}
 		return value;
 	}
+	
+	public static Integer findIntValueByName(String name) throws SystemException {
+		String stringValue = findValueByName(name);
+		Integer value = null;
+		try {
+			value = Integer.getInteger(stringValue);
+		} catch (Exception e) { }
+		return value;
+	}
 
 	public static void saveOrUpdateValueByName(String name, String value)
 			throws SystemException {

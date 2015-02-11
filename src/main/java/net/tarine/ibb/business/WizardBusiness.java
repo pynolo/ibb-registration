@@ -61,12 +61,15 @@ public class WizardBusiness {
 		String amount = request.getParameter(AppConstants.PARAMS_AMOUNT);
 		if (amount == null) amount = "";
 		if (amount.equals("") && !country.equals("")) {
-			if (country.equalsIgnoreCase("ITALY")) {
-				amount = ConfigBusiness.findValueByName(AppConstants.CONFIG_PRICE_ITALY);
-				if (amount == null) throw new SystemException("price_italy has not been configured");
-			} else {
-				amount = ConfigBusiness.findValueByName(AppConstants.CONFIG_PRICE_ABROAD);
-				if (amount == null) throw new SystemException("price_abroad has not been configured");
+			amount = ConfigBusiness.findValueByName(AppConstants.CONFIG_PRICE_TICKET);
+			if (amount == null) throw new SystemException("price_ticket has not been configured");
+			if (!country.equalsIgnoreCase("ITALY")) {
+				Integer maxRedTicket = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_REDUCED_TICKET_COUNT);
+				Integer countRedTicket = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_REDUCED_TICKET_COUNT);
+				if (countRedTicket <= maxRedTicket) {
+					amount = ConfigBusiness.findValueByName(AppConstants.CONFIG_PRICE_REDUCED_TICKET);
+				}
+				if (amount == null) throw new SystemException("price_reduced_ticket has not been configured");
 			}
 		}
 		session.setAttribute(AppConstants.PARAMS_AMOUNT, amount);

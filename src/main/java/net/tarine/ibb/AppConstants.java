@@ -11,8 +11,11 @@ import java.util.Map;
 public class AppConstants {
 
 	public static final String CONFIG_TICKET_COUNT = "ticket_count";
-	public static final String CONFIG_PRICE_ITALY = "price_italy";
-	public static final String CONFIG_PRICE_ABROAD = "price_abroad";
+	public static final String CONFIG_MAX_TICKET_COUNT = "max_ticket_count";
+	public static final String CONFIG_REDUCED_TICKET_COUNT = "reduced_ticket_count";
+	public static final String CONFIG_MAX_REDUCED_TICKET_COUNT = "max_reduced_ticket_count";
+	public static final String CONFIG_PRICE_TICKET = "price_full";
+	public static final String CONFIG_PRICE_REDUCED_TICKET = "price_reduced";
 	public static final String CONFIG_SERVICE_OPEN = "service_open";
 	
 	// CONFIG FILES

@@ -23,3 +23,7 @@ CREATE TABLE config (
 );
 ALTER TABLE `config` ADD UNIQUE (`name`);
 ALTER TABLE `config` ADD INDEX `config_name` (`name`);
+insert into `config` (name, val) values ('ticket_count','0');
+insert into `config` (name, val) values ('price_italy','65.00');
+insert into `config` (name, val) values ('price_abroad','65.00');
+insert into `config` (name, val) values ('service_open','1');

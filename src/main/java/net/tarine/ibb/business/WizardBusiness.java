@@ -62,9 +62,11 @@ public class WizardBusiness {
 		if (amount == null) amount = "";
 		if (amount.equals("") && !country.equals("")) {
 			if (country.equalsIgnoreCase("ITALY")) {
-				amount = AppConstants.PRICE_ITALY;
+				amount = ConfigBusiness.findValueByName(AppConstants.CONFIG_PRICE_ITALY);
+				if (amount == null) throw new SystemException("price_italy has not been configured");
 			} else {
-				amount = AppConstants.PRICE_ABROAD;
+				amount = ConfigBusiness.findValueByName(AppConstants.CONFIG_PRICE_ABROAD);
+				if (amount == null) throw new SystemException("price_abroad has not been configured");
 			}
 		}
 		session.setAttribute(AppConstants.PARAMS_AMOUNT, amount);

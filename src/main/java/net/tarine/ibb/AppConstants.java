@@ -10,8 +10,10 @@ import java.util.Map;
 
 public class AppConstants {
 
-	public static final String PRICE_ITALY = "65.00";
-	public static final String PRICE_ABROAD = "50.00";
+	public static final String CONFIG_TICKET_COUNT = "ticket_count";
+	public static final String CONFIG_PRICE_ITALY = "price_italy";
+	public static final String CONFIG_PRICE_ABROAD = "price_abroad";
+	public static final String CONFIG_SERVICE_OPEN = "service_open";
 	
 	// CONFIG FILES
 	public static final String HIBERNATE_CONFIG_FILE="/hibernate.cfg.xml";

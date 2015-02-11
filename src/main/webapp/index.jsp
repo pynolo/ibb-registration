@@ -1,3 +1,4 @@
+<%@page import="net.tarine.ibb.business.ConfigBusiness"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="net.tarine.ibb.business.WizardBusiness"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -25,14 +26,25 @@
 <body>
 <%
 	WizardBusiness.getParameters(session, request);
+	Integer serviceOpen = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_SERVICE_OPEN);
+	session.setAttribute(AppConstants.CONFIG_SERVICE_OPEN, serviceOpen);
+	Integer ticketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_TICKET_COUNT);
+	session.setAttribute(AppConstants.CONFIG_TICKET_COUNT, ticketCount);
+	Integer maxTicketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_TICKET_COUNT);
+	session.setAttribute(AppConstants.CONFIG_MAX_TICKET_COUNT, ticketCount);
 %>
 
 	<div class="container">
 	<h1 class="text-colored text-center">Italian Burning Boots</h1>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				
 				<c:choose>
+					<c:when test="${sessionScope.serviceOpen <= 0}">
+		    			<%@ include file="jspf/closed.jspf" %>
+		    		</c:when>
+		    		<c:when test="${sessionScope.ticketCount >= sessionScope.maxTicketCount}">
+		    			<%@ include file="jspf/full.jspf" %>
+		    		</c:when>
 					<c:when test="${sessionScope.step == 0}">
 		    			<%@ include file="jspf/step0.jspf" %>
 		    		</c:when>

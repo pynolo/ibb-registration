@@ -10,13 +10,13 @@ import java.util.Map;
 
 public class AppConstants {
 
-	public static final String CONFIG_TICKET_COUNT = "ticket_count";
-	public static final String CONFIG_MAX_TICKET_COUNT = "max_ticket_count";
-	public static final String CONFIG_REDUCED_TICKET_COUNT = "reduced_ticket_count";
-	public static final String CONFIG_MAX_REDUCED_TICKET_COUNT = "max_reduced_ticket_count";
-	public static final String CONFIG_PRICE_TICKET = "price_full";
-	public static final String CONFIG_PRICE_REDUCED_TICKET = "price_reduced";
-	public static final String CONFIG_SERVICE_OPEN = "service_open";
+	public static final String CONFIG_TICKET_COUNT = "ticketCount";
+	public static final String CONFIG_MAX_TICKET_COUNT = "maxTicketCount";
+	public static final String CONFIG_REDUCED_TICKET_COUNT = "reducedTicketCount";
+	public static final String CONFIG_MAX_REDUCED_TICKET_COUNT = "maxReducedTicketCount";
+	public static final String CONFIG_PRICE_TICKET = "priceFull";
+	public static final String CONFIG_PRICE_REDUCED_TICKET = "priceReduced";
+	public static final String CONFIG_SERVICE_OPEN = "serviceOpen";
 	
 	// CONFIG FILES
 	public static final String HIBERNATE_CONFIG_FILE="/hibernate.cfg.xml";

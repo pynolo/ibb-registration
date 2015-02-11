@@ -74,7 +74,7 @@ public class WizardBusiness {
 		}
 		session.setAttribute(AppConstants.PARAMS_AMOUNT, amount);
 	}
-	
+		
 	public static void saveParticipant(HttpServletRequest request) throws SystemException {
 		Participants prtc = new Participants();
 		//CODE

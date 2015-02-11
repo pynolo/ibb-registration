@@ -13,3 +13,13 @@ CREATE TABLE participants (
 	payment datetime DEFAULT NULL,
 	PRIMARY KEY(id)
 );
+
+DROP TABLE IF EXISTS config;
+CREATE TABLE config (
+	id int NOT NULL auto_increment,
+	name varchar(64) NOT NULL,
+	val varchar(256) NOT NULL,
+	PRIMARY KEY(id)
+);
+ALTER TABLE `config` ADD UNIQUE (`name`);
+ALTER TABLE `config` ADD INDEX `config_name` (`name`);

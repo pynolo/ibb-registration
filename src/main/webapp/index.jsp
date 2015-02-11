@@ -31,7 +31,7 @@
 	Integer ticketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_TICKET_COUNT);
 	session.setAttribute(AppConstants.CONFIG_TICKET_COUNT, ticketCount);
 	Integer maxTicketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_TICKET_COUNT);
-	session.setAttribute(AppConstants.CONFIG_MAX_TICKET_COUNT, ticketCount);
+	session.setAttribute(AppConstants.CONFIG_MAX_TICKET_COUNT, maxTicketCount);
 %>
 
 	<div class="container">

@@ -42,7 +42,7 @@ public class IpnServlet extends HttpServlet {
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		CloseableHttpClient client = HttpClientBuilder.create().build();
-		HttpPost post = new HttpPost(AppConstants.PAYPAL_URL_SANDBOX);//TODO
+		HttpPost post = new HttpPost(AppConstants.PAYPAL_URL);
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add(new BasicNameValuePair("cmd", "_notify-validate")); // You need to add this parameter to tell PayPal to verify
 		for (Enumeration<String> e = request.getParameterNames(); e

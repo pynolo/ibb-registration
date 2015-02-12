@@ -57,7 +57,10 @@ request.setAttribute("pList", statList);
 								<b>Arrival time</b>
 							</th>
 							<th>
-								<b>Payment</b>
+								<b>Amount</b>
+							</th>
+							<th>
+								<b>Payment date</b>
 							</th>
 							<th>
 								<b>Volunteer</b>
@@ -91,7 +94,11 @@ request.setAttribute("pList", statList);
 							</td>
 							<td>
 								<c:if test="${not empty p.payment}">
-									<c:out value="${p.amount}" />
+									<b>&euro;<c:out value="${p.amount}" /></b>
+								</c:if>
+							</td>
+							<td>
+								<c:if test="${not empty p.payment}">
 									<c:out value="${p.payment}" />
 								</c:if>
 							</td>

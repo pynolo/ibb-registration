@@ -10,10 +10,10 @@ import java.util.Map;
 
 public class AppConstants {
 
-	public static final String PAYPAL_URL = "https://www.paypal.com/cgi-bin/webscr";
-	public static final String PAYPAL_URL_SANDBOX = "https://www.sandbox.paypal.com/cgi-bin/webscr";
-	public static final String PAYPAL_ACCOUNT = "paolo@tarine.net";
-	public static final String PAYPAL_ACCOUNT_SANDBOX = "paolo-facilitator@tarine.net";
+	//public static final String PAYPAL_URL = "https://www.paypal.com/cgi-bin/webscr";
+	public static final String PAYPAL_URL= "https://www.sandbox.paypal.com/cgi-bin/webscr";//SANDBOX
+	//public static final String PAYPAL_ACCOUNT = "paolo@tarine.net";
+	public static final String PAYPAL_ACCOUNT = "paolo-facilitator@tarine.net";//SANDBOX
 	
 	public static final String CONFIG_TICKET_COUNT = "ticketCount";
 	public static final String CONFIG_MAX_TICKET_COUNT = "maxTicketCount";

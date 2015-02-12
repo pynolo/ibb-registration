@@ -40,9 +40,9 @@ WizardBusiness.saveParticipant(request);
 </div>
 	
 <p>&nbsp;<br /></p>
-<form action="<%=AppConstants.PAYPAL_URL_SANDBOX %>" method="post">
+<form action="<%=AppConstants.PAYPAL_URL %>" method="post">
     <input type="hidden" name="cmd" value="_donations">
-    <input type="hidden" name="business" value="<%=AppConstants.PAYPAL_ACCOUNT_SANDBOX %>">
+    <input type="hidden" name="business" value="<%=AppConstants.PAYPAL_ACCOUNT %>">
     <input type="hidden" name="item_name" value="Donation">
     <input type="hidden" name="item_number" value='<%=session.getAttribute("code") %>'>
     <input type="hidden" name="amount" value='<%=session.getAttribute("amount") %>'>
@@ -51,7 +51,7 @@ WizardBusiness.saveParticipant(request);
     <input type="hidden" name="currency_code" value="EUR">
     <input type="hidden" name="lc" value="US">
     <input type="hidden" name="notify_url" value='http://ibb.tarine.net/ipn'>
-    <input type="hidden" name="return" value='http://ibb.tarine.net/thanks.jsp'>
+    <input type="hidden" name="return" value='http://ibb.tarine.net/thankyou.jsp'>
     <input type="submit" title="PayPal" value=" PayPal " name="submit"
     	class="btn btn-primary btn-lg" /> <b>Minimum / Minimo &euro;<%=session.getAttribute("amount") %></b>
     <!--input type="image" src="https://www.paypal.com/en_AU/i/btn/btn_buynow_LG.gif"

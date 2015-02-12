@@ -16,7 +16,7 @@ public class EnvSingleton {
 	private String mysqlHost = System.getenv(AppConstants.OPENSHIFT_MYSQL_DB_HOST);
 	private String mysqlPort = System.getenv(AppConstants.OPENSHIFT_MYSQL_DB_PORT);
 	private String mysqlDbName = System.getenv(AppConstants.OPENSHIFT_APP_NAME);
-    
+	
 	//private static Properties appProps = null;
 	private static Properties testingProps = null;
 	

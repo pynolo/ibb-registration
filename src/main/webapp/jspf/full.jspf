@@ -2,10 +2,10 @@
 <%@ page import="net.tarine.ibb.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<h3>Registrations are closing</h3>
+<h3>Registrations are closed</h3>
 
 <div>
-	<i>Registrations are temporary blocked because we are close to the maximum number of participants.</i>
+	<i>Registrations are closed because we reached the maximum number of participants.</i>
 </div>
 <div>
 	<i>If you want to join write to <b>registration@italianburningboots.org</b> and you'll be invited to
@@ -14,15 +14,15 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-<h3>Iscrizioni in chiusura</h3>
+<h3>Iscrizioni chiuse</h3>
 
 <div>
-	<b>Le iscrizioni sono temporaneamente bloccate perch&egrave; abbiamo quasi raggiunto il numero
+	<b>Le iscrizioni sono chiuse perch&egrave; abbiamo raggiunto il numero
 	massimo di partecipanti.</b>
 </div>
 <div>
-	<b>Se vuoi iscriverti manda un messaggio a <i>registration@italianburningboots.org</i> cos&igrave; sarai invitato
-	a registrarti se ci saranno ancora posti disponibili.</b>
+	<b>Se vuoi iscriverti manda un messaggio a <i>registration@italianburningboots.org</i>
+	cos&igrave; riceverai un invito	a registrarti se si libereranno dei posti.</b>
 </div>
 
 <p>&nbsp;</p>

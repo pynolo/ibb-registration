@@ -23,9 +23,7 @@ CREATE TABLE config (
 );
 ALTER TABLE `config` ADD UNIQUE (`name`);
 ALTER TABLE `config` ADD INDEX `config_name` (`name`);
-insert into `config` (name, val) values ('ticketCount', '0');
 insert into `config` (name, val) values ('maxTicketCount', '38');
-insert into `config` (name, val) values ('reducedTicketCount', '0');
 insert into `config` (name, val) values ('maxReducedTicketCount', '0');
 insert into `config` (name, val) values ('priceFull', '58.00');
 insert into `config` (name, val) values ('priceReduced', '58.00');

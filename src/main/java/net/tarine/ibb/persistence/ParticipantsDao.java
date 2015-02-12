@@ -45,9 +45,11 @@ public class ParticipantsDao {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public Integer countTicketsByPrice(Session ses, String amount) throws SystemException {
+	public Integer countTicketsByAmount(Session ses, String amount) throws SystemException {
 		try {
-			String hql = "select count(id) from Participants p where p.amount = :s1 ";
+			String hql = "select count(id) from Participants p where "+
+					"p.amount = :s1 and " +
+					"p.payment is not null";
 			Query q = ses.createQuery(hql);
 			q.setParameter("s1", amount, StringType.INSTANCE);
 			List<Object> list = q.list();

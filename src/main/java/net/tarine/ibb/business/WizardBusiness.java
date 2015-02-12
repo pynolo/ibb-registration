@@ -167,11 +167,24 @@ public class WizardBusiness {
 		return result;
 	}
 	
+	public static Integer countTickets() throws SystemException {
+		Integer reducedCount = null;
+		Session ses = HibernateSessionFactory.getSession();
+		try {
+			reducedCount = new ParticipantsDao().countTicketsByAmount(ses, AppConstants.CONFIG_PRICE_TICKET);
+		} catch (SystemException e) {
+			throw new SystemException(e.getMessage(), e);
+		} finally {
+			ses.close();
+		}
+		return reducedCount;
+	}
+	
 	public static Integer countReducedTickets() throws SystemException {
 		Integer reducedCount = null;
 		Session ses = HibernateSessionFactory.getSession();
 		try {
-			reducedCount = new ParticipantsDao().countTicketsByPrice(ses, AppConstants.CONFIG_PRICE_REDUCED_TICKET);
+			reducedCount = new ParticipantsDao().countTicketsByAmount(ses, AppConstants.CONFIG_PRICE_REDUCED_TICKET);
 		} catch (SystemException e) {
 			throw new SystemException(e.getMessage(), e);
 		} finally {

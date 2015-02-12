@@ -36,10 +36,10 @@
 		serviceOpen = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_SERVICE_OPEN);
 	}
 	session.setAttribute(AppConstants.CONFIG_SERVICE_OPEN, serviceOpen);
-	Integer ticketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_TICKET_COUNT);
-	session.setAttribute(AppConstants.CONFIG_TICKET_COUNT, ticketCount);
 	Integer maxTicketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_TICKET_COUNT);
 	session.setAttribute(AppConstants.CONFIG_MAX_TICKET_COUNT, maxTicketCount);
+	Integer ticketCount = WizardBusiness.countTickets();
+	session.setAttribute("ticketCount", ticketCount);
 %>
 	<div class="container">
 	<h1 class="text-colored text-center">Italian Burning Boots</h1>
@@ -72,7 +72,9 @@
 		</div>
 	</div>
 	<!-- /container -->
-
+	
+	<!-- Sold tickets ${sessionScope.ticketCount} -->
+	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="jquery/1.11.1/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->

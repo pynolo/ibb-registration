@@ -15,7 +15,6 @@ public class AppConstants {
 	//public static final String PAYPAL_ACCOUNT = "paolo@tarine.net";
 	public static final String PAYPAL_ACCOUNT = "paolo-facilitator@tarine.net";//SANDBOX
 	
-	public static final String CONFIG_TICKET_COUNT = "ticketCount";
 	public static final String CONFIG_MAX_TICKET_COUNT = "maxTicketCount";
 	public static final String CONFIG_MAX_REDUCED_TICKET_COUNT = "maxReducedTicketCount";
 	public static final String CONFIG_PRICE_TICKET = "priceFull";

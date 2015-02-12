@@ -18,10 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import net.tarine.ibb.AppConstants;
 import net.tarine.ibb.BusinessException;
 import net.tarine.ibb.SystemException;
-import net.tarine.ibb.model.Config;
 import net.tarine.ibb.model.IpnResponses;
 import net.tarine.ibb.model.Participants;
-import net.tarine.ibb.persistence.ConfigDao;
 import net.tarine.ibb.persistence.GenericDao;
 import net.tarine.ibb.persistence.HibernateSessionFactory;
 import net.tarine.ibb.persistence.ParticipantsDao;
@@ -99,11 +97,6 @@ public class IpnServlet extends HttpServlet {
 				prt.setAmount(amount);
 				prt.setPayment(new Date());
 				GenericDao.updateGeneric(ses, prt.getId(), prt);
-				//Updating payment count
-				ConfigDao cDao = new ConfigDao();
-				Config ticketCount = cDao.findByName(ses, AppConstants.CONFIG_TICKET_COUNT);
-				Integer value = Integer.parseInt(ticketCount.getVal());
-				cDao.saveOrUpdateValueByName(ses, AppConstants.CONFIG_TICKET_COUNT, (value++)+"");
 			}
 			trn.commit();
 		} catch (SystemException e) {

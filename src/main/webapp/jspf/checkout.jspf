@@ -52,8 +52,8 @@ WizardBusiness.saveParticipant(request);
     <input type="hidden" name="lc" value="US">
     <input type="hidden" name="notify_url" value='http://ibb.tarine.net/ipn'>
     <input type="hidden" name="return" value='http://ibb.tarine.net/thanks.jsp'>
-    <input type="submit" title="PayPal" value="Donation / Donazione" name="submit"
-    	class="btn btn-primary btn-lg" /> <b>Min. &euro;<%=session.getAttribute("amount") %></b>
+    <input type="submit" title="PayPal" value=" PayPal " name="submit"
+    	class="btn btn-primary btn-lg" /> <b>Minimum / Minimo &euro;<%=session.getAttribute("amount") %></b>
     <!--input type="image" src="https://www.paypal.com/en_AU/i/btn/btn_buynow_LG.gif"
     	border="0" name="submit" alt="PayPal - The safer, easier way to pay online."-->
 </form>

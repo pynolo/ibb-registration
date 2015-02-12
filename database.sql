@@ -30,3 +30,17 @@ insert into `config` (name, val) values ('maxReducedTicketCount', '0');
 insert into `config` (name, val) values ('priceFull', '58.00');
 insert into `config` (name, val) values ('priceReduced', '58.00');
 insert into `config` (name, val) values ('serviceOpen','1');
+
+DROP TABLE IF EXISTS ipn_response;
+CREATE TABLE ipn_response (
+	id int NOT NULL auto_increment,
+	item_number varchar(128) NOT NULL,
+	payment_status varchar(128) NOT NULL,
+	payer_email varchar(128) NOT NULL,
+	mc_gross varchar(16) NOT NULL,
+	mc_currency varchar(16) NOT NULL,
+	payment_date varchar(128) NOT NULL,
+	pending_reason varchar(128) NOT NULL,
+	payment_type varchar(128) NOT NULL,
+	PRIMARY KEY(id)
+);

@@ -52,8 +52,10 @@
 
 		<!--mapping package="net.tarine.redstats.model"/-->
 		<mapping class="net.tarine.ibb.model.Config"/>
-		<mapping class="net.tarine.ibb.model.Participants"/>
 		<!--mapping class="net.tarine.ibb.model.Ip2nation"/-->
 		<mapping class="net.tarine.ibb.model.Ip2nationCountries"/>
+		<mapping class="net.tarine.ibb.model.IpnResponse"/>
+		<mapping class="net.tarine.ibb.model.Participants"/>
+
     </session-factory>
 </hibernate-configuration>

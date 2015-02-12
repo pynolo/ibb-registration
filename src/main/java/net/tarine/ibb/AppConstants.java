@@ -17,7 +17,6 @@ public class AppConstants {
 	
 	public static final String CONFIG_TICKET_COUNT = "ticketCount";
 	public static final String CONFIG_MAX_TICKET_COUNT = "maxTicketCount";
-	public static final String CONFIG_REDUCED_TICKET_COUNT = "reducedTicketCount";
 	public static final String CONFIG_MAX_REDUCED_TICKET_COUNT = "maxReducedTicketCount";
 	public static final String CONFIG_PRICE_TICKET = "priceFull";
 	public static final String CONFIG_PRICE_REDUCED_TICKET = "priceReduced";

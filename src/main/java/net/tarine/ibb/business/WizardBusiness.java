@@ -17,6 +17,7 @@ import net.tarine.ibb.model.Participants;
 import net.tarine.ibb.persistence.GenericDao;
 import net.tarine.ibb.persistence.HibernateSessionFactory;
 import net.tarine.ibb.persistence.Ip2nationDao;
+import net.tarine.ibb.persistence.ParticipantsDao;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -68,7 +69,7 @@ public class WizardBusiness {
 			if (amount == null) throw new SystemException("price_ticket has not been configured");
 			if (!country.equalsIgnoreCase("ITALY")) {
 				Integer maxRedTicket = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_REDUCED_TICKET_COUNT);
-				Integer countRedTicket = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_REDUCED_TICKET_COUNT);
+				Integer countRedTicket = countReducedTickets();
 				if (countRedTicket <= maxRedTicket) {
 					amount = ConfigBusiness.findValueByName(AppConstants.CONFIG_PRICE_REDUCED_TICKET);
 				}
@@ -166,4 +167,16 @@ public class WizardBusiness {
 		return result;
 	}
 	
+	public static Integer countReducedTickets() throws SystemException {
+		Integer reducedCount = null;
+		Session ses = HibernateSessionFactory.getSession();
+		try {
+			reducedCount = new ParticipantsDao().countTicketsByPrice(ses, AppConstants.CONFIG_PRICE_REDUCED_TICKET);
+		} catch (SystemException e) {
+			throw new SystemException(e.getMessage(), e);
+		} finally {
+			ses.close();
+		}
+		return reducedCount;
+	}
 }

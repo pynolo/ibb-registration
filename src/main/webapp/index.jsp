@@ -26,16 +26,19 @@
 <body>
 <%
 	WizardBusiness.getParameters(session, request);
-	Integer serviceOpen = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_SERVICE_OPEN);
+	Integer serviceOpen = null;
+	try {
+		serviceOpen =  Integer.parseInt((String) session.getAttribute(AppConstants.PARAMS_SERVICE_OPEN));
+	} catch (NumberFormatException e) {}
+	if (serviceOpen == null) {
+		serviceOpen = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_SERVICE_OPEN);
+	}
 	session.setAttribute(AppConstants.CONFIG_SERVICE_OPEN, serviceOpen);
 	Integer ticketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_TICKET_COUNT);
 	session.setAttribute(AppConstants.CONFIG_TICKET_COUNT, ticketCount);
 	Integer maxTicketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_TICKET_COUNT);
 	session.setAttribute(AppConstants.CONFIG_MAX_TICKET_COUNT, maxTicketCount);
 %>
-<c:out value="${sessionScope.serviceOpen}"/>
-<c:out value="${sessionScope.ticketCount}"/>
-<c:out value="${sessionScope.maxTicketCount}"/>
 	<div class="container">
 	<h1 class="text-colored text-center">Italian Burning Boots</h1>
 		<div class="panel panel-default">

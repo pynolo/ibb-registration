@@ -31,6 +31,7 @@ public class AppConstants {
 	public static final String OPENSHIFT_APP_NAME = "OPENSHIFT_APP_NAME";
 
 	// PARAMS
+	public static final String PARAMS_SERVICE_OPEN = "serviceOpen";
 	public static final String PARAMS_STEP = "step";
 	public static final String PARAMS_CODE = "code";
 	public static final String PARAMS_EMAIL = "email";

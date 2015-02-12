@@ -31,6 +31,7 @@
 	}
 </script>
 <form action="index.jsp" name="form3" method="post">
+	<input type="hidden" name="serviceOpen" value='<%=session.getAttribute("serviceOpen") %>' />
 	<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
 	<input type="hidden" name="step" value="3" />
 	<input type="hidden" name="name" value='<%=session.getAttribute("name") %>' />
@@ -60,7 +61,7 @@
 	</div>
 		<div class="checkbox">
 		<label for="v_greeters" class="checkbox">
-			<input type="checkbox" class="checkbox" name="v_greeters" />Greeters / Benvenuto</label>
+			<input type="checkbox" class="checkbox" name="v_greeters" />Greeters / Accoglienza</label>
 	</div>
 		<div class="checkbox">
 		<label for="v_deco" class="checkbox">

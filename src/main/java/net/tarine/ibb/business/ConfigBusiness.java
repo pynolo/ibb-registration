@@ -34,7 +34,7 @@ public class ConfigBusiness {
 		String stringValue = findValueByName(name);
 		Integer value = null;
 		try {
-			value = Integer.getInteger(stringValue);
+			value = Integer.parseInt(stringValue);
 		} catch (Exception e) { }
 		return value;
 	}

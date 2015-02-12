@@ -25,6 +25,9 @@ public class WizardBusiness {
 
 	public static void getParameters(HttpSession session, HttpServletRequest request) 
 			throws SystemException {
+		//SERVICE OPEN
+		String serviceOpen = request.getParameter(AppConstants.PARAMS_SERVICE_OPEN);
+		if (serviceOpen != null) session.setAttribute(AppConstants.PARAMS_SERVICE_OPEN, serviceOpen);
 		//STEP
 		String step = request.getParameter(AppConstants.PARAMS_STEP);
 		if (step == null) step = "0";

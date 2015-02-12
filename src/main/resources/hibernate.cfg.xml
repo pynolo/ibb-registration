@@ -54,7 +54,7 @@
 		<mapping class="net.tarine.ibb.model.Config"/>
 		<!--mapping class="net.tarine.ibb.model.Ip2nation"/-->
 		<mapping class="net.tarine.ibb.model.Ip2nationCountries"/>
-		<mapping class="net.tarine.ibb.model.IpnResponse"/>
+		<mapping class="net.tarine.ibb.model.IpnResponses"/>
 		<mapping class="net.tarine.ibb.model.Participants"/>
 
     </session-factory>

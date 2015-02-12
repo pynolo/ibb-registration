@@ -24,50 +24,47 @@
 	<![endif]-->
 </head>
 <body>
-<%
-	WizardBusiness.getParameters(session, request);
-	Integer serviceOpen = null;
-	try {
-		if (session.getAttribute(AppConstants.PARAMS_SERVICE_OPEN) != null) {
-			serviceOpen =  Integer.parseInt((String) session.getAttribute(AppConstants.PARAMS_SERVICE_OPEN));
-		}
-	} catch (NumberFormatException e) {}
-	if (serviceOpen == null) {
-		serviceOpen = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_SERVICE_OPEN);
-	}
-	session.setAttribute(AppConstants.CONFIG_SERVICE_OPEN, serviceOpen);
-	Integer ticketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_TICKET_COUNT);
-	session.setAttribute(AppConstants.CONFIG_TICKET_COUNT, ticketCount);
-	Integer maxTicketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_TICKET_COUNT);
-	session.setAttribute(AppConstants.CONFIG_MAX_TICKET_COUNT, maxTicketCount);
-%>
 	<div class="container">
 	<h1 class="text-colored text-center">Italian Burning Boots</h1>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<c:choose>
-					<c:when test="${sessionScope.serviceOpen <= 0}">
-		    			<%@ include file="jspf/closed.jspf" %>
-		    		</c:when>
-		    		<c:when test="${sessionScope.ticketCount >= sessionScope.maxTicketCount}">
-		    			<%@ include file="jspf/full.jspf" %>
-		    		</c:when>
-					<c:when test="${sessionScope.step == 0}">
-		    			<%@ include file="jspf/step0.jspf" %>
-		    		</c:when>
-		    		<c:when test="${sessionScope.step == 1}">
-		    			<%@ include file="jspf/step1.jspf" %>
-		    		</c:when>
-		    		<c:when test="${sessionScope.step == 2}">
-		    			<%@ include file="jspf/step2.jspf" %>
-		    		</c:when>
-		    		<c:when test="${sessionScope.step == 3}">
-		    			<%@ include file="jspf/step3.jspf" %>
-		    		</c:when>
-		    		<c:when test="${sessionScope.step == 1000}">
-		    			<%@ include file="jspf/checkout.jspf" %>
-		    		</c:when>
-		    	</c:choose>
+				<h3>Thank you</h3>
+
+				<div>
+					<i>We're happy to have you with us!</i>
+				</div>
+				<div>
+					<i>You will receive important information about the meeting point and about the
+					event at the email address you provided.</i>
+				</div>
+				<div>
+					<i>For more information and enquiries please write to <b>registration@italianburningboots.org</b></i>
+				</div>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				
+				<h3>Grazie</h3>
+				
+				<div>
+					<b>Siamo felici di averti tra noi!</b>
+				</div>
+				<div>
+					<b>Riceverai le informazioni importanti riguardo al luogo di incontro e sull'evento
+					in generale all'indirizzo email che hai fornito.</b>
+				</div>
+				<div>
+					<b>Per maggiori informazioni e domande scrivi a <i>registration@italianburningboots.org</i></b>
+				</div>
+				<p>&nbsp;</p>
+				<div class="row">
+					<div class="col-sm-2">
+				 		<button type="button" class="btn btn-primary" disabled="true">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
+					</div>
+					<div class="col-sm-8"></div>
+					<div class="col-sm-2">
+						<a href="http://www.italianburningboots.org"><button type="button" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button></a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

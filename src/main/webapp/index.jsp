@@ -28,7 +28,9 @@
 	WizardBusiness.getParameters(session, request);
 	Integer serviceOpen = null;
 	try {
-		serviceOpen =  Integer.parseInt((String) session.getAttribute(AppConstants.PARAMS_SERVICE_OPEN));
+		if (session.getAttribute(AppConstants.PARAMS_SERVICE_OPEN) != null) {
+			serviceOpen =  Integer.parseInt((String) session.getAttribute(AppConstants.PARAMS_SERVICE_OPEN));
+		}
 	} catch (NumberFormatException e) {}
 	if (serviceOpen == null) {
 		serviceOpen = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_SERVICE_OPEN);

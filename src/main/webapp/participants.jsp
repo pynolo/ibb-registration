@@ -1,3 +1,5 @@
+<%@page import="net.tarine.ibb.business.ConfigBusiness"%>
+<%@page import="net.tarine.ibb.business.WizardBusiness"%>
 <%@page import="net.tarine.ibb.business.ParticipantsBusiness"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="net.tarine.ibb.model.*"%>
@@ -6,6 +8,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
+Integer ticketCount = WizardBusiness.countTickets();
+session.setAttribute("ticketCount", ticketCount);
+Integer reducedTicketCount = WizardBusiness.countReducedTickets();
+session.setAttribute("reducedTicketCount", reducedTicketCount);
+
 List<Participants> statList = ParticipantsBusiness.findAllParticipants();
 request.setAttribute("pList", statList);
 %>
@@ -32,6 +39,8 @@ request.setAttribute("pList", statList);
 	<div class="container">
 		<div class="panel panel-default">
 			<div class="panel-body">
+				<p>Total tickets: <c:out value="${sessionScope.ticketCount}" /><br />
+				Total reduced tickets: <c:out value="${sessionScope.reducedTicketCount}" /></p>
 				<table class="table table-condensed" style="border-collapse: collapse">
 					<thead>
 						<tr>

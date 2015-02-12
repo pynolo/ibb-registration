@@ -38,7 +38,7 @@
 					event at the email address you provided.</i>
 				</div>
 				<div>
-					<i>For more information and enquiries please write to <b>registration@italianburningboots.org</b></i>
+					<i>If you have questions please write to <b>registration@italianburningboots.org</b></i>
 				</div>
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>
@@ -49,11 +49,11 @@
 					<b>Siamo felici di averti tra noi!</b>
 				</div>
 				<div>
-					<b>Riceverai le informazioni importanti sul luogo di incontro e sull'evento
+					<b>Riceverai informazioni importanti sul luogo di incontro e sull'evento
 					all'indirizzo email che hai fornito.</b>
 				</div>
 				<div>
-					<b>Per maggiori informazioni e domande scrivi a <i>registration@italianburningboots.org</i></b>
+					<b>Per domande scrivi a <i>registration@italianburningboots.org</i></b>
 				</div>
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>

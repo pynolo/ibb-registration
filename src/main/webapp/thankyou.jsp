@@ -49,12 +49,13 @@
 					<b>Siamo felici di averti tra noi!</b>
 				</div>
 				<div>
-					<b>Riceverai le informazioni importanti riguardo al luogo di incontro e sull'evento
-					in generale all'indirizzo email che hai fornito.</b>
+					<b>Riceverai le informazioni importanti sul luogo di incontro e sull'evento
+					all'indirizzo email che hai fornito.</b>
 				</div>
 				<div>
 					<b>Per maggiori informazioni e domande scrivi a <i>registration@italianburningboots.org</i></b>
 				</div>
+				<p>&nbsp;</p>
 				<p>&nbsp;</p>
 				<div class="row">
 					<div class="col-sm-2">

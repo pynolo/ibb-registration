@@ -31,8 +31,8 @@ insert into `config` (name, val) values ('priceFull', '58.00');
 insert into `config` (name, val) values ('priceReduced', '58.00');
 insert into `config` (name, val) values ('serviceOpen','1');
 
-DROP TABLE IF EXISTS ipn_response;
-CREATE TABLE ipn_response (
+DROP TABLE IF EXISTS ipn_responses;
+CREATE TABLE ipn_responses (
 	id int NOT NULL auto_increment,
 	item_number varchar(128) NOT NULL,
 	payment_status varchar(128) NOT NULL,

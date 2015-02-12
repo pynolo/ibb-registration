@@ -51,8 +51,8 @@ WizardBusiness.saveParticipant(request);
     <input type="hidden" name="no_note" value="1">
     <input type="hidden" name="currency_code" value="EUR">
     <input type="hidden" name="lc" value="US">
-    <input type="hidden" name="notify_url" value='http://ibb.tarine.net/ipn'>
-    <input type="hidden" name="return" value='http://ibb.tarine.net/thankyou.jsp'>
+    <input type="hidden" name="notify_url" value='<%=AppConstants.BASE_URL %>/ipn'>
+    <input type="hidden" name="return" value='<%=AppConstants.BASE_URL %>/thankyou.jsp'>
     <input type="submit" title="PayPal" value=" PayPal " name="submit"
     	class="btn btn-primary btn-lg" /> <b>Amount / Importo &euro;<%=session.getAttribute("amount") %></b>
     <!--input type="image" src="https://www.paypal.com/en_AU/i/btn/btn_buynow_LG.gif"

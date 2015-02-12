@@ -26,16 +26,6 @@
 <body>
 <%
 	WizardBusiness.getParameters(session, request);
-	String serviceOpen = null;
-	try {
-		if (session.getAttribute(AppConstants.PARAMS_SERVICE_OPEN) != null) {
-			serviceOpen =  (String) session.getAttribute(AppConstants.PARAMS_SERVICE_OPEN);
-		}
-	} catch (NumberFormatException e) {}
-	if (serviceOpen == null) {
-		serviceOpen = ConfigBusiness.findValueByName(AppConstants.CONFIG_SERVICE_OPEN);
-	}
-	session.setAttribute(AppConstants.CONFIG_SERVICE_OPEN, serviceOpen);
 	Integer maxTicketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_TICKET_COUNT);
 	session.setAttribute(AppConstants.CONFIG_MAX_TICKET_COUNT, maxTicketCount);
 	Integer ticketCount = WizardBusiness.countTickets();

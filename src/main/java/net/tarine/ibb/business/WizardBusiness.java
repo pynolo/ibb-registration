@@ -31,7 +31,11 @@ public class WizardBusiness {
 			throws SystemException, BusinessException {
 		//SERVICE OPEN
 		String serviceOpen = request.getParameter(AppConstants.PARAMS_SERVICE_OPEN);
-		if (serviceOpen != null) session.setAttribute(AppConstants.PARAMS_SERVICE_OPEN, serviceOpen);
+		if (serviceOpen != null) {
+			session.setAttribute(AppConstants.PARAMS_SERVICE_OPEN, serviceOpen);
+		} else {
+			serviceOpen = ConfigBusiness.findValueByName(AppConstants.CONFIG_SERVICE_OPEN);
+		}
 		//STEP
 		String step = request.getParameter(AppConstants.PARAMS_STEP);
 		if (step == null) step = "0";

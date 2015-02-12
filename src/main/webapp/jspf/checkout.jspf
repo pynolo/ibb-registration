@@ -10,15 +10,11 @@ WizardBusiness.saveParticipant(request);
 <h3>Confirmation</h3>
 
 <div>
-	<i>It looks like you're at the last step before being registered for the event.</i>
+	<i>The button below will take you to the donation page to make your registration effective.</i>
 </div>
 <div>
-	<i>The button below will take you to the donation page.
-	A donation will make your registration effective.</i>
-</div>
-<div>
-	<i>The amount for <%=session.getAttribute("amount") %> is <b>&euro;<%=session.getAttribute("amount") %></b>
-	to cover basic costs like hut rental and food.</i><br/>&nbsp;
+	<i>The amount for <%=session.getAttribute("country") %> is <b>&euro;<%=session.getAttribute("amount") %></b>
+	to cover costs like hut rental and food.</i><br/>&nbsp;
 </div>
 <!--div>
 	<i>Minimum amount is <b>&euro;<%=session.getAttribute("amount") %></b>
@@ -31,15 +27,12 @@ WizardBusiness.saveParticipant(request);
 <h3>Conferma</h3>
 
 <div>
-	<b>Sei all'ultimo passaggio per di confermare la tua presenza all'evento.</b>
-</div>
-<div>
-	<b>Il bottone sotto ti porter&agrave; alla pagina per effettuare una donazione.<br />
-	Solo quando avrai completato questa operazione la tua registrazione sar&agrave; effettiva!</b>
+	<b>Il bottone seguente ti porter&agrave; alla pagina per effettuare una donazione per
+	rendere la tua registrazione sar&agrave; effettiva.</b>
 </div>
 <div>
 	<b>L'importo &egrave; <i>&euro;<%=session.getAttribute("amount") %></i>
-	e serve solo a coprire spese di base come l'affitto del rifugio e il cibo.</b><br />&nbsp;
+	e servirà a coprire spese di base come l'affitto del rifugio e il cibo.</b><br />&nbsp;
 </div>
 <!--div>
 	<b>L'importo minimo &egrave; <i>&euro;<%=session.getAttribute("amount") %></i>

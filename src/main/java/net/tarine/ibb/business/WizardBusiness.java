@@ -11,9 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import net.tarine.ibb.AppConstants;
+import net.tarine.ibb.BusinessException;
 import net.tarine.ibb.SystemException;
+import net.tarine.ibb.model.Config;
 import net.tarine.ibb.model.Ip2nationCountries;
 import net.tarine.ibb.model.Participants;
+import net.tarine.ibb.persistence.ConfigDao;
 import net.tarine.ibb.persistence.GenericDao;
 import net.tarine.ibb.persistence.HibernateSessionFactory;
 import net.tarine.ibb.persistence.Ip2nationDao;
@@ -25,7 +28,7 @@ import org.hibernate.Transaction;
 public class WizardBusiness {
 
 	public static void getParameters(HttpSession session, HttpServletRequest request) 
-			throws SystemException {
+			throws SystemException, BusinessException {
 		//SERVICE OPEN
 		String serviceOpen = request.getParameter(AppConstants.PARAMS_SERVICE_OPEN);
 		if (serviceOpen != null) session.setAttribute(AppConstants.PARAMS_SERVICE_OPEN, serviceOpen);
@@ -167,11 +170,12 @@ public class WizardBusiness {
 		return result;
 	}
 	
-	public static Integer countTickets() throws SystemException {
+	public static Integer countTickets() throws SystemException, BusinessException {
 		Integer reducedCount = null;
 		Session ses = HibernateSessionFactory.getSession();
 		try {
-			reducedCount = new ParticipantsDao().countTicketsByAmount(ses, AppConstants.CONFIG_PRICE_TICKET);
+			Config priceConfig = new ConfigDao().findByName(ses, AppConstants.CONFIG_PRICE_TICKET);
+			reducedCount = new ParticipantsDao().countTicketsByAmount(ses, priceConfig.getVal());
 		} catch (SystemException e) {
 			throw new SystemException(e.getMessage(), e);
 		} finally {
@@ -180,11 +184,12 @@ public class WizardBusiness {
 		return reducedCount;
 	}
 	
-	public static Integer countReducedTickets() throws SystemException {
+	public static Integer countReducedTickets() throws SystemException, BusinessException {
 		Integer reducedCount = null;
 		Session ses = HibernateSessionFactory.getSession();
 		try {
-			reducedCount = new ParticipantsDao().countTicketsByAmount(ses, AppConstants.CONFIG_PRICE_REDUCED_TICKET);
+			Config priceConfig = new ConfigDao().findByName(ses, AppConstants.CONFIG_PRICE_REDUCED_TICKET);
+			reducedCount = new ParticipantsDao().countTicketsByAmount(ses, priceConfig.getVal());
 		} catch (SystemException e) {
 			throw new SystemException(e.getMessage(), e);
 		} finally {

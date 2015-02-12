@@ -27,8 +27,8 @@ WizardBusiness.saveParticipant(request);
 <h3>Conferma</h3>
 
 <div>
-	<b>Il bottone seguente ti porter&agrave; alla pagina per effettuare una donazione per
-	rendere la tua registrazione sar&agrave; effettiva.</b>
+	<b>Il bottone seguente ti porter&agrave; alla pagina della donazione che serve a
+	confermare la tua registrazione.</b>
 </div>
 <div>
 	<b>L'importo &egrave; <i>&euro;<%=session.getAttribute("amount") %></i>

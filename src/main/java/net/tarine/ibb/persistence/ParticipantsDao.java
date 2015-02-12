@@ -48,7 +48,7 @@ public class ParticipantsDao {
 	public Integer countTicketsByAmount(Session ses, String amount) throws SystemException {
 		try {
 			String hql = "select count(id) from Participants p where "+
-					"p.amount = :s1 and " +
+					"p.amount like :s1 and " +
 					"p.payment is not null";
 			Query q = ses.createQuery(hql);
 			q.setParameter("s1", amount, StringType.INSTANCE);

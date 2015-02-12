@@ -26,14 +26,14 @@
 <body>
 <%
 	WizardBusiness.getParameters(session, request);
-	Integer serviceOpen = null;
+	String serviceOpen = null;
 	try {
 		if (session.getAttribute(AppConstants.PARAMS_SERVICE_OPEN) != null) {
-			serviceOpen =  Integer.parseInt((String) session.getAttribute(AppConstants.PARAMS_SERVICE_OPEN));
+			serviceOpen =  (String) session.getAttribute(AppConstants.PARAMS_SERVICE_OPEN);
 		}
 	} catch (NumberFormatException e) {}
 	if (serviceOpen == null) {
-		serviceOpen = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_SERVICE_OPEN);
+		serviceOpen = ConfigBusiness.findValueByName(AppConstants.CONFIG_SERVICE_OPEN);
 	}
 	session.setAttribute(AppConstants.CONFIG_SERVICE_OPEN, serviceOpen);
 	Integer maxTicketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_TICKET_COUNT);
@@ -46,7 +46,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<c:choose>
-					<c:when test="${sessionScope.serviceOpen <= 0}">
+					<c:when test="${sessionScope.serviceOpen == '0'}">
 		    			<%@ include file="jspf/closed.jspf" %>
 		    		</c:when>
 		    		<c:when test="${sessionScope.ticketCount >= sessionScope.maxTicketCount}">

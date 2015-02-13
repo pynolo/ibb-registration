@@ -1,5 +1,6 @@
-<%@page import="net.tarine.ibb.business.ConfigBusiness"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="net.tarine.ibb.AppConstants"%>
+<%@ page import="net.tarine.ibb.business.ConfigBusiness"%>
 <%@ page import="net.tarine.ibb.business.WizardBusiness"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -38,7 +39,7 @@
 					event at the email address you provided.</i>
 				</div>
 				<div>
-					<i>If you have questions please write to <b>registration@italianburningboots.org</b></i>
+					<i>If you have questions please write to </i><b><%=AppConstants.EVENT_EMAIL %></b>
 				</div>
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>
@@ -53,7 +54,7 @@
 					all'indirizzo email che hai fornito.</b>
 				</div>
 				<div>
-					<b>Per domande scrivi a <i>registration@italianburningboots.org</i></b>
+					<b>Per domande scrivi a </b><i><%=AppConstants.EVENT_EMAIL %></i>
 				</div>
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>
@@ -63,7 +64,7 @@
 					</div>
 					<div class="col-sm-8"></div>
 					<div class="col-sm-2">
-						<a href="http://www.italianburningboots.org"><button type="button" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button></a>
+						<a href="<%=AppConstants.EVENT_URL %>"><button type="button" class="btn btn-primary">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button></a>
 					</div>
 				</div>
 			</div>

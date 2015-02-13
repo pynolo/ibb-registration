@@ -12,15 +12,15 @@ WizardBusiness.saveParticipant(request);
 <div>
 	<i>The button below will take you to the donation page to make your registration effective.</i>
 </div>
-<div>
-	<i>The amount for <%=session.getAttribute("country") %> is <b>&euro;<%=session.getAttribute("amount") %></b>
-	to cover costs like hut rental and food.</i><br/>&nbsp;
-</div>
 <!--div>
-	<i>Minimum amount is <b>&euro;<%=session.getAttribute("amount") %></b>
-	to cover basic costs like hut rental and food.
-	But if you donate more we'll use it to make a better event!</i><br/>&nbsp;
+	<i>The amount is <b>&euro;<%=session.getAttribute("amount") %></b>
+	to cover costs like hut rental and food.</i><br/>&nbsp;
 </div-->
+<div>
+	<i>Minimum amount is </i><b>&euro;<%=session.getAttribute("amount") %></b>
+	<i>to cover basic costs like hut rental and food.
+	But if you want to donate more contact us and we'll use it to make a better event!</i><br/>&nbsp;
+</div>
 
 <p>&nbsp;<br /></p>
 
@@ -30,15 +30,15 @@ WizardBusiness.saveParticipant(request);
 	<b>Il bottone seguente ti porter&agrave; alla pagina della donazione che serve a
 	confermare la tua registrazione.</b>
 </div>
-<div>
+<!--div>
 	<b>L'importo &egrave; <i>&euro;<%=session.getAttribute("amount") %></i>
 	e servirà a coprire spese di base come l'affitto del rifugio e il cibo.</b><br />&nbsp;
-</div>
-<!--div>
-	<b>L'importo minimo &egrave; <i>&euro;<%=session.getAttribute("amount") %></i>
-	e serve solo a coprire spese di base come l'affitto del rifugio e il cibo.
-	Ma se vuoi donare di pi&ugrave; penseremo a degli extra!</b><br />&nbsp;
 </div-->
+<div>
+	<b>L'importo minimo &egrave; </b><i>&euro;<%=session.getAttribute("amount") %></i>
+	<b>e serve solo a coprire spese di base come l'affitto del rifugio e il cibo.
+	Ma se vuoi donare di pi&ugrave; contattaci e penseremo a degli extra!</b><br />&nbsp;
+</div>
 	
 <p>&nbsp;<br /></p>
 <form action="<%=AppConstants.PAYPAL_URL %>" method="post">
@@ -54,7 +54,7 @@ WizardBusiness.saveParticipant(request);
     <input type="hidden" name="notify_url" value='<%=AppConstants.BASE_URL %>/ipn'>
     <input type="hidden" name="return" value='<%=AppConstants.BASE_URL %>/thankyou.jsp'>
     <input type="submit" title="PayPal" value=" PayPal " name="submit"
-    	class="btn btn-primary btn-lg" /> <b>Amount / Importo &euro;<%=session.getAttribute("amount") %></b>
+    	class="btn btn-primary btn-lg" /> <i>Amount &euro;<%=session.getAttribute("amount") %></i> / <b>Importo &euro;<%=session.getAttribute("amount") %></b>
     <!--input type="image" src="https://www.paypal.com/en_AU/i/btn/btn_buynow_LG.gif"
     	border="0" name="submit" alt="PayPal - The safer, easier way to pay online."-->
 </form>

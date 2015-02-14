@@ -1,0 +1,79 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="net.tarine.ibb.*"%>
+<%@ page import="java.util.List"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
+<script type="text/JavaScript">
+
+	$('.selectpicker').selectpicker();
+
+	function forwardForm0() {
+		var valid = true;
+		// Validate Name
+		var name = document.form0.name.value;
+		if (name=="" || name==null) {
+			alert("Please enter only alphanumeric values for your name / Inserisci solo numeri e lettere per favore");
+			valid = false;
+		}
+		
+		// Validate Email
+		var email = document.form0.email.value;
+		if (!(/(.+)@(.+){2,}\.(.+){2,}/.test(email)) || email=="" || email==null) {
+			alert("Please enter a valid email / Inserisci un'email valida per favore");
+			valid = false;
+		}
+
+		if (valid) {
+			document.form0.step.value = "1";
+			document.form0.submit();
+		}
+	}
+</script>
+<form action="index.jsp" name="form0" method="post">
+	<input type="hidden" name="serviceOpen" value='<%=session.getAttribute("serviceOpen") %>' />
+	<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
+	<input type="hidden" name="step" value="0" />
+	<!--input type="hidden" name="name" value='<%=session.getAttribute("name") %>' /-->
+	<!--input type="hidden" name="email" value='<%=session.getAttribute("email") %>' /-->
+	<input type="hidden" name="food" value='<%=session.getAttribute("food") %>' />
+	<input type="hidden" name="country" value='<%=session.getAttribute("country") %>' />
+	<input type="hidden" name="arrivalTime" value='<%=session.getAttribute("arrivalTime") %>' />
+	<input type="hidden" name="volunteer" value='<%=session.getAttribute("volunteer") %>' />
+	<input type="hidden" name="amount" value='<%=session.getAttribute("amount") %>' />
+	
+	<h3>Registration / Iscrizione</h3>
+	<p>&nbsp;</p>
+	<p>
+		<i>What's your name?</i><br/>
+		<b>Come ti chiami?</b>
+	</p>
+	<div class="input-group">
+		<input type="text" class="form-control" name="name"
+			value='<%=session.getAttribute("name") %>' aria-describedby="sizing-addon1" />
+	</div>
+	<p>&nbsp;</p>
+	<p>
+		<i>Your email to receive important info about the event</i><br/>
+		<b>La tua email per ricevere dettagli e avvisi sull'evento</b>
+	</p>
+	<div class="input-group">
+		<input type="text" class="form-control" name="email"
+			value='<%=session.getAttribute("email") %>' aria-describedby="sizing-addon1">
+	</div>
+	<p>&nbsp;</p>
+	<div class="row">
+		<div class="col-sm-2">
+	 		<button type="button" class="btn btn-primary" disabled="true">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
+		</div>
+		<div class="col-sm-8"></div>
+		<div class="col-sm-2">
+			<button type="button" class="btn btn-primary" onclick="forwardForm0(); return true;">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
+		</div>
+	</div>
+</form>
+<!--div class="progress">
+	<div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+	25%
+	</div>
+</div-->

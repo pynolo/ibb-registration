@@ -19,11 +19,11 @@
 			valid = false;
 		}
 		// Validate Drinks
-		//var breakfast = document.form1.drinks.checked;
-		//if (!breakfast) {
-		//	alert("Check that you know everything about drinks / Controlla di sapere come funzionano le bevande");
-		//	valid = false;
-		//}
+		var breakfast = document.form1.drinks.checked;
+		if (!breakfast) {
+			alert("Check that you know everything about drinks / Controlla di sapere come funzionano le bevande");
+			valid = false;
+		}
 		if (valid) {
 			document.form1.step.value = "2";
 			document.form1.submit();

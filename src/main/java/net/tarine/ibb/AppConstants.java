@@ -4,8 +4,6 @@ import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class AppConstants {
@@ -17,6 +15,7 @@ public class AppConstants {
 	public static final String PAYPAL_URL= "https://www.sandbox.paypal.com/cgi-bin/webscr";//SANDBOX
 	//public static final String PAYPAL_ACCOUNT = "paolo@tarine.net";
 	public static final String PAYPAL_ACCOUNT = "paolo-facilitator@tarine.net";//SANDBOX
+	public static final int CODE_LENGHT = 8;
 	
 	public static final String CONFIG_MAX_TICKET_COUNT = "maxTicketCount";
 	public static final String CONFIG_MAX_REDUCED_TICKET_COUNT = "maxReducedTicketCount";
@@ -48,17 +47,10 @@ public class AppConstants {
 	public static final String PARAMS_VOLUNTEER = "volunteer";
 	public static final String PARAMS_AMOUNT = "amount";
 	public static final String PARAMS_PAYMENT = "payment";
+	public static final String PARAMS_WIZARD_MODE = "wizardMode";
 	
-	// LOOKUP
-	public static final String NETWORK_TYPE_RED = "RED#";
-	public static final String NETWORK_TYPE_FRIENDICA = "FRND";
-	public static final String NETWORK_TYPE_DIASPORA = "DSPR";
-	public static final Map<String, String> NETWORK_TYPES = new HashMap<String, String>();
-	static {//key must be lowercase
-		NETWORK_TYPES.put("redmatrix", NETWORK_TYPE_RED);
-		NETWORK_TYPES.put("red matrix", NETWORK_TYPE_RED);
-		NETWORK_TYPES.put("friendica", NETWORK_TYPE_FRIENDICA);
-	};
+	//PARAM VALUES
+	public static final String VALUE_WIZARD_REPLACE = "replace";
 	
 	// FORMATS
 	public static final String PATTERN_TIMESTAMP = "dd/MM/yyyy HH:mm:ss z";//"dd/MM/yyyy HH:mm";

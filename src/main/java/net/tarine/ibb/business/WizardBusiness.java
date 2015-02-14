@@ -29,6 +29,9 @@ public class WizardBusiness {
 
 	public static void getParameters(HttpSession session, HttpServletRequest request) 
 			throws SystemException, BusinessException {
+		//WIZARD MODE
+		String wizardMode = request.getParameter(AppConstants.PARAMS_WIZARD_MODE);
+		if (wizardMode != null) session.setAttribute(AppConstants.PARAMS_WIZARD_MODE, wizardMode);
 		//SERVICE OPEN
 		String serviceOpen = request.getParameter(AppConstants.PARAMS_SERVICE_OPEN);
 		if (serviceOpen == null) {
@@ -41,7 +44,7 @@ public class WizardBusiness {
 		session.setAttribute(AppConstants.PARAMS_STEP, step);
 		//CODE
 		String code = request.getParameter(AppConstants.PARAMS_CODE);
-		if (code == null) code = WizardBusiness.createCode(session.getId(), 6);
+		if (code == null) code = WizardBusiness.createCode(session.getId(), AppConstants.CODE_LENGHT);
 		session.setAttribute(AppConstants.PARAMS_CODE, code);
 		//EMAIL
 		String email = request.getParameter(AppConstants.PARAMS_EMAIL);
@@ -85,51 +88,65 @@ public class WizardBusiness {
 		session.setAttribute(AppConstants.PARAMS_AMOUNT, amount);
 	}
 		
-	public static void saveParticipant(HttpServletRequest request) throws SystemException {
-		Participants prtc = new Participants();
+	public static void saveOrUpdateParticipant(HttpServletRequest request) throws SystemException {
 		//CODE
 		String code = request.getParameter(AppConstants.PARAMS_CODE);
 		if (code !=null) if (code.length()>64) code=code.substring(0, 64);
-		prtc.setCode(code);
-		//EMAIL
-		String email = request.getParameter(AppConstants.PARAMS_EMAIL);
-		if (email !=null) if (email.length()>64) email=email.substring(0, 64);
-		prtc.setEmail(email);
-		//NAME
-		String name = request.getParameter(AppConstants.PARAMS_NAME);
-		if (name !=null) if (name.length()>128) name=name.substring(0, 128);
-		prtc.setName(name);
-		//FOOD
-		String food = request.getParameter(AppConstants.PARAMS_FOOD);
-		if (food !=null) if (food.length()>2048) food=food.substring(0, 2048);
-		prtc.setFoodRestrictions(food);
-		//COUNTRY
-		String country = request.getParameter(AppConstants.PARAMS_COUNTRY);
-		if (country !=null) if (country.length()>256) country=country.substring(0, 256);
-		prtc.setCountryName(country);
-		//ARRIVAL TIME
-		String arrivalTime = request.getParameter(AppConstants.PARAMS_ARRIVAL_TIME);
-		if (arrivalTime !=null) if (arrivalTime.length()>128) arrivalTime=arrivalTime.substring(0, 128);
-		prtc.setArrivalTime(arrivalTime);
-		//VOLUNTEER
-		String volunteer = request.getParameter(AppConstants.PARAMS_VOLUNTEER);
-		if (volunteer !=null) if (volunteer.length()>2048) volunteer=volunteer.substring(0, 2048);
-		prtc.setVolunteering(volunteer);
-		//AMOUNT
-		String amountString = request.getParameter(AppConstants.PARAMS_AMOUNT);
-		Double amount = null;
-		if (amountString != null) {
-			try {
-				amount = Double.parseDouble(amountString);
-			} catch (NumberFormatException e1) { }
-		}
-		prtc.setAmount(amount);
-		//
-		prtc.setCreated(new Date());
+		
 		Session ses = HibernateSessionFactory.getSession();
 		Transaction trn = ses.beginTransaction();
 		try {
-			GenericDao.saveGeneric(ses, prtc);
+			Participants prtc = new Participants();
+			if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VALUE_WIZARD_REPLACE)) {
+				prtc = new ParticipantsDao().findByCode(ses, code);
+				if (prtc == null) throw new SystemException("ERROR: attempt to replace nonexisting code");
+			}
+			//CODE
+			prtc.setCode(code);
+			//EMAIL
+			String email = request.getParameter(AppConstants.PARAMS_EMAIL);
+			if (email !=null) if (email.length()>64) email=email.substring(0, 64);
+			prtc.setEmail(email);
+			//NAME
+			String name = request.getParameter(AppConstants.PARAMS_NAME);
+			if (name !=null) if (name.length()>128) name=name.substring(0, 128);
+			prtc.setName(name);
+			//FOOD
+			String food = request.getParameter(AppConstants.PARAMS_FOOD);
+			if (food !=null) if (food.length()>2048) food=food.substring(0, 2048);
+			prtc.setFoodRestrictions(food);
+			//COUNTRY
+			String country = request.getParameter(AppConstants.PARAMS_COUNTRY);
+			if (country !=null) if (country.length()>256) country=country.substring(0, 256);
+			prtc.setCountryName(country);
+			//ARRIVAL TIME
+			String arrivalTime = request.getParameter(AppConstants.PARAMS_ARRIVAL_TIME);
+			if (arrivalTime !=null) if (arrivalTime.length()>128) arrivalTime=arrivalTime.substring(0, 128);
+			prtc.setArrivalTime(arrivalTime);
+			//VOLUNTEER
+			String volunteer = request.getParameter(AppConstants.PARAMS_VOLUNTEER);
+			if (volunteer !=null) if (volunteer.length()>2048) volunteer=volunteer.substring(0, 2048);
+			prtc.setVolunteering(volunteer);
+			if (!request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VALUE_WIZARD_REPLACE)) {
+				//AMOUNT
+				String amountString = request.getParameter(AppConstants.PARAMS_AMOUNT);
+				Double amount = null;
+				if (amountString != null) {
+					try {
+						amount = Double.parseDouble(amountString);
+					} catch (NumberFormatException e1) { }
+				}
+				prtc.setAmount(amount);
+			}
+			//CREATION DATE
+			prtc.setCreated(new Date());
+			if (prtc.getId() == null) {
+				//SAVE
+				GenericDao.saveGeneric(ses, prtc);
+			} else {
+				//UPDATE
+				GenericDao.updateGeneric(ses, prtc.getId(), prtc);
+			}
 			trn.commit();
 		} catch (SystemException e) {
 			trn.rollback();

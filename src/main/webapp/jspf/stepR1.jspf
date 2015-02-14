@@ -22,7 +22,7 @@ try {
 </script>
 <form action="index.jsp" name="formR1" method="post" class="form-horizontal">
 	<c:choose>
-		<c:when test="${not empty requestScope.name}">
+		<c:when test="${not empty sessionScope.name}">
 			<input type="hidden" name="wizardMode" value='<%=session.getAttribute("wizardMode") %>' />
 			<input type="hidden" name="serviceOpen" value='<%=session.getAttribute("serviceOpen") %>' />
 			<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
@@ -55,7 +55,7 @@ try {
 		</c:when>
 		<c:otherwise>
 			<h3>Not found / Non trovato</h3>
-			
+			<p>&nbsp;</p>
 			<p>
 				<i>The registration number you provided is wrong!</i>
 				
@@ -63,16 +63,18 @@ try {
 			<p>
 				<b>Il codice che hai fornito &egrave; sbagliato!</b>
 			</p>
-			
+			<p>&nbsp;</p>
 		</c:otherwise>
 	</c:choose>
 	<div class="row">
 		<div class="col-sm-2">
-	 		<button type="button" class="btn btn-primary" onclick="backwardForm1(); return true;">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
+	 		<button type="button" class="btn btn-primary" onclick="backwardFormR1(); return true;">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
 		</div>
 		<div class="col-sm-8"></div>
 		<div class="col-sm-2">
-			<button type="button" class="btn btn-primary" onclick="forwardForm1(); return true;">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
+			<c:if test="${not empty requestScope.name}">
+				<button type="button" class="btn btn-primary" onclick="forwardFormR1(); return true;">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
+			</c:if>
 		</div>
 	</div>
 </form>

@@ -10,23 +10,22 @@
 
 	function forwardFormR0() {
 		var valid = true;
-		// Validate Name
-		var name = document.form0.code.value;
-		if (name=="" || name==null) {
+		// Validate Code
+		var code = document.formR0.code.value;
+		if (code=="" || code==null) {
 			alert("Please enter a valid registration code / Inserisci un codice valido per favore");
 			valid = false;
 		}
 
 		if (valid) {
-			document.form0.step.value = "R1";
-			document.form0.submit();
+			document.formR0.step.value = "R1";
+			document.formR0.submit();
 		}
 	}
 </script>
-<form action="index.jsp" name="form0" method="post">
+<form action="index.jsp" name="formR0" method="post">
 	<input type="hidden" name="wizardMode" value='<%=AppConstants.VALUE_WIZARD_REPLACE %>' />
 	<input type="hidden" name="serviceOpen" value='1' />
-	<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
 	<input type="hidden" name="step" value="R0" />
 	
 	<h3>Replace a registered person / Sostituisci una persona registrata</h3>
@@ -37,7 +36,7 @@
 	</p>
 	<div class="input-group">
 		<input type="text" class="form-control" name="code"
-			value='<%=session.getAttribute("code") %>' aria-describedby="sizing-addon1" />
+			value='' aria-describedby="sizing-addon1" />
 	</div>
 	<p>&nbsp;</p>
 	<div class="row">

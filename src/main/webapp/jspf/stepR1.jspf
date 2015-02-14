@@ -11,16 +11,16 @@ try {
 %>
 <script type="text/JavaScript">
 	function backwardFormR1() {
-		document.form1.step.value = "R0";
-		document.form1.submit();
+		document.formR1.step.value = "R0";
+		document.formR1.submit();
 	}
 
 	function forwardFormR1() {
-		document.form1.step.value = "0";
-		document.form1.submit();
+		document.formR1.step.value = "0";
+		document.formR1.submit();
 	}
 </script>
-<form action="index.jsp" name="form1" method="post" class="form-horizontal">
+<form action="index.jsp" name="formR1" method="post" class="form-horizontal">
 	<c:choose>
 		<c:when test="${not empty requestScope.name}">
 			<input type="hidden" name="wizardMode" value='<%=session.getAttribute("wizardMode") %>' />
@@ -43,7 +43,7 @@ try {
 				<i>Go ahead with this wizard to update the registration.</i>
 			</p>
 			<p>
-				<b>Il codice che hai fornito &egrave; </b><i></i><c:out value="${sessionScope.code }" /></i><br/>
+				<b>Il codice che hai fornito &egrave; </b><i><c:out value="${sessionScope.code }" /></i><br/>
 				<b>Al momento &egrave; abbinato a </b><i><c:out value="${sessionScope.name }" /></i><br />
 				<b>Prosegui per sostituire i dati.</b>
 			</p>
@@ -57,7 +57,7 @@ try {
 			<h3>Not found / Non trovato</h3>
 			
 			<p>
-				<i>The registration number you provided is wrong!<br/>
+				<i>The registration number you provided is wrong!</i>
 				
 			</p>
 			<p>

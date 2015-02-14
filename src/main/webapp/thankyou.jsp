@@ -36,35 +36,35 @@ session.setAttribute(AppConstants.PARAMS_CODE, code);
 			<div class="panel-body">
 				<h3>Thank you</h3>
 
-				<div>
+				<p>
 					<i>We're happy to have you with us!<br/>
 					You will receive important information about the meeting point
 					and about the event at the email address you provided.</i>
-				</div>
-				<div>
+				</p>
+				<p>
 					<i>Please take note of your registration code: </i><b><span style="font-size: 1.3em"><%=session.getAttribute("code") %></span></b><br />
 					<i><span class="text-warning">You will not be able to join the event without it!</span></i>
-				</div>
-				<div>
+				</p>
+				<p>
 					<i>If you have questions please write to </i><b><%=AppConstants.EVENT_EMAIL %></b>
-				</div>
+				</p>
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>
 				
 				<h3>Grazie</h3>
 				
-				<div>
+				<p>
 					<b>Siamo felici di averti tra noi!<br />
 					Riceverai informazioni importanti sul luogo di incontro e sull'evento
 					all'indirizzo email che hai fornito.</b>
-				</div>
-				<div>
+				</p>
+				<p>
 					<b>Prendi nota del tuo codice di registrazione: </b><i><span style="font-size: 1.3em"><%=session.getAttribute("code") %></span></i><br />
 					<b><span class="text-warning">Senza il codice non potrai partecipare all'evento!</span></b>
-				</div>
-				<div>
+				</p>
+				<p>
 					<b>Per domande scrivi a </b><i><%=AppConstants.EVENT_EMAIL %></i>
-				</div>
+				</p>
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>
 				<div class="row">

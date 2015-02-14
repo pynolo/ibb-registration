@@ -27,7 +27,7 @@ try {
 			<input type="hidden" name="serviceOpen" value='<%=session.getAttribute("serviceOpen") %>' />
 			<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
 			<input type="hidden" name="step" value="R1" />
-			<!--input type="hidden" name="name" value='<%=session.getAttribute("name") %>' /-->
+			<input type="hidden" name="name" value='<%=session.getAttribute("name") %>' />
 			<input type="hidden" name="email" value='<%=session.getAttribute("email") %>' />
 			<input type="hidden" name="food" value='<%=session.getAttribute("food") %>' />
 			<input type="hidden" name="country" value='<%=session.getAttribute("country") %>' />
@@ -38,13 +38,13 @@ try {
 			<h3>Found! / Trovato!</h3>
 			<p>&nbsp;</p>
 			<p>
-				<i>The registration number you provided is </i><b><c:out value="${sessionScope.code }" /></b><br/>
-				<i>At the moment it is owned by </i><b><c:out value="${sessionScope.name }" /></b>.
+				<i>The registration number you provided is </i><b><c:out value="${sessionScope.code }" /></b>. 
+				<i>At the moment it is owned by </i><b><c:out value="${sessionScope.name }" /></b>.<br/>
 				<i>Go ahead with this wizard to update the registration.</i>
 			</p>
 			<p>
-				<b>Il codice che hai fornito &egrave; </b><i><c:out value="${sessionScope.code }" /></i><br/>
-				<b>Al momento &egrave; abbinato a </b><i><c:out value="${sessionScope.name }" /></i>.
+				<b>Il codice che hai fornito &egrave; </b><i><c:out value="${sessionScope.code }" /></i>.
+				<b>Al momento &egrave; abbinato a </b><i><c:out value="${sessionScope.name }" /></i>.<br/>
 				<b>Prosegui per sostituire i dati.</b>
 			</p>
 			<p>&nbsp;</p>

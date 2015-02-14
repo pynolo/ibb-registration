@@ -4,8 +4,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
-WizardBusiness.saveParticipant(request);
+WizardBusiness.saveOrUpdateParticipant(request);
+if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VALUE_WIZARD_REPLACE)) {
 %>
+     <jsp:forward page="thankyou.jsp"/>
+<%
+} %>
 
 <h3>Confirmation</h3>
 

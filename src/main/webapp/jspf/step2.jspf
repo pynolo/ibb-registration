@@ -37,6 +37,7 @@ request.setAttribute("countryList", countryList);
 	}
 </script>
 <form action="index.jsp" name="form2" method="post">
+	<input type="hidden" name="wizardMode" value='<%=session.getAttribute("wizardMode") %>' />
 	<input type="hidden" name="serviceOpen" value='<%=session.getAttribute("serviceOpen") %>' />
 	<input type="hidden" name="code" value='<%=session.getAttribute("code") %>' />
 	<input type="hidden" name="step" value="2" />

@@ -39,18 +39,14 @@ try {
 			<p>&nbsp;</p>
 			<p>
 				<i>The registration number you provided is </i><b><c:out value="${sessionScope.code }" /></b><br/>
-				<i>At the moment it is owned by </i><b><c:out value="${sessionScope.name }" /></b><br />
+				<i>At the moment it is owned by </i><b><c:out value="${sessionScope.name }" /></b>.
 				<i>Go ahead with this wizard to update the registration.</i>
 			</p>
 			<p>
 				<b>Il codice che hai fornito &egrave; </b><i><c:out value="${sessionScope.code }" /></i><br/>
-				<b>Al momento &egrave; abbinato a </b><i><c:out value="${sessionScope.name }" /></i><br />
+				<b>Al momento &egrave; abbinato a </b><i><c:out value="${sessionScope.name }" /></i>.
 				<b>Prosegui per sostituire i dati.</b>
 			</p>
-			<div class="input-group">
-				<input type="text" class="form-control" name="food"
-					value='<%=session.getAttribute("food") %>' width="85%" aria-describedby="sizing-addon1" />
-			</div>
 			<p>&nbsp;</p>
 		</c:when>
 		<c:otherwise>
@@ -58,7 +54,6 @@ try {
 			<p>&nbsp;</p>
 			<p>
 				<i>The registration number you provided is wrong!</i>
-				
 			</p>
 			<p>
 				<b>Il codice che hai fornito &egrave; sbagliato!</b>
@@ -72,7 +67,7 @@ try {
 		</div>
 		<div class="col-sm-8"></div>
 		<div class="col-sm-2">
-			<c:if test="${not empty requestScope.name}">
+			<c:if test="${not empty sessionScope.name}">
 				<button type="button" class="btn btn-primary" onclick="forwardFormR1(); return true;">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
 			</c:if>
 		</div>

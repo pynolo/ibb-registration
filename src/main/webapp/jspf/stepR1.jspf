@@ -10,10 +10,10 @@ try {
 } catch (BusinessException e) {}
 %>
 <script type="text/JavaScript">
-	function backwardFormR1() {
+	/*function backwardFormR1() {
 		document.formR1.step.value = "R0";
 		document.formR1.submit();
-	}
+	}*/
 
 	function forwardFormR1() {
 		document.formR1.step.value = "0";
@@ -58,6 +58,7 @@ try {
 					</c:otherwise>
 				</c:choose>
 			</p>
+			<p>&nbsp;</p>
 			<p>
 				<b>Il codice che hai fornito &egrave; </b><i><c:out value="${sessionScope.code }" /></i>.
 				<b>Al momento &egrave; abbinato a </b><i><c:out value="${sessionScope.name }" /></i>.<br/>
@@ -72,23 +73,26 @@ try {
 				</c:choose>				
 			</p>
 			<p>&nbsp;</p>
+			<p>&nbsp;</p>
 		</c:when>
 		<c:otherwise>
 			<h3>Not found / Non trovato</h3>
 			<p>&nbsp;</p>
+			<p>&nbsp;</p>
 			<p>
-				<i>The registration number you provided is wrong!</i>
+				<i>The registration number you provided doesn't exist!</i>
 			</p>
 			<p>
-				<b>Il codice che hai fornito &egrave; sbagliato!</b>
+				<b>Il codice che hai fornito non esiste!</b>
 			</p>
+			<p>&nbsp;</p>
 			<p>&nbsp;</p>
 		</c:otherwise>
 	</c:choose>
 	<div class="row">
-		<div class="col-sm-2">
+		<!--<div class="col-sm-2">
 	 		<button type="button" class="btn btn-primary" onclick="backwardFormR1(); return true;">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>
-		</div>
+		</div>-->
 		<div class="col-sm-8"></div>
 		<div class="col-sm-2">
 			<c:if test="${not empty sessionScope.payment}">

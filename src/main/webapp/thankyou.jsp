@@ -36,7 +36,7 @@ if (code == null || email == null) {
 }
 %>
 	<div class="container">
-	<h1 class="text-colored text-center">Italian Burning Boots</h1>
+		<h1 class="text-colored text-center">Italian Burning Boots</h1>
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h3>Thank you</h3>
@@ -46,9 +46,14 @@ if (code == null || email == null) {
 					You will receive important information about the meeting point
 					and about the event at the email address you provided.</i>
 				</p>
+				<div class="text-center">
+					<i>Please take note of your registration code: </i>
+					<div style="border: 2px black dotted; padding: 0.5em; font-size: 1.3em; font-weight: bold;">
+						<%=session.getAttribute("code") %>
+					</div>
+					<span class="text-warning">You will not be able to join the event without it!</span>
+				</div>
 				<p>
-					<i>Please take note of your registration code: </i><b><span style="font-size: 1.3em"><%=session.getAttribute("code") %></span></b><br />
-					<i><span class="text-warning">You will not be able to join the event without it!</span></i><br />
 					<i>You will also need it to</i> <b>transfer</b> <i>your registration to someone else.</i>
 				</p>
 				<p>
@@ -67,7 +72,7 @@ if (code == null || email == null) {
 				<p>
 					<b>Prendi nota del tuo codice di registrazione: </b><i><span style="font-size: 1.3em"><%=session.getAttribute("code") %></span></i><br />
 					<b><span class="text-warning">Senza il codice non potrai partecipare all'evento!</span></b><br />
-					<b>Ti servir&agrave; anche se vuoi cedere la tua registrazione a qualcun'altro.</b>
+					<b>Ti servir&agrave; anche se vuoi </b><i>cedere</i><b> la tua registrazione a qualcun'altro.</b>
 				</p>
 				<p>
 					<b>Per domande scrivi a </b><i><%=AppConstants.EVENT_EMAIL %></i>

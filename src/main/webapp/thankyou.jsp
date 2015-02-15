@@ -48,15 +48,16 @@ if (code == null || email == null) {
 				</p>
 				<div class="text-center">
 					<i>Please take note of your registration code: </i>
-					<div style="border: 2px black dotted; padding: 0.5em; font-size: 1.3em; font-weight: bold;">
-						<%=session.getAttribute("code") %>
+					<div class="row">
+						<div class="col-md-2 col-md-offset-5"
+							style="border: 2px black dotted; padding: 0.5em; font-size: 1.9em; font-weight: bold;">
+							<%=session.getAttribute("code") %>
+						</div>
 					</div>
 					<span class="text-warning">You will not be able to join the event without it!</span>
 				</div>
 				<p>
-					<i>You will also need it to</i> <b>transfer</b> <i>your registration to someone else.</i>
-				</p>
-				<p>
+					<i>You will also need this code to</i> <b>transfer</b> <i>your registration to someone else.</i><br />
 					<i>If you have questions please write to </i><b><%=AppConstants.EVENT_EMAIL %></b>
 				</p>
 				<p>&nbsp;</p>

@@ -50,7 +50,7 @@ try {
 				<i>At the moment it is owned by </i><b><c:out value="${sessionScope.name }" /></b>.<br/>
 				<c:choose>
 					<c:when test="${not empty sessionScope.payment}">
-						<i>It has been confirmed with a donation of &euro;<c:out value="${sessionScope.amount }" /></i><br />
+						<i>It has been confirmed with a donation of</i> <b>&euro;<c:out value="${sessionScope.amount }" /></b><br />
 						<i>Go ahead with this wizard to update the registration data.</i>
 					</c:when>
 					<c:otherwise>
@@ -64,7 +64,7 @@ try {
 				<b>Al momento &egrave; abbinato a </b><i><c:out value="${sessionScope.name }" /></i>.<br/>
 				<c:choose>
 					<c:when test="${not empty sessionScope.payment}">
-						<b>&Egrave; stato confermato con una donazione di &euro;<c:out value="${sessionScope.amount }" /></b><br />
+						<b>&Egrave; stato confermato con una donazione di</b> <i>&euro;<c:out value="${sessionScope.amount }" /></i><br />
 						<b>Prosegui per sostituire i dati.</b>
 					</c:when>
 					<c:otherwise>

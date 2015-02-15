@@ -26,9 +26,14 @@
 </head>
 <body>
 <%
+String email = request.getParameter(AppConstants.PARAMS_EMAIL);
 String code = request.getParameter(AppConstants.PARAMS_CODE);
-if (code == null) code = "Error!!";
-session.setAttribute(AppConstants.PARAMS_CODE, code);
+if (code == null || email == null) { 
+	code = "Error in registration code or email!!";
+} else {
+	session.setAttribute(AppConstants.PARAMS_CODE, code);
+	//MailBusiness.sendConfirmEmail(email, code);
+}
 %>
 	<div class="container">
 	<h1 class="text-colored text-center">Italian Burning Boots</h1>
@@ -43,7 +48,8 @@ session.setAttribute(AppConstants.PARAMS_CODE, code);
 				</p>
 				<p>
 					<i>Please take note of your registration code: </i><b><span style="font-size: 1.3em"><%=session.getAttribute("code") %></span></b><br />
-					<i><span class="text-warning">You will not be able to join the event without it!</span></i>
+					<i><span class="text-warning">You will not be able to join the event without it!</span></i><br />
+					<i>You will also need it to</i> <b>transfer</b> <i>your registration to someone else.</i>
 				</p>
 				<p>
 					<i>If you have questions please write to </i><b><%=AppConstants.EVENT_EMAIL %></b>
@@ -60,7 +66,8 @@ session.setAttribute(AppConstants.PARAMS_CODE, code);
 				</p>
 				<p>
 					<b>Prendi nota del tuo codice di registrazione: </b><i><span style="font-size: 1.3em"><%=session.getAttribute("code") %></span></i><br />
-					<b><span class="text-warning">Senza il codice non potrai partecipare all'evento!</span></b>
+					<b><span class="text-warning">Senza il codice non potrai partecipare all'evento!</span></b><br />
+					<b>Ti servir&agrave; anche se vuoi cedere la tua registrazione a qualcun'altro.</b>
 				</p>
 				<p>
 					<b>Per domande scrivi a </b><i><%=AppConstants.EVENT_EMAIL %></i>

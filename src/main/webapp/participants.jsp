@@ -45,12 +45,6 @@ request.setAttribute("pList", statList);
 					<thead>
 						<tr>
 							<th>
-								<b>Code</b>
-							</th>
-							<th>
-								<b>Created</b>
-							</th>
-							<th>
 								<b>Email</b>
 							</th>
 							<th>
@@ -74,18 +68,15 @@ request.setAttribute("pList", statList);
 							<th>
 								<b>Volunteer</b>
 							</th>
+							<th>
+								<b>Created/modified</b>
+							</th>
 						</tr>
 					</thead>
 				
 					<tbody>
 						<c:forEach items="${requestScope.pList}" var="p" varStatus="status">
 						<tr>
-							<td>
-								<c:out value="${p.code}" />
-							</td>
-							<td>
-								<c:out value="${p.created}" />
-							</td>
 							<td>
 								<b><c:out value="${p.email}" /></b>
 							</td>
@@ -113,6 +104,9 @@ request.setAttribute("pList", statList);
 							</td>
 							<td>
 								<c:out value="${p.volunteering}" />
+							</td>
+							<td>
+								<c:out value="${p.created}" />
 							</td>
 						</tr>
 						</c:forEach>

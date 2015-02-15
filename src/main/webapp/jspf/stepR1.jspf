@@ -40,7 +40,7 @@ try {
 			<p>
 				<i>The registration number you provided is </i><b><c:out value="${sessionScope.code }" /></b>. 
 				<i>At the moment it is owned by </i><b><c:out value="${sessionScope.name }" /></b>.<br/>
-				<i>Go ahead with this wizard to update the registration.</i>
+				<i>Go ahead with this wizard to update the registration data.</i>
 			</p>
 			<p>
 				<b>Il codice che hai fornito &egrave; </b><i><c:out value="${sessionScope.code }" /></i>.

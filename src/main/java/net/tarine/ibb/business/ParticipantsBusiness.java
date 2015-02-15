@@ -50,5 +50,9 @@ public class ParticipantsBusiness {
 		session.setAttribute(AppConstants.PARAMS_NAME, prtc.getName());
 		//AMOUNT
 		session.setAttribute(AppConstants.PARAMS_AMOUNT, prtc.getAmount());
+		if (prtc.getPayment() != null) {
+			//PAYMENT
+			session.setAttribute(AppConstants.PARAMS_PAYMENT, prtc.getPayment());
+		}
 	}
 }

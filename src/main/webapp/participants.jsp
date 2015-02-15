@@ -39,8 +39,6 @@ request.setAttribute("pList", statList);
 	<div class="container">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<p>Total tickets: <c:out value="${sessionScope.ticketCount}" /><br />
-				Total reduced tickets: <c:out value="${sessionScope.reducedTicketCount}" /></p>
 				<table class="table table-condensed" style="border-collapse: collapse">
 					<thead>
 						<tr>
@@ -63,7 +61,7 @@ request.setAttribute("pList", statList);
 								<b>Amount</b>
 							</th>
 							<th>
-								<b>Payment date</b>
+								<b>Payment</b>
 							</th>
 							<th>
 								<b>Volunteer</b>
@@ -113,6 +111,8 @@ request.setAttribute("pList", statList);
 					</tbody>
 				</table>
 
+				<p>Total tickets: <c:out value="${sessionScope.ticketCount}" /><br />
+				Total reduced tickets: <c:out value="${sessionScope.reducedTicketCount}" /></p>
 			</div>
 		</div>
 	</div>

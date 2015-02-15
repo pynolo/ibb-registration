@@ -35,17 +35,41 @@ try {
 			<input type="hidden" name="volunteer" value='<%=session.getAttribute("volunteer") %>' />
 			<input type="hidden" name="amount" value='<%=session.getAttribute("amount") %>' />
 			
-			<h3>Found! / Trovato!</h3>
+			<c:choose>
+				<c:when test="${not empty sessionScope.payment}">
+					<h3>Found! / Trovato!</h3>
+				</c:when>
+				<c:otherwise>
+					<h3>There's a problem! / C'&egrave; un problema!</h3>
+				</c:otherwise>
+			</c:choose>
+			
 			<p>&nbsp;</p>
 			<p>
-				<i>The registration number you provided is </i><b><c:out value="${sessionScope.code }" /></b>. 
+				<i>The registration code you provided is </i><b><c:out value="${sessionScope.code }" /></b>. 
 				<i>At the moment it is owned by </i><b><c:out value="${sessionScope.name }" /></b>.<br/>
-				<i>Go ahead with this wizard to update the registration data.</i>
+				<c:choose>
+					<c:when test="${not empty sessionScope.payment}">
+						<i>It has been confirmed with a donation of &euro;<c:out value="${sessionScope.amount }" /></i><br />
+						<i>Go ahead with this wizard to update the registration data.</i>
+					</c:when>
+					<c:otherwise>
+						<span class="text-warning">Warning: the code you provided hasn't been confirmed with a donation!</span><br />
+					</c:otherwise>
+				</c:choose>
 			</p>
 			<p>
 				<b>Il codice che hai fornito &egrave; </b><i><c:out value="${sessionScope.code }" /></i>.
 				<b>Al momento &egrave; abbinato a </b><i><c:out value="${sessionScope.name }" /></i>.<br/>
-				<b>Prosegui per sostituire i dati.</b>
+				<c:choose>
+					<c:when test="${not empty sessionScope.payment}">
+						<b>&Egrave; stato confermato con una donazione di &euro;<c:out value="${sessionScope.amount }" /></b><br />
+						<b>Prosegui per sostituire i dati.</b>
+					</c:when>
+					<c:otherwise>
+						<span class="text-warning">Attenzione: il codice che hai fornito non &egrave; stato confermato con una donazione!</span><br />
+					</c:otherwise>
+				</c:choose>				
 			</p>
 			<p>&nbsp;</p>
 		</c:when>
@@ -67,7 +91,7 @@ try {
 		</div>
 		<div class="col-sm-8"></div>
 		<div class="col-sm-2">
-			<c:if test="${not empty sessionScope.name}">
+			<c:if test="${not empty sessionScope.payment}">
 				<button type="button" class="btn btn-primary" onclick="forwardFormR1(); return true;">Next <i class="glyphicon glyphicon-chevron-right"></i><i class="glyphicon glyphicon-chevron-right"></i>&nbsp;</button>
 			</c:if>
 		</div>

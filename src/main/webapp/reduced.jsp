@@ -26,7 +26,10 @@
 <body>
 <%
 WizardBusiness.getParameters(session, request);
-session.setAttribute(AppConstants.PARAMS_AMOUNT, AppConstants.CONFIG_PRICE_REDUCED_TICKET);
+String amount = ConfigBusiness.findValueByName(AppConstants.CONFIG_PRICE_REDUCED_TICKET);
+if (amount != null) {
+	session.setAttribute(AppConstants.PARAMS_AMOUNT, amount);
+}
 %>
 	<div class="container">
 	<h1 class="text-colored text-center">Italian Burning Boots</h1>

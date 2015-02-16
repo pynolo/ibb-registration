@@ -18,8 +18,9 @@ public class AppConstants {
 	public static final int CODE_LENGHT = 8;
 	
 	public static final String CONFIG_MAX_TICKET_COUNT = "maxTicketCount";
-	public static final String CONFIG_MAX_REDUCED_TICKET_COUNT = "maxReducedTicketCount";
+	public static final String CONFIG_MAX_FOREIGNER_TICKET_COUNT = "maxForeignTicketCount";
 	public static final String CONFIG_PRICE_TICKET = "priceFull";
+	public static final String CONFIG_PRICE_FOREIGNER_TICKET = "priceForeign";
 	public static final String CONFIG_PRICE_REDUCED_TICKET = "priceReduced";
 	public static final String CONFIG_SERVICE_OPEN = "serviceOpen";
 	

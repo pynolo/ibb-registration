@@ -24,9 +24,10 @@ CREATE TABLE config (
 ALTER TABLE `config` ADD UNIQUE (`name`);
 ALTER TABLE `config` ADD INDEX `config_name` (`name`);
 insert into `config` (name, val) values ('maxTicketCount', '38');
-insert into `config` (name, val) values ('maxReducedTicketCount', '0');
-insert into `config` (name, val) values ('priceFull', '58.00');
-insert into `config` (name, val) values ('priceReduced', '58.00');
+insert into `config` (name, val) values ('maxForeignTicketCount', '0');
+insert into `config` (name, val) values ('priceFull', '60.00');
+insert into `config` (name, val) values ('priceForeign', '60.00');
+insert into `config` (name, val) values ('priceReduced', '10.00');
 insert into `config` (name, val) values ('serviceOpen','1');
 
 DROP TABLE IF EXISTS ipn_responses;

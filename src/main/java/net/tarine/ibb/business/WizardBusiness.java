@@ -77,10 +77,10 @@ public class WizardBusiness {
 			amount = ConfigBusiness.findValueByName(AppConstants.CONFIG_PRICE_TICKET);
 			if (amount == null) throw new SystemException("price_ticket has not been configured");
 			if (!country.equalsIgnoreCase("ITALY")) {
-				Integer maxRedTicket = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_REDUCED_TICKET_COUNT);
+				Integer maxRedTicket = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_FOREIGNER_TICKET_COUNT);
 				Integer countRedTicket = countReducedTickets();
 				if (countRedTicket <= maxRedTicket) {
-					amount = ConfigBusiness.findValueByName(AppConstants.CONFIG_PRICE_REDUCED_TICKET);
+					amount = ConfigBusiness.findValueByName(AppConstants.CONFIG_PRICE_FOREIGNER_TICKET);
 				}
 				if (amount == null) throw new SystemException("price_reduced_ticket has not been configured");
 			}
@@ -208,7 +208,7 @@ public class WizardBusiness {
 		Integer reducedCount = null;
 		Session ses = HibernateSessionFactory.getSession();
 		try {
-			Config priceConfig = new ConfigDao().findByName(ses, AppConstants.CONFIG_PRICE_REDUCED_TICKET);
+			Config priceConfig = new ConfigDao().findByName(ses, AppConstants.CONFIG_PRICE_FOREIGNER_TICKET);
 			reducedCount = new ParticipantsDao().countTicketsByAmount(ses, priceConfig.getVal());
 		} catch (SystemException e) {
 			throw new SystemException(e.getMessage(), e);

@@ -111,8 +111,8 @@ request.setAttribute("pList", statList);
 					</tbody>
 				</table>
 
-				<p>Total tickets: <c:out value="${sessionScope.ticketCount}" /><br />
-				Total reduced tickets: <c:out value="${sessionScope.reducedTicketCount}" /></p>
+				<p>Total confirmed tickets: <c:out value="${sessionScope.ticketCount}" /><br />
+				<!-- Total reduced tickets: <c:out value="${sessionScope.reducedTicketCount}" />--></p>
 			</div>
 		</div>
 	</div>

@@ -14,7 +14,7 @@ if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VA
 <h3>Confirmation</h3>
 
 <div>
-	<i>To enter the event you will need this registration code: <span style="font-size: 1.3em"><%=session.getAttribute("amount") %></span><br />
+	<i>To enter the event you will need this registration code: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />
 	PLEASE NOTE: it will be valid only after the donation, to cover costs like hut rental and food.</i>
 </div>
 <div>
@@ -27,7 +27,7 @@ if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VA
 <h3>Conferma</h3>
 
 <div>
-	<b>Per partecipare all'evento ti servir&agrave; questo codice di registrazione: <span style="font-size: 1.3em"><%=session.getAttribute("amount") %></span><br />
+	<b>Per partecipare all'evento ti servir&agrave; questo codice di registrazione: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />
 	ATTENZIONE: sar&agrave; valido solo dopo che avrai effettuato la donazione, per coprire i costi di base come l'affitto del rifugio e le cene.</b>
 </div>
 <div>

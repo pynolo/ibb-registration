@@ -11,7 +11,7 @@ if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VA
 <%
 } %>
 
-<h3>Confirmation</h3>
+<h3>Waiting for confirmation</h3>
 
 <div>
 	<i>To enter the event you will need this registration code: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />
@@ -24,7 +24,7 @@ if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VA
 
 <p>&nbsp;<br /></p>
 
-<h3>Conferma</h3>
+<h3>In attesa di conferma</h3>
 
 <div>
 	<b>Per partecipare all'evento ti servir&agrave; questo codice di registrazione: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />

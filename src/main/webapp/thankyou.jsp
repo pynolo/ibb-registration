@@ -104,6 +104,8 @@ if (code == null || email == null) {
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-select.min.js"></script>
+	
+	<%=AppConstants.TRACKER %>
 </body>
 </html>
 

@@ -10,20 +10,20 @@
 
 	function forwardForm3() {
 		var volunteer = "";
-		if(document.form3.v_kitchen.checked) {
+		if(document.form3.v_1.checked) {
 			volunteer += "Kitchen ";
 		}
-		if(document.form3.v_outside.checked) {
-			volunteer += "Outside ";
+		if(document.form3.v_2.checked) {
+			volunteer += "Hut ";
 		}
-		if(document.form3.v_inside.checked) {
-			volunteer += "Inside ";
+		if(document.form3.v_3.checked) {
+			volunteer += "Greeter ";
 		}
-		if(document.form3.v_greeters.checked) {
-			volunteer += "Greeters ";
+		if(document.form3.v_4.checked) {
+			volunteer += "Wood ";
 		}
-		if(document.form3.v_deco.checked) {
-			volunteer += "Deco ";
+		if(document.form3.v_5.checked) {
+			volunteer += "Trail ";
 		}
 		document.form3.volunteer.value = volunteer;
 		document.form3.step.value = "1000";
@@ -46,28 +46,50 @@
 	<h3>Participation / Partecipazione</h3>
 	<p>
 		<i>Everybody help at IBB, wonderful people :) Click all the areas where you'd like to volunteer!</i><br/>
-		<b>A IBB tutti aiutano, gente splendida :) Clicca tutto ci&ograve; di cui potresti occuparti!</b>
+		<b>A IBB tutti aiutano, gente splendida :) Clicca tutto ci&ograve; di cui potresti occuparti!</b><br />
+		&nbsp;
 	</p>
 	<div class="checkbox">
 		<label for="v_kitchen" class="checkbox">
-			<input type="checkbox" class="checkbox" name="v_kitchen" />Kitchen / Cucina</label>
+			<input type="checkbox" class="checkbox" name="v_1" />Kitchen superstar</label>
 	</div>
-		<div class="checkbox">
+	<div class="row"><div class="col-sm-offset-1" style="font-size: 0.9em">
+		<i>to give your personal touch in the kitchen</i> /
+		<b>per dare il tuo tocco personale in cucina</b></div>
+	</div>
+	<div class="checkbox">
 		<label for="v_outside" class="checkbox">
-			<input type="checkbox" class="checkbox" name="v_outside" />Outside the hut and fire / Esterno rifugio e fuoco</label>
+			<input type="checkbox" class="checkbox" name="v_2" />Lord of the hut</label>
 	</div>
-		<div class="checkbox">
+	<div class="row"><div class="col-sm-offset-1" style="font-size: 0.9em">
+		<i>to keep the hut beautiful and comfortable</i> /
+		<b>per mantenere il rifugio bello e confortevole</b></div>
+	</div>
+	<div class="checkbox">
 		<label for="v_inside" class="checkbox">
-			<input type="checkbox" class="checkbox" name="v_inside" />Inside the hut / Interno rifugio</label>
+			<input type="checkbox" class="checkbox" name="v_3" />Greeter</label>
 	</div>
-		<div class="checkbox">
+	<div class="row"><div class="col-sm-offset-1" style="font-size: 0.9em">
+		<i>to welcome people and help them to reach the hut</i> /
+		<b>per dare il benvenuto e aiutare all'arrivo</b></div>
+	</div>
+	<div class="checkbox">
 		<label for="v_greeters" class="checkbox">
-			<input type="checkbox" class="checkbox" name="v_greeters" />Greeters / Accoglienza</label>
+			<input type="checkbox" class="checkbox" name="v_4" />Wood bandit</label>
 	</div>
-		<div class="checkbox">
+	<div class="row"><div class="col-sm-offset-1" style="font-size: 0.9em">
+		<i>to explore the woods and prepare the fire</i> /
+		<b>per esplorare i boschi e preparare il fuoco</b></div>
+	</div>
+	<div class="checkbox">
 		<label for="v_deco" class="checkbox">
-			<input type="checkbox" class="checkbox" name="v_deco" />Decoration / Allestimento</label>
+			<input type="checkbox" class="checkbox" name="v_5" />Trail angel</label>
 	</div>
+	<div class="row"><div class="col-sm-offset-1" style="font-size: 0.9em">
+		<i>to take care of the group during the hike</i> /
+		<b>per aver cura del gruppo durante la passeggiata</b></div>
+	</div>
+	<div>&nbsp;<br />&nbsp;</div>
 	<div class="row">
 		<div class="col-sm-2">
 	 		<button type="button" class="btn btn-primary" onclick="backwardForm3(); return true;">&nbsp;<i class="glyphicon glyphicon-chevron-left"></i><i class="glyphicon glyphicon-chevron-left"></i> Prev</button>

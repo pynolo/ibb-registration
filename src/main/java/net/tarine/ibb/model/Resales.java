@@ -17,8 +17,8 @@ import javax.persistence.TemporalType;
  * @author paolo
  */
 @Entity
-@Table(name = "resale")
-public class Resale extends BaseEntity {
+@Table(name = "resales")
+public class Resales extends BaseEntity {
 	private static final long serialVersionUID = 8062714332994455761L;
 	
 	@Id
@@ -45,7 +45,7 @@ public class Resale extends BaseEntity {
 	@Column(name = "days", nullable = false)
 	private Integer days;
 		
-	public Resale() {
+	public Resales() {
 	}
 
 	public Integer getId() {
@@ -114,10 +114,10 @@ public class Resale extends BaseEntity {
 
 	@Override
 	public boolean equals(Object object) {
-		if (!(object instanceof Resale)) {
+		if (!(object instanceof Resales)) {
 			return false;
 		}
-		Resale other = (Resale) object;
+		Resales other = (Resales) object;
 		if ((this.id == null && other.id != null)
 				|| (this.id != null && !this.id.equals(other.id))) {
 			return false;
@@ -127,6 +127,6 @@ public class Resale extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "Resale[id=" + id + "]";
+		return "Resales[id=" + id + "]";
 	}
 }

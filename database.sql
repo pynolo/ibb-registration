@@ -44,8 +44,8 @@ CREATE TABLE ipn_responses (
 	PRIMARY KEY(id)
 );
 
-DROP TABLE IF EXISTS resale;
-CREATE TABLE resale (
+DROP TABLE IF EXISTS resales;
+CREATE TABLE resales (
 	id int NOT NULL auto_increment,
 	created datetime NOT NULL,
 	expiration datetime NOT NULL,

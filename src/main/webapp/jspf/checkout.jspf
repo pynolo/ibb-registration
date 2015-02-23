@@ -48,8 +48,8 @@ if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VA
     <input type="hidden" name="lc" value="US">
     <input type="hidden" name="notify_url" value='<%=AppConstants.BASE_URL %>/ipn'>
     <input type="hidden" name="return" value='<%=AppConstants.BASE_URL %>/thankyou.jsp?code=<%=session.getAttribute("code") %>'>
-    <input type="submit" title="PayPal" value=" PayPal " name="submit"
-    	class="btn btn-primary btn-lg" /> <i>Amount &euro;<%=session.getAttribute("amount") %></i> / <b>Importo &euro;<%=session.getAttribute("amount") %></b>
+    <input type="submit" title="PayPal" value=" Confirm / Conferma " name="submit"
+    	class="btn btn-primary btn-lg" /> <i>Donation min. &euro;<%=session.getAttribute("amount") %></i> / <b>Donazione min. &euro;<%=session.getAttribute("amount") %></b>
     <!--input type="image" src="https://www.paypal.com/en_AU/i/btn/btn_buynow_LG.gif"
     	border="0" name="submit" alt="PayPal - The safer, easier way to pay online."-->
 </form>

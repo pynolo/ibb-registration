@@ -10,10 +10,19 @@
 		<servlet-name>ipnServlet</servlet-name>
 		<servlet-class>net.tarine.ibb.servlet.IpnServlet</servlet-class>
 	</servlet>
-
+	<servlet>
+		<servlet-name>emailToImage</servlet-name>
+		<servlet-class>net.tarine.ibb.servlet.EmailToImageServlet</servlet-class>
+	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>ipnServlet</servlet-name>
 		<url-pattern>/ipn</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>emailToImage</servlet-name>
+		<url-pattern>/emailtoimage</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
 

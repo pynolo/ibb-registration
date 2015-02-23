@@ -56,6 +56,7 @@
 		<mapping class="net.tarine.ibb.model.Ip2nationCountries"/>
 		<mapping class="net.tarine.ibb.model.IpnResponses"/>
 		<mapping class="net.tarine.ibb.model.Participants"/>
+		<mapping class="net.tarine.ibb.model.Resale"/>
 
     </session-factory>
 </hibernate-configuration>

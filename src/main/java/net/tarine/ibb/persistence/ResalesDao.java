@@ -20,9 +20,9 @@ public class ResalesDao {
 			hql += "where r.expiration >= :dt1 ";
 			hql += "order by r.created desc";
 			Query q = ses.createQuery(hql);
-			@SuppressWarnings("unchecked")
-			List<Resales> list = q.list();
 			q.setParameter("dt1", now, TimestampType.INSTANCE);
+			@SuppressWarnings("unchecked")
+			List<Resales> list = q.list();			
 			result = list;
 		} catch (HibernateException e) {
 			throw new SystemException(e.getMessage(), e);

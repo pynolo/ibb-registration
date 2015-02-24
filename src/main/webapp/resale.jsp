@@ -63,7 +63,7 @@ request.setAttribute("reList", reList);
 									<c:when test="${re.resaleType == 'SELL'}">
 										<b>Selling</b>
 									</c:when>
-									<c:when test="${re.resaleType == 'LOOK'}">
+									<c:when test="${re.resaleType == 'BUY'}">
 										<i>Looking for</i>
 									</c:when>
 								</c:choose>

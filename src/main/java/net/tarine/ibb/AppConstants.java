@@ -4,8 +4,6 @@ import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class AppConstants {
@@ -81,11 +79,6 @@ public class AppConstants {
 	// LOOKUP: RESALE TYPE
 	public static final String RESALE_TYPE_SELLING = "SELL";
 	public static final String RESALE_TYPE_BUYING = "BUY";
-	public static final Map<String, String> RESALE_TYPES = new HashMap<String, String>();
-	static {//key must be lowercase
-		RESALE_TYPES.put("Selling", RESALE_TYPE_SELLING);
-		RESALE_TYPES.put("Looking for", RESALE_TYPE_BUYING);
-	};
 	
 	//Tracking code
 	public static final String TRACKER = "<!-- Piwik -->"+

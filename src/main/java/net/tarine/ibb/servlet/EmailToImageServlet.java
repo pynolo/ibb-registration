@@ -2,7 +2,6 @@ package net.tarine.ibb.servlet;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GradientPaint;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -24,6 +23,9 @@ public class EmailToImageServlet extends HttpServlet {
     /* (non-Javadoc)
      * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
      */
+    private static final int IMG_WIDTH = 300;
+    private static final int IMG_HEIGHT = 25;
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // parameters
     	String username = request.getParameter("username");
@@ -37,23 +39,23 @@ public class EmailToImageServlet extends HttpServlet {
         response.setContentType("image/jpg");
         ServletOutputStream out = response.getOutputStream();
  
-        BufferedImage bufferedImage = new BufferedImage(200, 30, BufferedImage.TYPE_BYTE_INDEXED);
+        BufferedImage bufferedImage = new BufferedImage(IMG_WIDTH, IMG_HEIGHT, BufferedImage.TYPE_BYTE_INDEXED);
  
         Graphics2D graphics = bufferedImage.createGraphics();
          
         // Set back ground of the generated image to white
         graphics.setColor(Color.WHITE);
-        graphics.fillRect(0, 0, 200, 40);
+        graphics.fillRect(0, 0, IMG_WIDTH, IMG_HEIGHT);
  
         // set gradient font of text to be converted to image
-        GradientPaint gradientPaint = new GradientPaint(10, 5, Color.BLUE, 20, 10, Color.LIGHT_GRAY, true);
-        graphics.setPaint(gradientPaint);
+        //GradientPaint gradientPaint = new GradientPaint(10, 5, Color.BLUE, 20, 10, Color.LIGHT_GRAY, true);
+        graphics.setPaint(Color.BLUE);
         Font font = new Font("sans-serif", Font.BOLD, 15);
         graphics.setFont(font);
  
         // write email string in the image
         String email = username+"@"+domain;
-        graphics.drawString(email, 1, 1);
+        graphics.drawString(email, 0, 15);
  
         // release resources used by graphics context
         graphics.dispose();

@@ -19,9 +19,11 @@ request.setAttribute("reList", reList);
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>IBB Resale</title>
-	
+		
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/bootstrap-select.min.css" rel="stylesheet" />
+	<link href="css/custom.css" rel="stylesheet" />
 	<link rel="shortcut icon" type="image/png" href="images/rm-16.png" />
 	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -33,6 +35,20 @@ request.setAttribute("reList", reList);
 </head>
 <body>
 
+<script language="javascript"> 
+function toggle(showHideDiv, switchTextDiv) {
+	var ele = document.getElementById(showHideDiv);
+	var text = document.getElementById(switchTextDiv);
+	if(ele.style.display == "block") {
+		ele.style.display = "none";
+		text.innerHTML = "Email";
+	} else {
+		ele.style.display = "block";
+		text.innerHTML = "Hide/nascondi";
+	}
+}
+</script>
+
 	<div class="container">
 		<h1 class="text-colored text-center">Resale / Scambio</h1>
 		<div class="panel panel-default">
@@ -43,9 +59,9 @@ request.setAttribute("reList", reList);
 							<th>
 								<b></b>
 							</th>
-							<th>
+							<!--th>
 								<b>Added</b>
-							</th>
+							</th-->
 							<th>
 								<b>Message</b>
 							</th>
@@ -56,26 +72,29 @@ request.setAttribute("reList", reList);
 					</thead>
 				
 					<tbody>
-						<c:forEach items="${reScope.pList}" var="re" varStatus="status">
+						<c:forEach items="${requestScope.reList}" var="re" varStatus="status">
 						<tr>
 							<td>
 								<c:choose>
 									<c:when test="${re.resaleType == 'SELL'}">
-										<b>Selling</b>
+										<b>Offering</b>
 									</c:when>
 									<c:when test="${re.resaleType == 'BUY'}">
-										<i>Looking for</i>
+										<b>Searching</b>
 									</c:when>
 								</c:choose>
 							</td>
-							<td>
+							<!--td>
 								<c:out value="${re.formattedCreationDate}" />
-							</td>
+							</td-->
 							<td>
 								<c:out value="${re.message}" />
 							</td>
 							<td>
-								<img src="emailtoimage?username=${re.emailUsername}&domain=${re.emailDomain }" />
+								<a id="show_${re.id}" href="javascript:toggle('email_${re.id}','show_${re.id}');" >Email</a>
+								<div id="email_${re.id}" style="display: none;">
+									<img src="emailtoimage?username=${re.emailUsername}&domain=${re.emailDomain }" />
+								</div>
 							</td>
 						</tr>
 						</c:forEach>

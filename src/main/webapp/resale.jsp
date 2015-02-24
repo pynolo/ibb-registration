@@ -34,6 +34,7 @@ request.setAttribute("reList", reList);
 <body>
 
 	<div class="container">
+		<h1 class="text-colored text-center">Resale / Scambio</h1>
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<table class="table table-condensed" style="border-collapse: collapse">
@@ -42,9 +43,9 @@ request.setAttribute("reList", reList);
 							<th>
 								<b></b>
 							</th>
-							<!--th>
+							<th>
 								<b>Added</b>
-							</th-->
+							</th>
 							<th>
 								<b>Message</b>
 							</th>
@@ -67,14 +68,14 @@ request.setAttribute("reList", reList);
 									</c:when>
 								</c:choose>
 							</td>
-							<!--td>
-								<c:out value="${re.created}" />
-							</td-->
+							<td>
+								<c:out value="${re.formattedCreationDate}" />
+							</td>
 							<td>
 								<c:out value="${re.message}" />
 							</td>
 							<td>
-								<c:out value="${re.email}" />
+								<img src="emailtoimage?username=${re.emailUsername}&domain=${re.emailDomain }" />
 							</td>
 						</tr>
 						</c:forEach>

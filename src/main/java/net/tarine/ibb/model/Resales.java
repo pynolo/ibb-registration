@@ -12,6 +12,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import net.tarine.ibb.AppConstants;
+
 /**
  * 
  * @author paolo
@@ -48,6 +50,36 @@ public class Resales extends BaseEntity {
 	public Resales() {
 	}
 
+	public String getEmailUsername() {
+		if (email != null) {
+			String[] split = email.split("@");
+			if (split.length > 0) {
+				String username = split[0];
+				return username;
+			} else return null;
+		} else return null;
+	}
+	
+	public String getEmailDomain() {
+		if (email != null) {
+			String[] split = email.split("@");
+			if (split.length > 1) {
+				String domain = split[1];
+				return domain;
+			} else return null;
+		} else return null;
+	}
+	
+	public String getFormattedCreationDate() {
+		return AppConstants.FORMAT_DAY.format(created);
+	}
+	
+	public String getFormattedExpirationDate() {
+		return AppConstants.FORMAT_DAY.format(expiration);
+	}
+	
+	//Getters & setters
+	
 	public Integer getId() {
 		return id;
 	}

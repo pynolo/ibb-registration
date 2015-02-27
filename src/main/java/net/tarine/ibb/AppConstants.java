@@ -49,6 +49,10 @@ public class AppConstants {
 	public static final String PARAMS_AMOUNT = "amount";
 	public static final String PARAMS_PAYMENT = "payment";
 	public static final String PARAMS_WIZARD_MODE = "wizardMode";
+	public static final String PARAMS_RESALE_TYPE = "resaleType";
+	public static final String PARAMS_MESSAGE = "message";
+	public static final String PARAMS_EXPDATE = "expDate";
+	
 	
 	//PARAM VALUES
 	public static final String VALUE_WIZARD_REPLACE = "replace";

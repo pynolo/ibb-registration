@@ -70,7 +70,7 @@ public class ResaleBusiness {
 		if (expDateString == null) expDateString = "";
 		
 		//VERIFICATION
-		if (resaleType.length() > 0 || message.length() > 0 || email.length() > 0) {
+		if (resaleType.length() > 0 || expDateString.length() > 0 || email.length() > 0) {
 			if ((resaleType.length() < 2) || (resaleType.length() > 4))
 					throw new BusinessException("Some fields are not valid. Please submit the form again.");
 			if ((message.length() < 2) || (message.length() > 255))

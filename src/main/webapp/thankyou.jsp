@@ -26,13 +26,11 @@
 </head>
 <body>
 <%
-String email = request.getParameter(AppConstants.PARAMS_EMAIL);
 String code = request.getParameter(AppConstants.PARAMS_CODE);
-if (code == null || email == null) { 
-	code = "Error in registration code or email!!";
+if (code == null) { 
+	code = "Error in registration code!!";
 } else {
 	session.setAttribute(AppConstants.PARAMS_CODE, code);
-	//MailBusiness.sendConfirmEmail(email, code);
 }
 %>
 	<div class="container">

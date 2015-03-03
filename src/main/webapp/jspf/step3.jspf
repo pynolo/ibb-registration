@@ -13,17 +13,11 @@
 		if(document.form3.v_1.checked) {
 			volunteer += "Kitchen ";
 		}
-		if(document.form3.v_2.checked) {
-			volunteer += "Hut ";
-		}
 		if(document.form3.v_3.checked) {
 			volunteer += "Greeter ";
 		}
 		if(document.form3.v_4.checked) {
 			volunteer += "Wood ";
-		}
-		if(document.form3.v_5.checked) {
-			volunteer += "Trail ";
 		}
 		document.form3.volunteer.value = volunteer;
 		document.form3.step.value = "1000";
@@ -58,14 +52,6 @@
 		<b>per dare il tuo tocco personale in cucina</b></div>
 	</div>
 	<div class="checkbox">
-		<label for="v_outside" class="checkbox">
-			<input type="checkbox" class="checkbox" name="v_2" />Lord of the hut</label>
-	</div>
-	<div class="row"><div class="col-sm-offset-1" style="font-size: 0.9em">
-		<i>to keep the hut beautiful and comfortable</i> /
-		<b>per mantenere il rifugio bello e confortevole</b></div>
-	</div>
-	<div class="checkbox">
 		<label for="v_inside" class="checkbox">
 			<input type="checkbox" class="checkbox" name="v_3" />Greeter</label>
 	</div>
@@ -80,14 +66,6 @@
 	<div class="row"><div class="col-sm-offset-1" style="font-size: 0.9em">
 		<i>to explore the woods and prepare the fire</i> /
 		<b>per esplorare i boschi e preparare il fuoco</b></div>
-	</div>
-	<div class="checkbox">
-		<label for="v_deco" class="checkbox">
-			<input type="checkbox" class="checkbox" name="v_5" />Trail angel</label>
-	</div>
-	<div class="row"><div class="col-sm-offset-1" style="font-size: 0.9em">
-		<i>to take care of the group during the hike</i> /
-		<b>per aver cura del gruppo durante la passeggiata</b></div>
 	</div>
 	<div>&nbsp;<br />&nbsp;</div>
 	<div class="row">

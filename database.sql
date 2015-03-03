@@ -33,14 +33,14 @@ insert into `config` (name, val) values ('serviceOpen','1');
 DROP TABLE IF EXISTS ipn_responses;
 CREATE TABLE ipn_responses (
 	id int NOT NULL auto_increment,
-	item_number varchar(128) NOT NULL,
-	payment_status varchar(128) NOT NULL,
-	payer_email varchar(128) NOT NULL,
-	mc_gross varchar(16) NOT NULL,
-	mc_currency varchar(16) NOT NULL,
-	payment_date varchar(128) NOT NULL,
-	pending_reason varchar(128) NOT NULL,
-	payment_type varchar(128) NOT NULL,
+	item_number varchar(128) DEFAULT NULL,
+	payment_status varchar(128) DEFAULT NULL,
+	payer_email varchar(128) DEFAULT NULL,
+	mc_gross varchar(16) DEFAULT NULL,
+	mc_currency varchar(16) DEFAULT NULL,
+	payment_date varchar(128) DEFAULT NULL,
+	pending_reason varchar(128) DEFAULT NULL,
+	payment_type varchar(128) DEFAULT NULL,
 	PRIMARY KEY(id)
 );
 

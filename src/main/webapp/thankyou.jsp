@@ -46,7 +46,7 @@ if (code == null || email == null) {
 					<div class="row">
 						<div class="col-md-2 col-md-offset-5"
 							style="border: 2px black dotted; padding: 0.5em; font-size: 1.9em; font-weight: bold;">
-							<%=session.getAttribute(AppConstants.PARAMS_CODE) %>
+							<%=code %>
 						</div>
 					</div>
 					<span class="text-warning">Print this page: the code is necessary to <b>join the event</b> or to <b>change</b> the participant's name!</span><br />
@@ -70,7 +70,7 @@ if (code == null || email == null) {
 					<div class="row">
 						<div class="col-md-2 col-md-offset-5"
 							style="border: 2px black dotted; padding: 0.5em; font-size: 1.9em; font-weight: bold;">
-							<%=session.getAttribute(AppConstants.PARAMS_CODE) %>
+							<%=code %>
 						</div>
 					</div>
 					<span class="text-warning">Stampa la pagina: senza il codice non potrai <b>partecipare</b> o <b>cambiare</b> il nominativo del partecipante!</span><br />

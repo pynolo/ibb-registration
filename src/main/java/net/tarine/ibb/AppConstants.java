@@ -11,10 +11,10 @@ public class AppConstants {
 	public static final String BASE_URL= "http://ibb.tarine.net";
 	public static final String EVENT_URL= "http://www.italianburningboots.org";
 	public static final String EVENT_EMAIL= "registration@italianburningboots.org";
-	//public static final String PAYPAL_URL = "https://www.paypal.com/cgi-bin/webscr";
-	public static final String PAYPAL_URL= "https://www.sandbox.paypal.com/cgi-bin/webscr";//SANDBOX
-	//public static final String PAYPAL_ACCOUNT = "paolo@tarine.net";
-	public static final String PAYPAL_ACCOUNT = "paolo-facilitator@tarine.net";//SANDBOX
+	public static final String PAYPAL_URL = "https://www.paypal.com/cgi-bin/webscr";
+	//public static final String PAYPAL_URL= "https://www.sandbox.paypal.com/cgi-bin/webscr";//SANDBOX
+	public static final String PAYPAL_ACCOUNT = "ibb.registration@tarine.net";
+	//public static final String PAYPAL_ACCOUNT = "paolo-facilitator@tarine.net";//SANDBOX
 	public static final int CODE_LENGHT = 6;
 	
 	public static final String CONFIG_MAX_TICKET_COUNT = "maxTicketCount";

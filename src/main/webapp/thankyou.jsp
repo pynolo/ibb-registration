@@ -49,7 +49,7 @@ if (code == null || email == null) {
 							<%=session.getAttribute(AppConstants.PARAMS_CODE) %>
 						</div>
 					</div>
-					<span class="text-warning">Print this page: the code is necessary to join the event or to change the participant's name!</span><br />
+					<span class="text-warning">Print this page: the code is necessary to <b>join the event</b> or to <b>change</b> the participant's name!</span><br />
 				</div>
 				
 				<p>

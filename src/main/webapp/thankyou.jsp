@@ -41,46 +41,46 @@ if (code == null || email == null) {
 			<div class="panel-body">
 				<h3>Thank you</h3>
 
-				<p>
-					<i>We're happy to have you with us!<br/>
-					You will receive important information about the meeting point
-					and about the event at the email address you provided.</i>
-				</p>
 				<div class="text-center">
-					<i>Please take note of your registration code: </i>
+					<i>IMPORTANT: Please take note of your registration code: </i>
 					<div class="row">
 						<div class="col-md-2 col-md-offset-5"
 							style="border: 2px black dotted; padding: 0.5em; font-size: 1.9em; font-weight: bold;">
-							<%=session.getAttribute("code") %>
+							<%=session.getAttribute(AppConstants.PARAMS_CODE) %>
 						</div>
 					</div>
-					<span class="text-warning">Print this page: you can't join the event without the code!</span><br />
+					<span class="text-warning">Print this page: the code is necessary to join the event or to change the participant's name!</span><br />
 				</div>
+				
 				<p>
-					<i>You will also need this code to</i> <b>transfer</b> <i>your registration to someone else.</i>
+					<i>We're happy to have you with us!<br/>
+					You will receive important information about the event location 
+					on the email address you provided.</i>
+				</p>
+				<p>
 					<i>If you have questions please write to </i><b><%=AppConstants.EVENT_EMAIL %></b>
 				</p>
 				<p>&nbsp;</p>
 				
 				<h3>Grazie</h3>
 				
-				<p>
-					<b>Siamo felici di averti tra noi!<br />
-					Riceverai informazioni importanti sul luogo di incontro e sull'evento
-					all'indirizzo email che hai fornito.</b>
-				</p>
+				
 				<div class="text-center">
-					<b>Prendi nota del tuo codice di registrazione: </b>
+					<b>IMPORTANTE: prendi nota del tuo codice di registrazione: </b>
 					<div class="row">
 						<div class="col-md-2 col-md-offset-5"
 							style="border: 2px black dotted; padding: 0.5em; font-size: 1.9em; font-weight: bold;">
-							<%=session.getAttribute("code") %>
+							<%=session.getAttribute(AppConstants.PARAMS_CODE) %>
 						</div>
 					</div>
-					<span class="text-warning">Stampa la pagina: senza il codice non potrai partecipare all'evento!</span><br />
+					<span class="text-warning">Stampa la pagina: senza il codice non potrai <b>partecipare</b> o <b>cambiare</b> il nominativo del partecipante!</span><br />
 				</div>
 				<p>
-					<b>Il codice ti servir&agrave; anche se vuoi </b><i>cedere</i><b> la tua registrazione a qualcun'altro.</b>
+					<b>Siamo felici di averti tra noi!<br />
+					Riceverai informazioni importanti sul luogo dell'evento
+					all'indirizzo email che hai fornito.</b>
+				</p>
+				<p>
 					<b>Per domande scrivi a </b><i><%=AppConstants.EVENT_EMAIL %></i>
 				</p>
 				<p>&nbsp;</p>

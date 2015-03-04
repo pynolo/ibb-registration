@@ -28,7 +28,7 @@
 	WizardBusiness.getParameters(session, request);
 	Integer maxTicketCount = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_TICKET_COUNT);
 	session.setAttribute(AppConstants.CONFIG_MAX_TICKET_COUNT, maxTicketCount);
-	Integer ticketCount = WizardBusiness.countTickets();
+	Integer ticketCount = WizardBusiness.countConfirmedParticipants();
 	session.setAttribute("ticketCount", ticketCount);
 %>
 	<div class="container">

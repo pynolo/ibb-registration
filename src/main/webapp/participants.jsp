@@ -8,10 +8,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
-Integer ticketCount = WizardBusiness.countTickets();
+Integer ticketCount = WizardBusiness.countConfirmedParticipants();
 session.setAttribute("ticketCount", ticketCount);
-Integer reducedTicketCount = WizardBusiness.countReducedTickets();
-session.setAttribute("reducedTicketCount", reducedTicketCount);
+//Integer reducedTicketCount = WizardBusiness.countReducedTickets();
+//session.setAttribute("reducedTicketCount", reducedTicketCount);
 
 List<Participants> statList = ParticipantsBusiness.findAllParticipants();
 request.setAttribute("pList", statList);

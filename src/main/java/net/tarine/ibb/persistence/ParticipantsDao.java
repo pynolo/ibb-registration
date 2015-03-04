@@ -65,4 +65,23 @@ public class ParticipantsDao {
 		}
 		return null;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public Integer countConfirmedParticipants(Session ses) throws SystemException {
+		try {
+			String hql = "select count(id) from Participants p where "+
+					"p.payment is not null";
+			Query q = ses.createQuery(hql);
+			List<Object> list = q.list();
+			if (list != null) {
+				if (list.size() > 0) {
+					Long count = (Long) list.get(0);
+					return count.intValue();
+				}
+			}
+		} catch (HibernateException e) {
+			throw new SystemException(e.getMessage(), e);
+		}
+		return null;
+	}
 }

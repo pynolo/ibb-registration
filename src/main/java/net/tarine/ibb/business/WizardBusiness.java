@@ -190,19 +190,32 @@ public class WizardBusiness {
 		return result;
 	}
 	
-	public static Integer countTickets() throws SystemException, BusinessException {
-		Integer reducedCount = null;
+	public static Integer countConfirmedParticipants() throws SystemException, BusinessException {
+		Integer count = null;
 		Session ses = HibernateSessionFactory.getSession();
 		try {
-			Config priceConfig = new ConfigDao().findByName(ses, AppConstants.CONFIG_PRICE_TICKET);
-			reducedCount = new ParticipantsDao().countTicketsByAmount(ses, priceConfig.getVal());
+			count = new ParticipantsDao().countConfirmedParticipants(ses);
 		} catch (SystemException e) {
 			throw new SystemException(e.getMessage(), e);
 		} finally {
 			ses.close();
 		}
-		return reducedCount;
+		return count;
 	}
+	
+	//public static Integer countTickets() throws SystemException, BusinessException {
+	//	Integer reducedCount = null;
+	//	Session ses = HibernateSessionFactory.getSession();
+	//	try {
+	//		Config priceConfig = new ConfigDao().findByName(ses, AppConstants.CONFIG_PRICE_TICKET);
+	//		reducedCount = new ParticipantsDao().countTicketsByAmount(ses, priceConfig.getVal());
+	//	} catch (SystemException e) {
+	//		throw new SystemException(e.getMessage(), e);
+	//	} finally {
+	//		ses.close();
+	//	}
+	//	return reducedCount;
+	//}
 	
 	public static Integer countReducedTickets() throws SystemException, BusinessException {
 		Integer reducedCount = null;

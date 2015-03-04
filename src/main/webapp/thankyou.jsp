@@ -28,7 +28,7 @@
 <%
 String code = request.getParameter(AppConstants.PARAMS_CODE);
 if (code == null) { 
-	code = "Error in registration code!!";
+	code = "Error: registration code is missing!";
 } else {
 	session.setAttribute(AppConstants.PARAMS_CODE, code);
 }
@@ -48,20 +48,17 @@ if (code == null) {
 						</div>
 					</div>
 					<span class="text-warning">Print this page: the code is necessary to <b>join the event</b> or to <b>change</b> the participant's name!</span><br />
+					&nbsp;
 				</div>
 				
 				<p>
-					<i>We're happy to have you with us!<br/>
-					You will receive important information about the event location 
-					on the email address you provided.</i>
-				</p>
-				<p>
-					<i>If you have questions please write to </i><b><%=AppConstants.EVENT_EMAIL %></b>
+					<i>We're happy to have you with us! You will receive important information 
+					about the event location on the email address you provided. If you have 
+					questions please write to </i><b><%=AppConstants.EVENT_EMAIL %></b>
 				</p>
 				<p>&nbsp;</p>
 				
 				<h3>Grazie</h3>
-				
 				
 				<div class="text-center">
 					<b>IMPORTANTE: prendi nota del tuo codice di registrazione: </b>
@@ -71,15 +68,13 @@ if (code == null) {
 							<%=code %>
 						</div>
 					</div>
-					<span class="text-warning">Stampa la pagina: senza il codice non potrai <b>partecipare</b> o <b>cambiare</b> il nominativo del partecipante!</span><br />
+					<span class="text-warning">Stampa la pagina: senza il codice non potrai <b>partecipare</b> o <b>cambiare</b> il nominativo del partecipante!</span><br/>
+					&nbsp;
 				</div>
 				<p>
-					<b>Siamo felici di averti tra noi!<br />
-					Riceverai informazioni importanti sul luogo dell'evento
-					all'indirizzo email che hai fornito.</b>
-				</p>
-				<p>
-					<b>Per domande scrivi a </b><i><%=AppConstants.EVENT_EMAIL %></i>
+					<b>Siamo felici di averti tra noi! Riceverai informazioni importanti sul luogo 
+					dell'evento all'indirizzo email che hai fornito. Per domande scrivi
+					a </b><i><%=AppConstants.EVENT_EMAIL %></i>
 				</p>
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>

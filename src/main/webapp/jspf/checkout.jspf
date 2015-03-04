@@ -11,11 +11,11 @@ if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VA
 <%
 } %>
 
-<h3>Waiting for confirmation</h3>
+<h3>You only need to confirm</h3>
 
 <div>
 	<i>To enter the event you will need this registration code: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />
-	PLEASE NOTE: it will be valid only after the donation.</i>
+	PLEASE NOTE: it will be valid and confirmed only after the donation.</i>
 </div>
 <div>
 	<i>Minimum amount is </i><b>&euro;<%=session.getAttribute("amount") %></b><i> to cover costs like hut rental and food, 
@@ -25,11 +25,11 @@ if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VA
 
 <p>&nbsp;<br /></p>
 
-<h3>In attesa di conferma</h3>
+<h3>Devi solo confermare</h3>
 
 <div>
 	<b>Per partecipare all'evento ti servir&agrave; questo codice di registrazione: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />
-	ATTENZIONE: sar&agrave; valido solo dopo che avrai effettuato la donazione.</b>
+	ATTENZIONE: sar&agrave; valido solo dopo che avrai confermato con la donazione.</b>
 </div>
 <div>
 	<b>L'importo minimo &egrave; </b><i>&euro;<%=session.getAttribute("amount") %></i><b> per coprire i costi di base come l'affitto del rifugio e le cene,

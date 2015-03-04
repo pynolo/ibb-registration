@@ -1,7 +1,7 @@
-<%@page import="net.tarine.ibb.business.ConfigBusiness"%>
-<%@page import="net.tarine.ibb.business.WizardBusiness"%>
-<%@page import="net.tarine.ibb.business.ParticipantsBusiness"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="net.tarine.ibb.business.ConfigBusiness"%>
+<%@ page import="net.tarine.ibb.business.WizardBusiness"%>
+<%@ page import="net.tarine.ibb.business.ParticipantsBusiness"%>
 <%@ page import="net.tarine.ibb.model.*"%>
 <%@ page import="net.tarine.ibb.*"%>
 <%@ page import="java.util.List"%>

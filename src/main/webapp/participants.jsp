@@ -43,6 +43,8 @@ request.setAttribute("pList", statList);
 					<thead>
 						<tr>
 							<th>
+							</th>
+							<th>
 								<b>Email</b>
 							</th>
 							<th>
@@ -58,23 +60,35 @@ request.setAttribute("pList", statList);
 								<b>Arrival time</b>
 							</th>
 							<th>
+								<b>Volunteer</b>
+							</th>
+							<th>
 								<b>Amount</b>
 							</th>
 							<th>
 								<b>Payment</b>
 							</th>
-							<th>
-								<b>Volunteer</b>
-							</th>
-							<th>
+							<!--<th>
 								<b>Created/modified</b>
-							</th>
+							</th>-->
 						</tr>
 					</thead>
 				
 					<tbody>
+						<% int count = 0; %>
 						<c:forEach items="${requestScope.pList}" var="p" varStatus="status">
 						<tr>
+							<td>
+								<c:choose>
+									<c:when test="${not empty p.payment}">
+										<% count++;%>
+										<%=count %>.
+									</c:when>
+									<c:otherwise>
+										&nbsp;
+									</c:otherwise>
+								</c:choose>
+							</td>
 							<td>
 								<b><c:out value="${p.email}" /></b>
 							</td>
@@ -91,6 +105,9 @@ request.setAttribute("pList", statList);
 								<c:out value="${p.arrivalTime}" />
 							</td>
 							<td>
+								<c:out value="${p.volunteering}" />
+							</td>
+							<td>
 								<c:if test="${not empty p.payment}">
 									<b>&euro;<c:out value="${p.amount}" /></b>
 								</c:if>
@@ -100,12 +117,9 @@ request.setAttribute("pList", statList);
 									<c:out value="${p.payment}" />
 								</c:if>
 							</td>
-							<td>
-								<c:out value="${p.volunteering}" />
-							</td>
-							<td>
+							<!--<td>
 								<c:out value="${p.created}" />
-							</td>
+							</td>-->
 						</tr>
 						</c:forEach>
 					</tbody>

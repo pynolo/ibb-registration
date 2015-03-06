@@ -71,6 +71,7 @@ public class AppConstants {
 	public static final SimpleDateFormat FORMAT_YEAR = new SimpleDateFormat("yyyy");
 	public static final SimpleDateFormat FORMAT_TIMESTAMP = new SimpleDateFormat(AppConstants.PATTERN_TIMESTAMP);
 	public static final DecimalFormat FORMAT_CURRENCY = new DecimalFormat(AppConstants.PATTERN_CURRENCY);
+	public static final DecimalFormat FORMAT_INTEGER = new DecimalFormat("#0");
 	public static Date DATE_FAR_PAST;
 	public static Date DATE_FAR_FUTURE;
 	static {

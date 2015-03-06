@@ -10,11 +10,12 @@
 <%
 Integer ticketCount = WizardBusiness.countConfirmedParticipants();
 Integer maxTicket = ConfigBusiness.findIntValueByName(AppConstants.CONFIG_MAX_TICKET_COUNT);
-String soldPercentage = AppConstants.FORMAT_INTEGER.format((double)ticketCount/(double)maxTicket)+"%";
+Double percentage = ((double)ticketCount/(double)maxTicket)*100D;
+String percentageString = AppConstants.FORMAT_INTEGER.format(percentage)+"%";
 //Integer reducedTicketCount = WizardBusiness.countReducedTickets();
 session.setAttribute("ticketCount", ticketCount);
 session.setAttribute("maxTicket", maxTicket);
-session.setAttribute("soldPercentage", soldPercentage);
+session.setAttribute("percentageString", percentageString);
 //session.setAttribute("reducedTicketCount", reducedTicketCount);
 
 List<Participants> statList = ParticipantsBusiness.findAllParticipants();
@@ -131,7 +132,7 @@ request.setAttribute("pList", statList);
 
 				<p>Total confirmed tickets: 
 					<c:out value="${sessionScope.ticketCount}" />/<c:out value="${sessionScope.maxTicket}" />
-					&nbsp;(<c:out value="${sessionScope.soldPercentage}" />)<br />
+					&nbsp;(<c:out value="${sessionScope.percentageString}" />)<br />
 				<!-- Total reduced tickets: <c:out value="${sessionScope.reducedTicketCount}" />--></p>
 			</div>
 		</div>

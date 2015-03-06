@@ -5,11 +5,12 @@
 <h3>Registrations are closed</h3>
 
 <div>
-	<i>Registrations are closed because we reached the maximum number of participants.</i>
+	<i>Registrations are closed because we reached the maximum number of participants.
+	But don't be depressed, we're arranging a resale system for people who
+	registered but changed their plans.</i>
 </div>
 <div>
-	<i>If you want to join write to <b><%=AppConstants.EVENT_EMAIL %></b> and you'll be invited to
-	register if we can accept more people.</i>
+	<i>For more information </i><b><%=AppConstants.EVENT_EMAIL %></b>
 </div>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -18,11 +19,11 @@
 
 <div>
 	<b>Le iscrizioni sono chiuse perch&egrave; abbiamo raggiunto il numero
-	massimo di partecipanti.</b>
+	massimo di partecipanti. Ma non disperarti, stiamo preparando un sistema di rivendita, pensato
+	per chi si &egrave; registrato ma non pu&ograve; pi&ugrave; venire.</b>
 </div>
 <div>
-	<b>Se vuoi iscriverti manda un messaggio a <i><%=AppConstants.EVENT_EMAIL %></i>
-	cos&igrave; riceverai un invito	a registrarti se si libereranno dei posti.</b>
+	<b>Per maggiori informazioni </b><i><%=AppConstants.EVENT_EMAIL %></i>
 </div>
 
 <p>&nbsp;</p>

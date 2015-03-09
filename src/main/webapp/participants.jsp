@@ -49,9 +49,9 @@ request.setAttribute("pList", statList);
 						<tr>
 							<th>
 							</th>
-							<th>
+							<!--<th>
 								<b>Email</b>
-							</th>
+							</th>-->
 							<th>
 								<b>Name</b>
 							</th>
@@ -94,9 +94,9 @@ request.setAttribute("pList", statList);
 									</c:otherwise>
 								</c:choose>
 							</td>
-							<td>
+							<!--<td>
 								<b><c:out value="${p.email}" /></b>
-							</td>
+							</td>-->
 							<td>
 								<b><c:out value="${p.name}" /></b>
 							</td>
@@ -115,6 +115,7 @@ request.setAttribute("pList", statList);
 							<td>
 								<c:if test="${not empty p.payment}">
 									<b>&euro;<c:out value="${p.amount}" /></b>
+									<img src="images/confirmed.png" />
 								</c:if>
 							</td>
 							<td>

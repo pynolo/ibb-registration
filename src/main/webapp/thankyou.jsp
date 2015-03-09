@@ -64,7 +64,7 @@ if (code == null) {
 				<h3>Siamo felici di averti tra noi!</h3>
 				
 				<div class="text-center">
-					<b>IMPORTANTE: Il tuo codice &egrave; CONFERMATO. Stampalo o prendi nota!</b>
+					<b>Il tuo codice &egrave; CONFERMATO. Stampalo o prendi nota!</b>
 					<div class="row">
 						<div class="col-md-2 col-md-offset-5"
 							style="border: 2px black dotted; padding: 0.5em; font-size: 1.9em; font-weight: bold;">

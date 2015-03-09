@@ -37,42 +37,49 @@ if (code == null) {
 		<h1 class="text-colored text-center">Italian Burning Boots</h1>
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<h3>Thank you</h3>
+				<h3>We're happy to have you with us!</h3>
 
 				<div class="text-center">
-					<i>IMPORTANT: Please take note of your registration code: </i>
+					<i>Your registration code is CONFIRMED. Print it or write it down!</i>
 					<div class="row">
 						<div class="col-md-2 col-md-offset-5"
 							style="border: 2px black dotted; padding: 0.5em; font-size: 1.9em; font-weight: bold;">
 							<%=code %>
 						</div>
 					</div>
-					<span class="text-warning">Print this page: the code is necessary to <b>join the event</b> or to <b>change</b> the participant's name!</span><br />
-					&nbsp;
 				</div>
-				
 				<p>
-					<i>We're happy to have you with us! You will receive important information 
+					<i><span class="text-warning">SUPER IMPORTANT - How to use the code:</span><br/>
+					&bull; Keep it private and use it <span class="text-warning">to enter the event</span>,it works like a ticket!<br />
+					&bull; Give it to someone else <span class="text-warning">to let her/him replace your registration data</span> to take your place
+					(<a href="transfer.jsp">link</a>)</i>
+				</p>
+				<p>
+					<i>You will receive important information 
 					about the event location on the email address you provided. If you have 
 					questions please write to </i><b><%=AppConstants.EVENT_EMAIL %></b>
 				</p>
 				<p>&nbsp;</p>
 				
-				<h3>Grazie</h3>
+				<h3>Siamo felici di averti tra noi!</h3>
 				
 				<div class="text-center">
-					<b>IMPORTANTE: prendi nota del tuo codice di registrazione: </b>
+					<b>IMPORTANTE: Il tuo codice &egrave; CONFERMATO. Stampalo o prendi nota!</b>
 					<div class="row">
 						<div class="col-md-2 col-md-offset-5"
 							style="border: 2px black dotted; padding: 0.5em; font-size: 1.9em; font-weight: bold;">
 							<%=code %>
 						</div>
 					</div>
-					<span class="text-warning">Stampa la pagina: senza il codice non potrai <b>partecipare</b> o <b>cambiare</b> il nominativo del partecipante!</span><br/>
-					&nbsp;
 				</div>
 				<p>
-					<b>Siamo felici di averti tra noi! Riceverai informazioni importanti sul luogo 
+					<b><span class="text-warning">IMPORTANTISSIMO - come usare il codice:</span><br />
+					&bull; Non comunicarlo ad altri e <span class="text-warning">portalo all'evento per entrare</span>, funziona come un biglietto!<br />
+					&bull; Dallo a un'altra persona, <span class="text-warning">se vuoi che sostituisca i suoi dati ai tuoi</span> per prendere il tuo posto
+					(<a href="transfer.jsp">link</a>)</b>
+				</p>
+				<p>
+					<b>Riceverai informazioni importanti sul luogo 
 					dell'evento all'indirizzo email che hai fornito. Per domande scrivi
 					a </b><i><%=AppConstants.EVENT_EMAIL %></i>
 				</p>

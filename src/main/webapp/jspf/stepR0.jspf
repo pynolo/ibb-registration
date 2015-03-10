@@ -32,8 +32,8 @@
 	<p>&nbsp;</p>
 	<p>&nbsp;</p>
 	<p>
-		<i>Which is the registration code?</i><br/>
-		<b>Quale &egrave; il codice di registrazione?</b>
+		<i>Which is the secret code you want to transfer?</i><br/>
+		<b>Quale &egrave; il codice segreto da trasferire?</b>
 	</p>
 	<div class="input-group">
 		<input type="text" class="form-control" name="code"

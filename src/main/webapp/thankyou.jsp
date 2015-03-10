@@ -40,7 +40,7 @@ if (code == null) {
 				<h3>We're happy to have you with us!</h3>
 
 				<div class="text-center">
-					<i>Your registration code is CONFIRMED. Print it or write it down!</i>
+					<i>Your secret code is CONFIRMED. Print it or write it down!</i>
 					<div class="row">
 						<div class="col-md-2 col-md-offset-5"
 							style="border: 2px black dotted; padding: 0.5em; font-size: 1.9em; font-weight: bold;">
@@ -49,7 +49,7 @@ if (code == null) {
 					</div>
 				</div>
 				<p>
-					<i><span class="text-warning">SUPER IMPORTANT - How to use the code:</span><br/>
+					<i><span class="text-warning">SUPER IMPORTANT - How to use the secret code:</span><br/>
 					&bull; Keep it private and use it <span class="text-warning">to enter the event</span>,it works like a ticket!<br />
 					&bull; Give it to someone else <span class="text-warning">to let her/him replace your registration data</span> to take your place
 					(<a href="transfer.jsp">link</a>)</i>
@@ -64,7 +64,7 @@ if (code == null) {
 				<h3>Siamo felici di averti tra noi!</h3>
 				
 				<div class="text-center">
-					<b>Il tuo codice &egrave; CONFERMATO. Stampalo o prendi nota!</b>
+					<b>Il tuo codice segreto &egrave; CONFERMATO. Stampalo o prendi nota!</b>
 					<div class="row">
 						<div class="col-md-2 col-md-offset-5"
 							style="border: 2px black dotted; padding: 0.5em; font-size: 1.9em; font-weight: bold;">
@@ -73,7 +73,7 @@ if (code == null) {
 					</div>
 				</div>
 				<p>
-					<b><span class="text-warning">IMPORTANTISSIMO - come usare il codice:</span><br />
+					<b><span class="text-warning">IMPORTANTISSIMO - come usare il codice segreto:</span><br />
 					&bull; Non comunicarlo ad altri e <span class="text-warning">portalo all'evento per entrare</span>, funziona come un biglietto!<br />
 					&bull; Dallo a un'altra persona, <span class="text-warning">se vuoi che sostituisca i suoi dati ai tuoi</span> per prendere il tuo posto
 					(<a href="transfer.jsp">link</a>)</b>

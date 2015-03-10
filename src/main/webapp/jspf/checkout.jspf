@@ -14,7 +14,7 @@ if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VA
 <h3>You only need to confirm</h3>
 
 <div>
-	<i>To enter the event you will need this registration code: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />
+	<i>To enter the event you will need to confirm this secret code: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />
 	PLEASE NOTE: it will be valid and confirmed only after the donation.</i>
 </div>
 <div>
@@ -28,7 +28,7 @@ if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VA
 <h3>Devi solo confermare</h3>
 
 <div>
-	<b>Per partecipare all'evento ti servir&agrave; questo codice di registrazione: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />
+	<b>Per partecipare all'evento ti servir&agrave; confermare questo codice segreto: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />
 	ATTENZIONE: sar&agrave; valido solo dopo che avrai confermato con la donazione.</b>
 </div>
 <div>

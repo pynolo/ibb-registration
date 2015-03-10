@@ -46,7 +46,7 @@ try {
 			
 			<p>&nbsp;</p>
 			<p>
-				<i>The registration code you provided is </i><b><c:out value="${sessionScope.code }" /></b>. 
+				<i>The secret code you provided is </i><b><c:out value="${sessionScope.code }" /></b>. 
 				<i>At the moment it is owned by </i><b><c:out value="${sessionScope.name }" /></b>.<br/>
 				<c:choose>
 					<c:when test="${not empty sessionScope.payment}">
@@ -54,13 +54,13 @@ try {
 						<i>Go ahead with this wizard to update the registration data.</i>
 					</c:when>
 					<c:otherwise>
-						<span class="text-warning">Warning: the code you provided hasn't been confirmed with a donation!</span><br />
+						<span class="text-warning">Warning: the secret code you provided hasn't been confirmed with a donation!</span><br />
 					</c:otherwise>
 				</c:choose>
 			</p>
 			<p>&nbsp;</p>
 			<p>
-				<b>Il codice che hai fornito &egrave; </b><i><c:out value="${sessionScope.code }" /></i>.
+				<b>Il codice segreto che hai fornito &egrave; </b><i><c:out value="${sessionScope.code }" /></i>.
 				<b>Al momento &egrave; abbinato a </b><i><c:out value="${sessionScope.name }" /></i>.<br/>
 				<c:choose>
 					<c:when test="${not empty sessionScope.payment}">
@@ -68,7 +68,7 @@ try {
 						<b>Prosegui per sostituire i dati.</b>
 					</c:when>
 					<c:otherwise>
-						<span class="text-warning">Attenzione: il codice che hai fornito non &egrave; stato confermato con una donazione!</span><br />
+						<span class="text-warning">Attenzione: il codice segreto che hai fornito non &egrave; stato confermato con una donazione!</span><br />
 					</c:otherwise>
 				</c:choose>				
 			</p>

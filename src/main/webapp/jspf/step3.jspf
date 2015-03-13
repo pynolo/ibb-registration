@@ -19,6 +19,9 @@
 		if(document.form3.v_4.checked) {
 			volunteer += "Wood ";
 		}
+		if(document.form3.v_4.checked) {
+			volunteer += "Creativity ";
+		}
 		document.form3.volunteer.value = volunteer;
 		document.form3.step.value = "1000";
 		document.form3.submit();
@@ -66,6 +69,14 @@
 	<div class="row"><div class="col-sm-offset-1" style="font-size: 0.9em">
 		<i>to explore the woods and prepare the fire</i> /
 		<b>per esplorare i boschi e preparare il fuoco</b></div>
+	</div>
+	<div class="checkbox">
+		<label for="v_workshop" class="checkbox">
+			<input type="checkbox" class="checkbox" name="v_5" />Creativity guru</label>
+	</div>
+	<div class="row"><div class="col-sm-offset-1" style="font-size: 0.9em">
+		<i>to contribute with a workshop or an artwork</i> /
+		<b>per contribuire con un workshop o con la tua arte</b></div>
 	</div>
 	<div>&nbsp;<br />&nbsp;</div>
 	<div class="row">

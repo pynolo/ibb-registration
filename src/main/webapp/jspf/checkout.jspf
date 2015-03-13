@@ -14,8 +14,8 @@ if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VA
 <h3>You only need to confirm</h3>
 
 <div>
-	<i>To enter the event you will need to confirm this secret code: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />
-	PLEASE NOTE: it will be valid and confirmed only after the donation.</i>
+	<i>YOU'RE NOT REGISTERED YET, there's just one more step!<br />
+	You will receive your secret registration code only after the donation. It will be like a ticket.</i>
 </div>
 <div>
 	<i>Minimum amount is </i><b>&euro;<%=session.getAttribute("amount") %></b><i> to cover costs like hut rental and food, 
@@ -28,15 +28,15 @@ if (request.getParameter(AppConstants.PARAMS_WIZARD_MODE).equals(AppConstants.VA
 <h3>Devi solo confermare</h3>
 
 <div>
-	<b>Per partecipare all'evento ti servir&agrave; confermare questo codice segreto: <span style="font-size: 1.3em"><%=session.getAttribute("code") %></span><br />
-	ATTENZIONE: sar&agrave; valido solo dopo che avrai confermato con la donazione.</b>
+	<b>NON SEI ANCORA REGISTRATO/A, manca solo l'ultimo passo!<br />
+	Riceverai il codice segreto per partecipare solo dopo la donazione. Il codice &egrave; come un biglietto</b>
 </div>
 <div>
 	<b>L'importo minimo &egrave; </b><i>&euro;<%=session.getAttribute("amount") %></i><b> per coprire i costi di base come l'affitto del rifugio e le cene,
 	ma se vuoi donare di pi&ugrave; contattaci e penseremo a degli extra!</b><br />
 	&nbsp;
 </div>
-	
+
 <p>&nbsp;<br /></p>
 <form action="<%=AppConstants.PAYPAL_URL %>" method="post">
     <input type="hidden" name="cmd" value="_donations">

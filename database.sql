@@ -43,15 +43,3 @@ CREATE TABLE ipn_responses (
 	payment_type varchar(128) DEFAULT NULL,
 	PRIMARY KEY(id)
 );
-
-DROP TABLE IF EXISTS resales;
-CREATE TABLE resales (
-	id int NOT NULL auto_increment,
-	created datetime NOT NULL,
-	expiration datetime NOT NULL,
-	resale_type varchar(4) NOT NULL,
-	message varchar(256) NOT NULL,
-	email varchar(64) NOT NULL,
-	days int(11) NOT NULL,
-	PRIMARY KEY(id)
-);

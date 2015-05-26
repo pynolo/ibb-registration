@@ -49,9 +49,9 @@ request.setAttribute("pList", statList);
 						<tr>
 							<th>
 							</th>
-							<!--<th>
+							<th>
 								<b>Email</b>
-							</th>-->
+							</th>
 							<th>
 								<b>Name</b>
 							</th>
@@ -94,9 +94,9 @@ request.setAttribute("pList", statList);
 									</c:otherwise>
 								</c:choose>
 							</td>
-							<!--<td>
+							<td>
 								<b><c:out value="${p.email}" /></b>
-							</td>-->
+							</td>
 							<td>
 								<b><c:out value="${p.name}" /></b>
 							</td>

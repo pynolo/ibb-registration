@@ -82,51 +82,46 @@ request.setAttribute("pList", statList);
 					<tbody>
 						<% int count = 0; %>
 						<c:forEach items="${requestScope.pList}" var="p" varStatus="status">
-						<tr>
-							<td>
-								<c:choose>
-									<c:when test="${not empty p.payment}">
+							<c:if test="${not empty p.payment}">
+								<tr>
+									<td>
 										<% count++;%>
 										<%=count %>.
-									</c:when>
-									<c:otherwise>
-										&nbsp;
-									</c:otherwise>
-								</c:choose>
-							</td>
-							<td>
-								<b><c:out value="${p.email}" /></b>
-							</td>
-							<td>
-								<b><c:out value="${p.name}" /></b>
-							</td>
-							<td>
-								<c:out value="${p.foodRestrictions}" />
-							</td>
-							<td>
-								<c:out value="${p.countryName}" />
-							</td>
-							<td>
-								<c:out value="${p.arrivalTime}" />
-							</td>
-							<td>
-								<c:out value="${p.volunteering}" />
-							</td>
-							<td>
-								<c:if test="${not empty p.payment}">
-									<b>&euro;<c:out value="${p.amount}" /></b>
-									<img src="images/confirmed.png" />
-								</c:if>
-							</td>
-							<td>
-								<c:if test="${not empty p.payment}">
-									<c:out value="${p.payment}" />
-								</c:if>
-							</td>
-							<!--<td>
-								<c:out value="${p.created}" />
-							</td>-->
-						</tr>
+									</td>
+									<td>
+										<b><c:out value="${p.email}" /></b>
+									</td>
+									<td>
+										<b><c:out value="${p.name}" /></b>
+									</td>
+									<td>
+										<c:out value="${p.foodRestrictions}" />
+									</td>
+									<td>
+										<c:out value="${p.countryName}" />
+									</td>
+									<td>
+										<c:out value="${p.arrivalTime}" />
+									</td>
+									<td>
+										<c:out value="${p.volunteering}" />
+									</td>
+									<td>
+										<c:if test="${not empty p.payment}">
+											<b>&euro;<c:out value="${p.amount}" /></b>
+											<img src="images/confirmed.png" />
+										</c:if>
+									</td>
+									<td>
+										<c:if test="${not empty p.payment}">
+											<c:out value="${p.payment}" />
+										</c:if>
+									</td>
+									<!--<td>
+										<c:out value="${p.created}" />
+									</td>-->
+								</tr>
+							</c:if>
 						</c:forEach>
 					</tbody>
 				</table>
